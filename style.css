@@ -1,0 +1,1318 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+
+/* --- Premium Navbar --- */
+
+/* 1. Nav Links - Sliding Underline & Lift Effect */
+.nav-links a {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 3px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Line jo shuru mein hidden (width: 0) rahegi */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%; /* Center se start hogi */
+    transform: translateX(-50%);
+    background-color: #d34e2a;
+    transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth snap animation */
+}
+
+/* Hover karne par text thoda upar uthega aur line 100% ho jayegi */
+.nav-links a:hover {
+    transform: translateY(-2px);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* 2. Icons - Playful Scale & Pop Effect */
+.nav-icons a {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s;
+}
+
+.nav-icons a:hover {
+    transform: scale(1.2) translateY(-2px); /* Icon bada hoga aur thoda upar jayega */
+    color: #d34e2a !important;
+}
+
+/* --- JABARDAST TEXT LOGO STYLING --- */
+
+
+
+
+
+
+
+.custom-brand-logo {
+    display: flex;
+    align-items: flex-end; /* Dono words ko niche se ek line me barabar rakhne ke liye */
+    gap: 8px; /* URBAN aur EDGE ke beech ka thoda sa gap */
+    text-decoration: none;
+    padding-left: 30px;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    transition: transform 0.4s ease;
+}
+
+.custom-brand-logo:hover {
+    transform: scale(1.05); /* Pura logo halka sa aage aayega */
+}
+
+/* URBAN Part */
+.urban-part {
+    display: flex;
+    flex-direction: column; 
+}
+
+.urban-text {
+    font-size: 32px;
+    font-weight: 900; 
+    letter-spacing: -1px;
+    line-height: 1; 
+}
+
+.urban-line {
+    width: 100%;
+    height: 4px; 
+    background-color: #000;
+    margin-top: 4px; 
+}
+
+/* EDGE Part */
+.edge-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-bottom: 0px; 
+}
+
+.edge-text {
+    font-size: 18px; /* URBAN se chhota, jaisa tumne kaha */
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1;
+    color: #0088ff;
+    text-shadow: 1px 1px 2px black;
+}
+
+.edge-icons {
+    display: flex;
+    gap: 4px; /* Icons ke beech ka gap */
+    margin: 3px 0; 
+    font-size: 10px; /* Ekdam chhote letters */
+    color: #0088ff; ;
+}
+
+
+
+
+/* Nav Links Styling */
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    padding-top: 15px;
+}
+
+.nav-links ul li {
+    margin: 0 15px;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.nav-links ul li a:hover {
+    color: #0088ff;
+}
+
+/* Icons and Search Bar */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-right: 30px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #f4f4f4;
+    border-radius: 20px;
+    padding: 5px 20px;
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    padding: 5px;
+    outline: none;
+    width: 150px;
+}
+
+
+
+/*============================Hero section================================*/
+
+/* --- HERO SECTION CUSTOM CSS --- */
+
+.hero-section {
+    min-height: calc(100vh - 90px); /* Screen ki height minus navbar ki height */
+    background: #111; /* Dark background */
+}
+
+/* Peeche wala bada text */
+.massive-text {
+    font-size: 24vw; /* Screen ke hisaab se bahut bada hoga */
+    font-weight: 900;
+    color: #d34e2a; /* Design jaisa dark orange/rust color */
+    letter-spacing: -5px;
+    z-index: 1; /* Model ke peeche rahega */
+    user-select: none; /* Text select na ho paye */
+}
+
+/* ========================================= */
+/* --- HOME PAGE MASSIVE TEXT ANIMATION --- */
+/* ========================================= */
+
+.massive-text {
+    /* 8 seconds ka smooth loop */
+    animation: urbanBreathe 8s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+    transform-origin: center center;
+    white-space: nowrap; /* Taki letter spacing badhne par text tute nahi */
+}
+
+@keyframes urbanBreathe {
+    0% {
+        /* translate(-50%, -50%) rakhna zaroori hai center maintain karne ke liye */
+        transform: translate(-50%, -50%) scale(1);
+        letter-spacing: -2px; /* Shuru mein thoda tight */
+        opacity: 0.8;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.05); /* Piche ki taraf zoom hoga */
+        letter-spacing: 15px; /* Letters ke beech jagah khulegi */
+        opacity: 0.4; /* Thoda fade hoga taaki models aur highlight hon */
+        text-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15); /* Halka sa 3D glow */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        letter-spacing: -2px; /* Wapas original position */
+        opacity: 0.8;
+    }
+}
+
+
+
+/* Outline Text Effect (2026 ke liye) */
+.outline-text {
+    color: transparent; /* Andar se khali */
+    -webkit-text-stroke: 2px #fff; /* Bahar se white border */
+}
+
+/* Chhote text ke beech ka gap */
+.tracking-widest {
+    letter-spacing: 2px;
+}
+
+/* --- HERO SECTION CAROUSEL CSS --- */
+
+.hero-section {
+    min-height: 110vh;
+    /* Naya Gradient Background: Dark Charcoal se Pure Black ki taraf */
+    background: linear-gradient(135deg, #2b2b2b 0%, #111111 50%, #000000 100%);
+}
+
+/* ========================================= */
+/* --- BACKGROUND TEXT (GEAR/URBAN/JUST IN) ANIMATION --- */
+/* ========================================= */
+
+.hero-bg-text, .drop-bg-text {
+    /* 12 second loop */
+    animation: backgroundBreathe 15s ease-in-out infinite;
+    transform-origin: center center;
+    white-space: nowrap;
+}
+
+@keyframes backgroundBreathe {
+    0% { 
+        /* Opacity hata di, bas position aur scale rakha hai */
+        transform: translate(-50%, -50%) scale(1); 
+    }
+    50% { 
+        /* Halki si zoom aur letter spacing khulegi */
+        transform: translate(-50%, -50%) scale(1.08); 
+        letter-spacing: 2vw; 
+    }
+    100% { 
+        transform: translate(-50%, -50%) scale(1); 
+    }
+}
+
+
+
+
+
+/* --- MARQUEE CSS --- */
+.marquee-container {
+    position: absolute;
+
+    background: #d34e2a; /* Orange background */
+    color: #fff;
+    padding: 8px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 1px solid #000;
+    top: 70px ;
+
+}
+
+.marquee-content {
+    display: inline-block;
+    font-size: 11px;
+    animation: scrollText 15s linear infinite; /* 15s speed hai, kam zyada kar sakte ho */
+}
+
+@keyframes scrollText {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Aadha scroll hone par loop ho jayega */
+}
+
+/* OPTION 1: HOLLOW OUTLINE TEXT */
+.massive-text {
+    font-size: 24vw; 
+    font-weight: 900;
+    font-family: 'Archivo Black', sans-serif; /* Ye font ispe bahut mast lagega */
+    letter-spacing: -5px;
+    z-index: 1; 
+    user-select: none; 
+    
+    /* Jadoo yahan hai */
+    color: transparent; /* Andar ka color gayab */
+    -webkit-text-stroke: 4px #d34e2a; /* Bahar 4px ka orange border */
+    text-shadow: 0px 0px 30px rgba(211, 78, 42, 0.4); /* Halke orange rang ki glowing shadow */
+}
+
+
+.hero-carousel-container {
+    height: 85%; 
+    max-height: 100vh;
+    width: 100%; /* Pure screen par failne ke liye */
+    z-index: 2; /* Bada text peeche, collection text aage */
+    pointer-events: none; /* Taaki log image par click karke slide na rokein */
+
+}
+
+.hero-carousel-img {
+    height: 100%; /* Container ki poori height lega */
+    width: 50%; /* Ratio maintain rakhega */
+    object-fit: contain;
+    filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.5)); /* Thodi shadow taaki model realistic lage */
+}
+
+/* --- CAROUSEL SMOOTH FADE FIX --- */
+.carousel-fade .carousel-item {
+    /* Bootstrap ke default time ko override kar rahe hain */
+    transition: opacity 3.5s ease-in-out !important; 
+}
+
+
+
+/* Ensure links are clickable even with pointer-events: none on images */
+.pointer-events-auto {
+    pointer-events: auto;
+}
+
+
+/* Text ko 'U' ke upar set karne ke liye */
+.urban-box {
+    top: 20%; /* Upar se kitna niche lana hai (U ke center ke hisaab se adjust kar lena) */
+    left: 5%; /* Left side se doori (U ke theek upar lane ke liye) */
+}
+.urban-box p{
+    font-size: 20px;
+    color: whitesmoke;
+}
+
+/* Button ko ekdam niche set karne ke liye */
+.button-box {
+    flex-direction: column;
+    bottom: 20px; /* Niche se doori (Collection 2026 ke barabar rakhne ke liye 60px theek hai) */
+    left: 5%; 
+    gap: 40px;
+    padding-bottom: 40px;
+}
+.button-box p{
+    text-align: left;
+}
+/* --- PREMIUM URBAN BUTTON DESIGN --- */
+
+.btn-urban {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #ffffff;
+    padding: 12px 35px; /* Button ko thoda lamba aur chauda kiya */
+    font-size: 13px;
+    letter-spacing: 2px; /* Text ke beech gap premium look deta hai */
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease-in-out; /* Smooth animation ke liye */
+    width: fit-content; /* Button sirf text jitni jagah lega */
+}
+
+/* Hover Effect (Jab mouse button par aayega) */
+.btn-urban:hover {
+    background-color: transparent; /* Background gayab (transparent) ho jayega */
+    color: #ffffff; /* Text white ho jayega */
+    border: 2px solid #ffffff; /* White border dikhega */
+    transform: translateY(-5px); /* Button thoda hawa me uthega */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5); /* Niche ek mast shadow aayegi */
+}
+
+
+
+/* Collection 2026 ko 'N' ke theek niche lana */
+.collection-box {
+    right: 4%; /* Ye usko N ke theek niche layega */
+
+    padding-bottom: 15px; /* Niche se thoda upar uthane ke liye */
+    pointer-events: auto;
+
+}
+
+.collection{
+    font-size: 100px;
+    font-family: 'Archivo Black' ;
+    letter-spacing: 5px; /* Letters ko thoda chipkane ke liye, bilkul image jaisa */
+    text-transform: none; /* Taki 'C' capital aur baaki small rahe */
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.collection:hover{
+    animation: glitch-anim 0.2s infinite;
+
+
+}
+@keyframes glitch-anim {
+    0% { text-shadow: 3px 2px 0px #0ff, -3px -2px 0px #f00; transform: translate(0); }
+    20% { text-shadow: -3px 2px 0px #0ff, 3px -2px 0px #f00; transform: translate(-2px, 2px); }
+    40% { text-shadow: 3px -2px 0px #0ff, -3px 2px 0px #f00; transform: translate(2px, -2px); }
+    60% { text-shadow: -3px -2px 0px #0ff, 3px 2px 0px #f00; transform: translate(-2px, -2px); }
+    80% { text-shadow: 3px 2px 0px #0ff, -3px -2px 0px #f00; transform: translate(2px, 2px); }
+    100% { text-shadow: 3px 2px 0px #0ff, -3px -2px 0px #f00; transform: translate(0); }
+}
+
+
+/*=============================================Wear the legacy==================================================*/
+
+
+.wear-legacy-section {
+    background-color: #ffffff; /* Safed background */
+}
+
+/* Image par hover effect (Zoom in) */
+.category-box {
+    cursor: pointer;
+    background-color: #f8f9fa; /* Agar photo load na ho toh light grey dikhega */
+}
+
+.category-img {
+    transition: transform 0.5s ease; /* Smooth animation time */
+    object-fit: cover;
+    aspect-ratio: 4 / 5; /* Ekdam perfect portrait ratio set karega */
+}
+
+/* Jab mouse dabbe par aayega, photo badi hogi par bahar nahi niklegi overflow-hidden ki wajah se */
+.category-box:hover .category-img {
+    transform: scale(1.05); 
+}
+
+/*================================latest Men's collection=========================================*/
+
+/* --- LATEST MEN'S SECTION CSS --- */
+
+.latest-mens-section {
+    background-color: #ffffff;
+}
+
+/* Products par cursor point karega */
+.product-card {
+    cursor: pointer;
+}
+
+/* Image background ko ekdam light grey rakha hai jaisa design me hai */
+.product-img-box {
+    background-color: #f8f9fa; /* Light grey base */
+    aspect-ratio: 4 / 5; /* Sabhi images ek hi size/height ki rahengi */
+}
+
+.product-img {
+    transition: transform 0.4s ease, filter 0.4s ease;
+    object-fit: cover;
+    height: 100%;
+}
+
+/* Hover Effect: Jab mouse layenge toh photo thodi zoom hogi aur shadow aayegi */
+.product-card:hover .product-img {
+    transform: scale(1.08); /* Photo badi hogi */
+}
+
+.product-card:hover h6 {
+    color: #d34e2a; /* Title ka color hover par orange ho jayega */
+    transition: color 0.3s;
+}
+
+
+/*==========================================Urbanland Section==================================================*/
+
+/* --- PROMO BANNER CSS --- */
+
+/* Peeche wala bada text (safed rang ka) */
+
+/* --- PROMO BANNER DARK GRADIENT --- */
+.promo-gradient-box {
+    /* Gunmetal Grey se Pure Black ka gradient */
+    background: linear-gradient(135deg, #4f4f4f 0%, #2b2b2b 50%, #0a0a0a 100%);
+}
+
+/* Bada text ab dark background par aur mast chamkega */
+.promo-massive-text {
+    text-shadow: 0px 10px 30px rgba(0, 0, 0, 0.8); /* Shadow ko thoda heavy kar diya */
+}
+.promo-massive-text {
+    font-size: 10vw; /* Screen ke hisaab se bada-chhota hoga */
+    letter-spacing: -2px;
+    white-space: nowrap; /* Text ko ek hi line me rakhega */
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.05); /* Halka sa 3D feel */
+    user-select: none;
+}
+
+/* Model ki image ko adjust karna */
+.promo-model-img {
+    height:100%; /* Banner ki height ka 95% lega */
+    max-height: 450px;
+    object-fit: contain;
+    object-position: bottom; /* Zameen se chipka rahega */
+    filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.3)); /* Model ke peeche shadow */
+}
+
+/* Button ka Hover Effect */
+.promo-btn {
+    transition: all 0.3s ease;
+}
+
+.promo-btn:hover {
+    background-color: #d34e2a; /* Hover par Orange ho jayega */
+    border-color: #d34e2a;
+    transform: translateY(-3px);
+}
+
+/*==========================================footer section =======================================*/
+
+/* --- FOOTER CSS --- */
+
+/* Footer ke links ka design */
+.footer-links li {
+    margin-bottom: 8px; /* Links ke beech ka gap */
+}
+
+.footer-links a {
+    color: #6c757d; /* Muted grey color */
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect: Grey se Black ho jayega */
+.footer-links a:hover {
+    color: #000000;
+}
+
+/* Newsletter Input field ko outline hatane ke liye */
+.newsletter-section .form-control:focus {
+    box-shadow: none;
+    background-color: #f1f1f1 !important;
+}
+
+/* Payment Icons hover effect */
+.payment-icons i {
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.payment-icons i:hover {
+    color: #000000;
+}
+
+
+
+
+/*============================================ Inner Pages (Clothing, etc) ======================================*/
+
+.page-header {
+    min-height: 250px; /* Banner ki height */
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%); /* Premium dark background */
+}
+
+.filter-bar select {
+    cursor: pointer;
+}
+.filter-bar select:focus {
+    box-shadow: none; /* Click karne par jo blue glow aata hai use hatane ke liye */
+    border-color: #d34e2a; /* Click karne par orange border aayega */
+}
+
+/* --- Hero Section Background --- */
+.hero-clothing {
+    background: linear-gradient(135deg, #161616 0%, #2a2a2a 100%);
+    border-bottom: 2px solid #eee;
+}
+
+/* --- Giant Background Text (Shifted Right & Faded) --- */
+.hero-bg-text {
+    position: absolute;
+    top: 50%;
+    left: 70%; /* Yahan se Right shift ho gaya */
+    transform: translate(-50%, -50%);
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 20vw;
+    color: rgba(255, 255, 255, 0.04); /* Ekdum halka transparent kar diya */
+    z-index: 1; /* Peeche bhej diya */
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+/* --- Left Text Styling --- */
+.brand-accent {
+    color: #d34e2a;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.hero-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 4.5rem;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.hero-subtitle {
+    font-size: 15px;
+    color: #ccc;
+    max-width: 80%;
+}
+
+/* --- Model Image (Zameen par) --- */
+.hero-model-img {
+    max-height: 450px;
+    width: auto;
+    display: inline-block;
+    vertical-align: bottom; /* Isse image column ke base line par aayegi */
+    margin-bottom: -5px; /* Exact border par chipkane ke liye */
+    filter: drop-shadow(-15px 15px 25px rgba(0,0,0,0.6)); /* Shadow left side di hai */
+}
+
+
+/* ======================================================================================================================== */
+/* ---------------------------------------- ACCESSORIES PAGE SPECIFIC STYLES------------------------------------------- --- */
+/* ======================================================================================================================== */
+
+/* Full Viewport Hero */
+.acc-hero {
+    height: 100vh; /* Pura screen cover karega */
+}
+
+.acc-hero-overlay {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
+    z-index: 0;
+}
+
+.acc-hero-title {
+    font-size: 6rem;
+    line-height: 0.9;
+    text-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-15px); }
+    60% { transform: translateY(-7px); }
+}
+
+/* Category Cards */
+.cursor-pointer { cursor: pointer; }
+.acc-cat-card {
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+.acc-cat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+    border-color: #d34e2a;
+}
+.acc-cat-card:hover i {
+    color: #d34e2a !important;
+}
+
+/* Bento Box Grid (Lookbook Style) */
+.bento-card {
+    cursor: pointer;
+}
+
+.bento-img {
+    transition: transform 0.8s ease;
+}
+
+.bento-card:hover .bento-img {
+    transform: scale(1.05);
+}
+
+.bento-content {
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+}
+
+.bento-content-light {
+    background: linear-gradient(to top, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%);
+}
+
+.bento-btn {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.bento-card:hover .bento-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================================================================================== */
+/* ------------------------------------- HOME DECOR PAGE SPECIFIC STYLES ------------------------------------- */
+/* =========================================================================================================== */
+
+/* --- Interactive Hotspots (Shop the Room) --- */
+.hotspot {
+    z-index: 5;
+    cursor: pointer;
+}
+
+.hotspot-dot {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 4px solid #d34e2a;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Pulsing Animation */
+.hotspot-dot::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    background-color: rgba(211, 78, 42, 0.4); /* Brand orange transparent */
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.8); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+.hotspot:hover .hotspot-dot {
+    transform: scale(1.2);
+    background-color: #d34e2a;
+}
+
+/* Pop-up Card */
+.hotspot-card {
+    position: absolute;
+    top: 30px; /* Dot ke niche dikhega */
+    left: 50%;
+    transform: translateX(-50%) translateY(15px);
+    width: 140px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none; /* Jab hidden ho toh click na ho */
+}
+
+/* Triangle Pointing Up */
+.hotspot-card::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background: #fff;
+}
+
+.hotspot:hover .hotspot-card {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
+
+/* --- Pinterest Style Masonry Grid --- */
+.masonry-grid {
+    column-count: 3; /* Desktop par 3 columns */
+    column-gap: 1.5rem;
+}
+
+.masonry-item {
+    break-inside: avoid; /* Image beech se kate nahi */
+    overflow: hidden;
+}
+
+.masonry-item img {
+    display: block;
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.masonry-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.masonry-item:hover img {
+    transform: scale(1.05);
+}
+
+.masonry-item:hover .masonry-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ============================================================================================================ */
+/* ------------------------------------ COLLECTIONS PAGE SPECIFIC STYLES -------------------------------------- */
+/* ============================================================================================================ */
+
+.campaign-banner {
+    min-height: 85vh; /* Badi cinematic height */
+    border-bottom: 2px solid #fff;
+    cursor: pointer;
+}
+
+/* Background image ka smooth zoom effect */
+.campaign-bg {
+    transition: transform 6s ease-out; /* Ekdum slow cinematic zoom */
+    z-index: 0;
+}
+
+/* Jab banner pe hover ho toh image zoom ho */
+.campaign-banner:hover .campaign-bg {
+    transform: scale(1.08);
+}
+
+.campaign-overlay {
+    z-index: 1;
+    transition: opacity 0.5s;
+}
+
+.campaign-banner:hover .campaign-overlay {
+    opacity: 0.8; /* Thoda dark hoga taaki text aur pop hoke aaye */
+}
+
+/* Content Fade In animation */
+.campaign-content {
+    opacity: 0.9;
+    transform: translateY(0);
+    transition: all 0.5s ease;
+}
+
+.campaign-banner:hover .campaign-content {
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+/* Campaign Shop Button */
+.shop-campaign-btn {
+    transition: all 0.3s;
+}
+
+.shop-campaign-btn:hover {
+    background-color: #d34e2a !important;
+    border-color: #d34e2a !important;
+    color: #fff !important;
+    box-shadow: 0 10px 20px rgba(211, 78, 42, 0.3);
+}
+
+
+/* ============================================================================================================ */
+/* ------------------------------------ NEW ARRIVALS (HYPE DROP) STYLES --------------------------------------- */
+/* ============================================================================================================ */
+
+/* Hero Section */
+.new-drop-hero {
+    border-bottom: 2px solid #000;
+}
+
+.drop-bg-text {
+    font-size: 18vw !important;
+}
+
+
+/* Scrolling Marquee Animation */
+.marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marqueeScroll 15s linear infinite;
+}
+
+.marquee-content span {
+    display: inline-block;
+}
+
+@keyframes marqueeScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* -50% kyunki humne text 2 baar likha hai HTML mein */
+}
+
+/* Hype Grid Cards (Brutalist Black & White Boxy Design) */
+.hype-card {
+    transition: all 0.2s ease;
+    /* Hard solid shadow for brutalist streetwear look */
+    box-shadow: 4px 4px 0px rgba(0,0,0,1); 
+}
+
+.hype-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px rgba(211, 78, 42, 1); /* Hover par shadow Orange ho jayegi */
+}
+
+.hype-img-box {
+    position: relative;
+}
+
+.hype-img {
+    transition: transform 0.4s ease;
+}
+
+.hype-card:hover .hype-img {
+    transform: scale(1.05);
+}
+
+/* Quick Add Button sliding up */
+.hype-quick-add {
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.hype-card:hover .hype-quick-add {
+    transform: translateY(0);
+}
+
+
+/* ============================================================================================================ */
+/* -------------------------------------- SALES PAGE SPECIFIC STYLES ------------------------------------------ */
+/* ============================================================================================================ */
+
+/* Sales Hero Animation */
+.sale-hero {
+    border-bottom: 4px solid #000;
+}
+
+.sale-lines {
+    animation: slideLines 20s linear infinite;
+}
+
+@keyframes slideLines {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+}
+
+/* Sale Cards Styling */
+.sale-card {
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+
+.sale-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255, 51, 0, 0.15); /* Red tinted shadow on hover */
+    outline: 2px solid #ff3300; /* Sharp red border on hover */
+}
+
+
+/* ========================================= */
+/* --- SALES FOOTER SPECIFIC STYLES --- */
+/* ========================================= */
+
+.sales-footer {
+    background-color: #050505 !important; /* Normal dark se bhi thoda zyada gehra kala */
+}
+
+/* Links pe hover karne par Orange color aur aage khisakna */
+.footer-links-dark a {
+    transition: all 0.3s ease;
+}
+
+.footer-links-dark a:hover {
+    color: #ff3300 !important;
+    padding-left: 5px; /* Hover pe text halka sa aage aayega */
+}
+
+/* Social Icons Hover Bounce */
+.icon-hover {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;
+}
+
+.icon-hover:hover {
+    transform: translateY(-5px) scale(1.1);
+    color: #ff3300 !important;
+}
+
+/* Input Box Focus hatane ke liye */
+.sales-footer .form-control:focus {
+    border-color: #ff3300 !important;
+    box-shadow: none;
+}
+.sales-footer .form-control::placeholder {
+    color: #555 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*============================================Mobile responsiveness===============================================*/
+
+
+
+
+@media (max-width: 991px) {
+    /* 1. Section ki height mobile ke hisaab se theek ki */
+    .hero-section {
+        min-height: 50vh !important; /* 110vh mobile par bahut lamba ho jata hai */
+    }
+
+    /* 2. Model ko bada kiya (50% se 90% kar diya taaki screen bhare) */
+    .hero-carousel-img {
+        width: 90% !important; 
+        object-position: bottom center !important;
+    }
+
+    /* 3. Bada "URBAN" text ko thoda upar khiskaya aur size set kiya */
+    .massive-text {
+        font-size: 28vw !important; 
+        top: 45% !important; /* Taki model ke theek peechhe aaye */
+    }
+
+    /* 4. Top left wala text ("Urban Edge's Drop") */
+    .urban-box {
+        top: 12% !important; /* Upar se thoda paas laya */
+        left: 5% !important;
+        z-index: 4;
+    }
+    .urban-box p {
+        font-size: 14px !important;
+    }
+
+    /* 5. Left side ka Bottom text aur Button */
+    .button-box {
+        bottom: 20px !important;
+        left: 5% !important;
+        gap: 15px !important;
+        padding-bottom: 20px !important;
+        z-index: 4;
+    }
+    .button-box p {
+        font-size: 11px !important;
+        max-width: 200px !important; /* Text lamba na kheeche */
+        line-height: 1.4 !important;
+    }
+    .btn-urban {
+        padding: 8px 20px !important;
+        font-size: 11px !important;
+    }
+
+    /* 6. Right side ka "Collection 2026" */
+    .collection-box {
+        right: 5% !important;
+        bottom: 90px !important; /* Button se overlap na kare isliye thoda upar uthaya */
+        padding-bottom: 0px !important;
+    }
+    .collection {
+        font-size: 40px !important; /* Bada text chhota kiya */
+        letter-spacing: 2px !important;
+    }
+    .display-3.outline-text {
+        font-size: 35px !important; /* 2026 ko fit kiya */
+    }
+
+
+
+    /* 7. Promo Banner (Urban Land) fix */
+    .promo-massive-text {
+        font-size: 8vw !important;
+        padding-left: 40px;
+    }
+    .promo-model-img {
+        height: 80% !important; 
+    }
+/*---------------------------------------------Clothing page styling-----------------------------------------------------*/
+
+    /* 1. Hero Section Fixes (No floating models, clear text) */
+    
+    .hero-clothing {
+        height: 100vh;
+        padding-top: 40px;
+        text-align: center;
+        align-items: center; /* Mobile par center align */
+    }
+    
+    .hero-bg-text {
+        font-size: 25vw !important; /* Background text mobile ke hisaab se shrink */
+        left: 50%;
+        top: 65%;
+    }
+    
+    .hero-title {
+        font-size: 3rem !important; /* Text bada aur clear rahega */
+        line-height: 1.1;
+        padding-top: 0px;
+    }
+    
+    .hero-subtitle {
+        font-size: 14px !important;
+        padding: 0 15px;
+        text-align: right;
+        margin-bottom: 30px;
+    }
+
+
+    
+    
+
+    /* 2. Filter Bar Adjustments (Side-by-side dropdowns) */
+    .filter-bar .filters, .filter-bar .sorting {
+        width: 100%;
+        justify-content: space-between !important;
+    }
+    
+    .filter-bar select {
+        width: 48% !important; /* Mobile par filters side-by-side dikhenge */
+        font-size: 11px !important;
+        margin-bottom: 5px;
+    }
+
+    /* 3. Product Cards & Touch Screen Fixes */
+    .product-card {
+        padding: 5px;
+    }
+    
+    .product-card h6 {
+        font-size: 11px !important; 
+        margin-top: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; /* Bada naam mobile par cut na ho, '...' lag jaye */
+    }
+    
+    .product-card p {
+        font-size: 12px !important;
+    }
+    
+    .swatch-circle {
+        width: 10px;
+        height: 10px;
+    }
+
+    /* Mobile par mouse hover nahi hota, isliye Quick Add hamesha bottom mein dikhna chahiye */
+    .quick-add-box {
+        transform: translateY(0);
+        opacity: 0.95;
+        padding: 5px !important;
+        background: rgba(255, 255, 255, 0.9);
+    }
+    
+    .quick-add-box button {
+        font-size: 9px !important;
+        padding: 6px !important;
+    }
+
+    /* 4. Footer Tweaks */
+    .footer-section h6 {
+        margin-top: 20px;
+    }
+    .payment-icons {
+        margin-top: 15px;
+        justify-content: center !important;
+    }
+
+/*------------------------------------------------Mobile Responsive for Accessories--------------------------------------------------*/
+
+    /* ... tumhara baaki mobile ka code ... */
+
+    .hero-model-img {
+        max-height: none !important; /* Purani chhoti height limit hata di */
+        width: 100% !important; /* Ab ye mobile screen ki puri width le lega */
+        max-width: 450px; /* Bahut zyada bada hoke phate nahi, isliye limit */
+        margin-top: 40px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .acc-hero-title {
+    font-size: 45px !important;
+    line-height: 0.9;
+    text-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/*--------------------------------------- Mobile Responsiveness for Home Decor--------------------------------------------- */
+
+    .masonry-grid {
+        column-count: 2; /* Tablet par 2 columns */
+    }
+}
+
+@media (max-width: 576px) {
+    .masonry-grid {
+        column-count: 1; /* Phone par 1 column */
+    }
+    .hotspot-card {
+        width: 120px; /* Mobile par card chota */
+    }
+    .masonry-overlay {
+        opacity: 1; /* Mobile par hamesha dikhao kyunki hover nahi hota */
+        transform: translateY(0);
+    }
+}
+
+/*-------------------------------- Mobile Responsiveness for Campaigns---------------------------------------- */
+
+
+@media (max-width: 991px) {
+    .campaign-banner {
+        min-height: 60vh; /* Mobile par height thodi kam */
+    }
+    
+    /* Mobile par gradients center focused hone chahiye kyunki text mostly left/center align ho jata hai */
+    .campaign-overlay {
+        background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 100%) !important;
+    }
+    
+    /* Text alignment mobile par center kar dete hain jisse clean lage */
+    .campaign-content {
+        text-align: center !important;
+        margin-top: auto; /* Text ko bottom ki taraf push karne ke liye */
+    }
+    
+    .campaign-content p.ms-lg-auto {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+}
+
+    
+  /*-------------------------------- Mobile Responsiveness for New arrivals---------------------------------------- */
+
+@media (max-width: 991px) {
+    .hype-quick-add {
+        transform: translateY(0);
+        position: relative !important;
+        border-top: 0 !important;
+    }
+    .hype-card {
+        box-shadow: 2px 2px 0px rgba(0,0,0,1);
+    }
+}
+
+@media (max-width: 768px) {
+   .drop-bg-text { font-size: 25vw !important; }
+}
+
+/*-------------------------------------- Mobile Adjustments for Sales------------------------------------------ */
+
+@media (max-width: 768px) {
+    .sale-hero h1 {
+        font-size: 3.5rem !important;
+        text-shadow: 2px 2px 0 #fff !important;
+    }
+    .sale-hero h2 {
+        font-size: 2rem !important;
+    }
+    .sale-card .badge {
+        font-size: 10px !important;
+    }
+    .sale-card h6 {
+        white-space: normal; /* Mobile pe product naam poora dikhna chahiye */
+    }
+}
+
+
+
+
+
+
+
+

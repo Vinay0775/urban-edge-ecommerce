@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Shop the latest trends at Urban Edge. Discover high-quality streetwear, bold collections, and modern apparel designed for the urban lifestyle.">
+    <title>Urban Edge | Premium Streetwear/Clothings</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-white border-bottom" style="min-height: 70px;">
+        <div class="container-fluid px-md-5">
+            
+            <div class="logo">
+                <a href="index.html" class="custom-brand-logo pb-1" style="padding-left: 0;">
+                    <div class="urban-part">
+                        <span class="urban-text">URBAN</span>
+                        <div class="urban-line"></div>
+                    </div>
+                    <div class="edge-part">
+                        <span class="edge-text">EDGE</span>
+                        <div class="edge-icons">
+                            <i class="fa-solid fa-headphones"></i> <i class="fa-solid fa-shirt"></i> <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <button class="navbar-toggler rounded-0 border-dark" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between" id="mobileNav">
+                
+                <div class="nav-links mx-auto mt-3 mt-lg-0">
+                    <ul class="d-flex flex-column flex-lg-row align-items-center mb-0 ps-0 text-center gap-3 gap-lg-0">
+                        <li><a href="clothing.html">CLOTHING</a></li>
+                        <li><a href="accessories.html">ACCESSORIES</a></li>
+                        <li><a href="homedecor.html">HOME DECOR</a></li>
+                        <li><a href="collections.html">COLLECTIONS</a></li>
+                        <li><a href="newarrivals.html">NEW ARRIVALS</a></li>
+                        <li><a href="sales.html" class="sale-link" style="color: #d34e2a;">SALES</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-icons d-flex flex-column flex-lg-row align-items-center gap-3 mt-3 mt-lg-0 pb-3 pb-lg-0">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search">
+                        <a href="#" style="text-decoration:none;">🔍</a>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="fs-5 text-dark" style="text-decoration:none;"><i class="fa-regular fa-user"></i></a>
+                        <a href="#" class="fs-5 text-dark" style="text-decoration:none;"><i class="fa-solid fa-bag-shopping"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!------------------------------- Hero section--------------------- -->
+
+   <section class="hero-clothing position-relative bg-dark text-white overflow-hidden">
+    
+    <div class="hero-bg-text">
+        URBAN
+    </div>
+
+    <div class="container position-relative" style="z-index: 2; height: 100%;">
+        <div class="row align-items-end" style="min-height: 450px;">
+            
+            <div class="col-lg-6 pb-5 pt-5 text-center text-lg-start">
+                <p class="brand-accent text-uppercase mb-2">Home / Clothing</p>
+                <h1 class="hero-title text-uppercase mb-3">New Era<br>Apparel</h1>
+                <p class="hero-subtitle mb-4">Discover high-quality streetwear designed  for the urban lifestyle.</p>
+                <button class="btn btn-outline-light rounded-0 px-4 py-2 fw-bold text-uppercase shop-btn">Explore Collection</button>
+            </div>
+
+            <div class="col-lg-6 text-center text-lg-end p-0 hero-model-div">
+                <img src="image/Clothingmodels.png" alt="Streetwear Model" class="hero-model-img">
+            </div>
+
+        </div>
+    </div>
+
+</section>
+    <section class="filter-bar py-3 border-bottom bg-light">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+            
+            <div class="filters d-flex gap-2 w-100 w-md-auto justify-content-center justify-content-md-start">
+                <select class="form-select form-select-sm rounded-0 border-dark fw-bold" style="width: 120px; font-size: 12px; text-transform: uppercase;">
+                    <option selected>Size</option>
+                    <option value="1">Small (S)</option>
+                    <option value="2">Medium (M)</option>
+                    <option value="3">Large (L)</option>
+                    <option value="4">X-Large (XL)</option>
+                </select>
+                <select class="form-select form-select-sm rounded-0 border-dark fw-bold" style="width: 120px; font-size: 12px; text-transform: uppercase;">
+                    <option selected>Color</option>
+                    <option value="black">Black</option>
+                    <option value="white">White</option>
+                    <option value="orange">Orange</option>
+                </select>
+            </div>
+
+            <div class="sorting d-flex align-items-center gap-2 w-100 w-md-auto justify-content-center justify-content-md-end">
+                <span class="text-uppercase fw-bold text-muted d-none d-sm-inline" style="font-size: 11px;">Sort By:</span>
+                <select class="form-select form-select-sm rounded-0 border-dark fw-bold" style="width: 160px; font-size: 12px; text-transform: uppercase;">
+                    <option selected>Featured</option>
+                    <option value="low">Price: Low to High</option>
+                    <option value="high">Price: High to Low</option>
+                    <option value="new">Newest Arrivals</option>
+                </select>
+            </div>
+
+        </div>
+    </section>
+
+    <!------------------------------- Product Section ----------------------->
+
+
+
+
+    <section class="clothing-products py-5 mb-5">
+        <div class="container">
+            <div class="row g-4 text-center">
+                
+               <div class="col-lg-3 col-md-4 col-6">
+                    <div class="product-card position-relative">
+                        
+                        <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
+                            <span class="badge bg-dark rounded-0 position-absolute top-0 start-0 m-2 px-2 py-1" style="font-size: 9px; z-index: 2;">NEW</span>
+                            <img src="image/product1.png" alt="Product 1" class="img-fluid w-100 product-img">
+                            
+                            <div class="quick-add-box position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center">
+                                <button class="btn btn-dark w-100 rounded-0 fw-bold text-uppercase py-2 shadow-sm" style="font-size: 10px; letter-spacing: 1px;">Quick Add +</button>
+                            </div>
+                        </div>
+
+                        <h6 class="fw-bold mb-1 text-truncate" style="font-size: 12px;">Urban T-Shirts (Organic)</h6>
+                        
+                        <div class="color-swatches d-flex justify-content-center gap-1 mb-2">
+                            <span class="swatch-circle shadow-sm" style="background-color: #000000;" title="Black"></span>
+                            <span class="swatch-circle border shadow-sm" style="background-color: #ffffff;" title="White"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #d34e2a;" title="Orange"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #556b2f;" title="Olive"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #808080;" title="Grey"></span>
+                        </div>
+
+                        <p class="fw-bold m-0" style="font-size: 13px;">Rs. 600</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="product-card position-relative">
+                        
+                        <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
+                            <span class="badge bg-dark rounded-0 position-absolute top-0 start-0 m-2 px-2 py-1" style="font-size: 9px; z-index: 2;">NEW</span>
+                            <img src="image/product1.png" alt="Product 1" class="img-fluid w-100 product-img">
+                            
+                            <div class="quick-add-box position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center">
+                                <button class="btn btn-dark w-100 rounded-0 fw-bold text-uppercase py-2 shadow-sm" style="font-size: 10px; letter-spacing: 1px;">Quick Add +</button>
+                            </div>
+                        </div>
+
+                        <h6 class="fw-bold mb-1 text-truncate" style="font-size: 12px;">Urban T-Shirts (Organic)</h6>
+                        
+                        <div class="color-swatches d-flex justify-content-center gap-1 mb-2">
+                            <span class="swatch-circle shadow-sm" style="background-color: #000000;" title="Black"></span>
+                            <span class="swatch-circle border shadow-sm" style="background-color: #ffffff;" title="White"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #d34e2a;" title="Orange"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #556b2f;" title="Olive"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #808080;" title="Grey"></span>
+                        </div>
+
+                        <p class="fw-bold m-0" style="font-size: 13px;">Rs. 600</p>
+                    </div>
+                </div>
+
+               <div class="col-lg-3 col-md-4 col-6">
+                    <div class="product-card position-relative">
+                        
+                        <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
+                            <span class="badge bg-dark rounded-0 position-absolute top-0 start-0 m-2 px-2 py-1" style="font-size: 9px; z-index: 2;">NEW</span>
+                            <img src="image/product1.png" alt="Product 1" class="img-fluid w-100 product-img">
+                            
+                            <div class="quick-add-box position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center">
+                                <button class="btn btn-dark w-100 rounded-0 fw-bold text-uppercase py-2 shadow-sm" style="font-size: 10px; letter-spacing: 1px;">Quick Add +</button>
+                            </div>
+                        </div>
+
+                        <h6 class="fw-bold mb-1 text-truncate" style="font-size: 12px;">Urban T-Shirts (Organic)</h6>
+                        
+                        <div class="color-swatches d-flex justify-content-center gap-1 mb-2">
+                            <span class="swatch-circle shadow-sm" style="background-color: #000000;" title="Black"></span>
+                            <span class="swatch-circle border shadow-sm" style="background-color: #ffffff;" title="White"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #d34e2a;" title="Orange"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #556b2f;" title="Olive"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #808080;" title="Grey"></span>
+                        </div>
+
+                        <p class="fw-bold m-0" style="font-size: 13px;">Rs. 600</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="product-card position-relative">
+                        
+                        <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
+                            <span class="badge bg-dark rounded-0 position-absolute top-0 start-0 m-2 px-2 py-1" style="font-size: 9px; z-index: 2;">NEW</span>
+                            <img src="image/product1.png" alt="Product 1" class="img-fluid w-100 product-img">
+                            
+                            <div class="quick-add-box position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center">
+                                <button class="btn btn-dark w-100 rounded-0 fw-bold text-uppercase py-2 shadow-sm" style="font-size: 10px; letter-spacing: 1px;">Quick Add +</button>
+                            </div>
+                        </div>
+
+                        <h6 class="fw-bold mb-1 text-truncate" style="font-size: 12px;">Urban T-Shirts (Organic)</h6>
+                        
+                        <div class="color-swatches d-flex justify-content-center gap-1 mb-2">
+                            <span class="swatch-circle shadow-sm" style="background-color: #000000;" title="Black"></span>
+                            <span class="swatch-circle border shadow-sm" style="background-color: #ffffff;" title="White"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #d34e2a;" title="Orange"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #556b2f;" title="Olive"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #808080;" title="Grey"></span>
+                        </div>
+
+                        <p class="fw-bold m-0" style="font-size: 13px;">Rs. 600</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="product-card position-relative">
+                        
+                        <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
+                            <span class="badge bg-dark rounded-0 position-absolute top-0 start-0 m-2 px-2 py-1" style="font-size: 9px; z-index: 2;">NEW</span>
+                            <img src="image/product1.png" alt="Product 1" class="img-fluid w-100 product-img">
+                            
+                            <div class="quick-add-box position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center">
+                                <button class="btn btn-dark w-100 rounded-0 fw-bold text-uppercase py-2 shadow-sm" style="font-size: 10px; letter-spacing: 1px;">Quick Add +</button>
+                            </div>
+                        </div>
+
+                        <h6 class="fw-bold mb-1 text-truncate" style="font-size: 12px;">Urban T-Shirts (Organic)</h6>
+                        
+                        <div class="color-swatches d-flex justify-content-center gap-1 mb-2">
+                            <span class="swatch-circle shadow-sm" style="background-color: #000000;" title="Black"></span>
+                            <span class="swatch-circle border shadow-sm" style="background-color: #ffffff;" title="White"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #d34e2a;" title="Orange"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #556b2f;" title="Olive"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #808080;" title="Grey"></span>
+                        </div>
+
+                        <p class="fw-bold m-0" style="font-size: 13px;">Rs. 600</p>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="product-card position-relative">
+                        
+                        <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
+                            <span class="badge bg-dark rounded-0 position-absolute top-0 start-0 m-2 px-2 py-1" style="font-size: 9px; z-index: 2;">NEW</span>
+                            <img src="image/product1.png" alt="Product 1" class="img-fluid w-100 product-img">
+                            
+                            <div class="quick-add-box position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center">
+                                <button class="btn btn-dark w-100 rounded-0 fw-bold text-uppercase py-2 shadow-sm" style="font-size: 10px; letter-spacing: 1px;">Quick Add +</button>
+                            </div>
+                        </div>
+
+                        <h6 class="fw-bold mb-1 text-truncate" style="font-size: 12px;">Urban T-Shirts (Organic)</h6>
+                        
+                        <div class="color-swatches d-flex justify-content-center gap-1 mb-2">
+                            <span class="swatch-circle shadow-sm" style="background-color: #000000;" title="Black"></span>
+                            <span class="swatch-circle border shadow-sm" style="background-color: #ffffff;" title="White"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #d34e2a;" title="Orange"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #556b2f;" title="Olive"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #808080;" title="Grey"></span>
+                        </div>
+
+                        <p class="fw-bold m-0" style="font-size: 13px;">Rs. 600</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="product-card position-relative">
+                        
+                        <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
+                            <span class="badge bg-dark rounded-0 position-absolute top-0 start-0 m-2 px-2 py-1" style="font-size: 9px; z-index: 2;">NEW</span>
+                            <img src="image/product1.png" alt="Product 1" class="img-fluid w-100 product-img">
+                            
+                            <div class="quick-add-box position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center">
+                                <button class="btn btn-dark w-100 rounded-0 fw-bold text-uppercase py-2 shadow-sm" style="font-size: 10px; letter-spacing: 1px;">Quick Add +</button>
+                            </div>
+                        </div>
+
+                        <h6 class="fw-bold mb-1 text-truncate" style="font-size: 12px;">Urban T-Shirts (Organic)</h6>
+                        
+                        <div class="color-swatches d-flex justify-content-center gap-1 mb-2">
+                            <span class="swatch-circle shadow-sm" style="background-color: #000000;" title="Black"></span>
+                            <span class="swatch-circle border shadow-sm" style="background-color: #ffffff;" title="White"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #d34e2a;" title="Orange"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #556b2f;" title="Olive"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #808080;" title="Grey"></span>
+                        </div>
+
+                        <p class="fw-bold m-0" style="font-size: 13px;">Rs. 600</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="product-card position-relative">
+                        
+                        <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
+                            <span class="badge bg-dark rounded-0 position-absolute top-0 start-0 m-2 px-2 py-1" style="font-size: 9px; z-index: 2;">NEW</span>
+                            <img src="image/product1.png" alt="Product 1" class="img-fluid w-100 product-img">
+                            
+                            <div class="quick-add-box position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center">
+                                <button class="btn btn-dark w-100 rounded-0 fw-bold text-uppercase py-2 shadow-sm" style="font-size: 10px; letter-spacing: 1px;">Quick Add +</button>
+                            </div>
+                        </div>
+
+                        <h6 class="fw-bold mb-1 text-truncate" style="font-size: 12px;">Urban T-Shirts (Organic)</h6>
+                        
+                        <div class="color-swatches d-flex justify-content-center gap-1 mb-2">
+                            <span class="swatch-circle shadow-sm" style="background-color: #000000;" title="Black"></span>
+                            <span class="swatch-circle border shadow-sm" style="background-color: #ffffff;" title="White"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #d34e2a;" title="Orange"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #556b2f;" title="Olive"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #808080;" title="Grey"></span>
+                        </div>
+
+                        <p class="fw-bold m-0" style="font-size: 13px;">Rs. 600</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="product-card position-relative">
+                        
+                        <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
+                            <span class="badge bg-dark rounded-0 position-absolute top-0 start-0 m-2 px-2 py-1" style="font-size: 9px; z-index: 2;">NEW</span>
+                            <img src="image/product1.png" alt="Product 1" class="img-fluid w-100 product-img">
+                            
+                            <div class="quick-add-box position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center">
+                                <button class="btn btn-dark w-100 rounded-0 fw-bold text-uppercase py-2 shadow-sm" style="font-size: 10px; letter-spacing: 1px;">Quick Add +</button>
+                            </div>
+                        </div>
+
+                        <h6 class="fw-bold mb-1 text-truncate" style="font-size: 12px;">Urban T-Shirts (Organic)</h6>
+                        
+                        <div class="color-swatches d-flex justify-content-center gap-1 mb-2">
+                            <span class="swatch-circle shadow-sm" style="background-color: #000000;" title="Black"></span>
+                            <span class="swatch-circle border shadow-sm" style="background-color: #ffffff;" title="White"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #d34e2a;" title="Orange"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #556b2f;" title="Olive"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #808080;" title="Grey"></span>
+                        </div>
+
+                        <p class="fw-bold m-0" style="font-size: 13px;">Rs. 600</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="product-card position-relative">
+                        
+                        <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
+                            <span class="badge bg-dark rounded-0 position-absolute top-0 start-0 m-2 px-2 py-1" style="font-size: 9px; z-index: 2;">NEW</span>
+                            <img src="image/product1.png" alt="Product 1" class="img-fluid w-100 product-img">
+                            
+                            <div class="quick-add-box position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center">
+                                <button class="btn btn-dark w-100 rounded-0 fw-bold text-uppercase py-2 shadow-sm" style="font-size: 10px; letter-spacing: 1px;">Quick Add +</button>
+                            </div>
+                        </div>
+
+                        <h6 class="fw-bold mb-1 text-truncate" style="font-size: 12px;">Urban T-Shirts (Organic)</h6>
+                        
+                        <div class="color-swatches d-flex justify-content-center gap-1 mb-2">
+                            <span class="swatch-circle shadow-sm" style="background-color: #000000;" title="Black"></span>
+                            <span class="swatch-circle border shadow-sm" style="background-color: #ffffff;" title="White"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #d34e2a;" title="Orange"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #556b2f;" title="Olive"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #808080;" title="Grey"></span>
+                        </div>
+
+                        <p class="fw-bold m-0" style="font-size: 13px;">Rs. 600</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="product-card position-relative">
+                        
+                        <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
+                            <span class="badge bg-dark rounded-0 position-absolute top-0 start-0 m-2 px-2 py-1" style="font-size: 9px; z-index: 2;">NEW</span>
+                            <img src="image/product1.png" alt="Product 1" class="img-fluid w-100 product-img">
+                            
+                            <div class="quick-add-box position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center">
+                                <button class="btn btn-dark w-100 rounded-0 fw-bold text-uppercase py-2 shadow-sm" style="font-size: 10px; letter-spacing: 1px;">Quick Add +</button>
+                            </div>
+                        </div>
+
+                        <h6 class="fw-bold mb-1 text-truncate" style="font-size: 12px;">Urban T-Shirts (Organic)</h6>
+                        
+                        <div class="color-swatches d-flex justify-content-center gap-1 mb-2">
+                            <span class="swatch-circle shadow-sm" style="background-color: #000000;" title="Black"></span>
+                            <span class="swatch-circle border shadow-sm" style="background-color: #ffffff;" title="White"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #d34e2a;" title="Orange"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #556b2f;" title="Olive"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #808080;" title="Grey"></span>
+                        </div>
+
+                        <p class="fw-bold m-0" style="font-size: 13px;">Rs. 600</p>
+                    </div>
+                </div>
+
+               <div class="col-lg-3 col-md-4 col-6">
+                    <div class="product-card position-relative">
+                        
+                        <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
+                            <span class="badge bg-dark rounded-0 position-absolute top-0 start-0 m-2 px-2 py-1" style="font-size: 9px; z-index: 2;">NEW</span>
+                            <img src="image/product1.png" alt="Product 1" class="img-fluid w-100 product-img">
+                            
+                            <div class="quick-add-box position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center">
+                                <button class="btn btn-dark w-100 rounded-0 fw-bold text-uppercase py-2 shadow-sm" style="font-size: 10px; letter-spacing: 1px;">Quick Add +</button>
+                            </div>
+                        </div>
+
+                        <h6 class="fw-bold mb-1 text-truncate" style="font-size: 12px;">Urban T-Shirts (Organic)</h6>
+                        
+                        <div class="color-swatches d-flex justify-content-center gap-1 mb-2">
+                            <span class="swatch-circle shadow-sm" style="background-color: #000000;" title="Black"></span>
+                            <span class="swatch-circle border shadow-sm" style="background-color: #ffffff;" title="White"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #d34e2a;" title="Orange"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #556b2f;" title="Olive"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #808080;" title="Grey"></span>
+                        </div>
+
+                        <p class="fw-bold m-0" style="font-size: 13px;">Rs. 600</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="product-card position-relative">
+                        
+                        <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
+                            <span class="badge bg-dark rounded-0 position-absolute top-0 start-0 m-2 px-2 py-1" style="font-size: 9px; z-index: 2;">NEW</span>
+                            <img src="image/product1.png" alt="Product 1" class="img-fluid w-100 product-img">
+                            
+                            <div class="quick-add-box position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center">
+                                <button class="btn btn-dark w-100 rounded-0 fw-bold text-uppercase py-2 shadow-sm" style="font-size: 10px; letter-spacing: 1px;">Quick Add +</button>
+                            </div>
+                        </div>
+
+                        <h6 class="fw-bold mb-1 text-truncate" style="font-size: 12px;">Urban T-Shirts (Organic)</h6>
+                        
+                        <div class="color-swatches d-flex justify-content-center gap-1 mb-2">
+                            <span class="swatch-circle shadow-sm" style="background-color: #000000;" title="Black"></span>
+                            <span class="swatch-circle border shadow-sm" style="background-color: #ffffff;" title="White"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #d34e2a;" title="Orange"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #556b2f;" title="Olive"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #808080;" title="Grey"></span>
+                        </div>
+
+                        <p class="fw-bold m-0" style="font-size: 13px;">Rs. 600</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="product-card position-relative">
+                        
+                        <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
+                            <span class="badge bg-dark rounded-0 position-absolute top-0 start-0 m-2 px-2 py-1" style="font-size: 9px; z-index: 2;">NEW</span>
+                            <img src="image/product1.png" alt="Product 1" class="img-fluid w-100 product-img">
+                            
+                            <div class="quick-add-box position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center">
+                                <button class="btn btn-dark w-100 rounded-0 fw-bold text-uppercase py-2 shadow-sm" style="font-size: 10px; letter-spacing: 1px;">Quick Add +</button>
+                            </div>
+                        </div>
+
+                        <h6 class="fw-bold mb-1 text-truncate" style="font-size: 12px;">Urban T-Shirts (Organic)</h6>
+                        
+                        <div class="color-swatches d-flex justify-content-center gap-1 mb-2">
+                            <span class="swatch-circle shadow-sm" style="background-color: #000000;" title="Black"></span>
+                            <span class="swatch-circle border shadow-sm" style="background-color: #ffffff;" title="White"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #d34e2a;" title="Orange"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #556b2f;" title="Olive"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #808080;" title="Grey"></span>
+                        </div>
+
+                        <p class="fw-bold m-0" style="font-size: 13px;">Rs. 600</p>
+                    </div>
+                </div>
+
+               <div class="col-lg-3 col-md-4 col-6">
+                    <div class="product-card position-relative">
+                        
+                        <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
+                            <span class="badge bg-dark rounded-0 position-absolute top-0 start-0 m-2 px-2 py-1" style="font-size: 9px; z-index: 2;">NEW</span>
+                            <img src="image/product1.png" alt="Product 1" class="img-fluid w-100 product-img">
+                            
+                            <div class="quick-add-box position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center">
+                                <button class="btn btn-dark w-100 rounded-0 fw-bold text-uppercase py-2 shadow-sm" style="font-size: 10px; letter-spacing: 1px;">Quick Add +</button>
+                            </div>
+                        </div>
+
+                        <h6 class="fw-bold mb-1 text-truncate" style="font-size: 12px;">Urban T-Shirts (Organic)</h6>
+                        
+                        <div class="color-swatches d-flex justify-content-center gap-1 mb-2">
+                            <span class="swatch-circle shadow-sm" style="background-color: #000000;" title="Black"></span>
+                            <span class="swatch-circle border shadow-sm" style="background-color: #ffffff;" title="White"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #d34e2a;" title="Orange"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #556b2f;" title="Olive"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #808080;" title="Grey"></span>
+                        </div>
+
+                        <p class="fw-bold m-0" style="font-size: 13px;">Rs. 600</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="product-card position-relative">
+                        
+                        <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
+                            <span class="badge bg-dark rounded-0 position-absolute top-0 start-0 m-2 px-2 py-1" style="font-size: 9px; z-index: 2;">NEW</span>
+                            <img src="image/product1.png" alt="Product 1" class="img-fluid w-100 product-img">
+                            
+                            <div class="quick-add-box position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center">
+                                <button class="btn btn-dark w-100 rounded-0 fw-bold text-uppercase py-2 shadow-sm" style="font-size: 10px; letter-spacing: 1px;">Quick Add +</button>
+                            </div>
+                        </div>
+
+                        <h6 class="fw-bold mb-1 text-truncate" style="font-size: 12px;">Urban T-Shirts (Organic)</h6>
+                        
+                        <div class="color-swatches d-flex justify-content-center gap-1 mb-2">
+                            <span class="swatch-circle shadow-sm" style="background-color: #000000;" title="Black"></span>
+                            <span class="swatch-circle border shadow-sm" style="background-color: #ffffff;" title="White"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #d34e2a;" title="Orange"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #556b2f;" title="Olive"></span>
+                            <span class="swatch-circle shadow-sm" style="background-color: #808080;" title="Grey"></span>
+                        </div>
+
+                        <p class="fw-bold m-0" style="font-size: 13px;">Rs. 600</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pagination-box mt-5 d-flex justify-content-center">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination mb-0">
+                        <li class="page-item disabled">
+                            <a class="page-link rounded-0 text-muted fw-bold" href="#" tabindex="-1" style="font-size: 12px; text-transform: uppercase;">Prev</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link rounded-0 fw-bold border-dark bg-dark text-white" href="#" style="font-size: 12px;">1</a></li>
+                        <li class="page-item"><a class="page-link rounded-0 fw-bold text-dark border-dark" href="#" style="font-size: 12px;">2</a></li>
+                        <li class="page-item"><a class="page-link rounded-0 fw-bold text-dark border-dark" href="#" style="font-size: 12px;">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link rounded-0 text-dark border-dark fw-bold" href="#" style="font-size: 12px; text-transform: uppercase;">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ----------------------------------------Footer Section----------------------------------------------------- -->
+
+<section class="newsletter-section py-5 border-top bg-white">
+    <div class="container text-center" style="max-width: 550px;">
+        <h5 class="fw-bolder mb-3 text-uppercase" style="font-family: 'Archivo Black', sans-serif; font-size: 18px;">Newsletter</h5>
+        <p class="text-muted mb-4" style="font-size: 13px;">Sign up for exclusive offers, original stories, activism awareness, events and more.</p>
+        
+        <div class="input-group mb-3">
+            <input type="email" class="form-control rounded-0 bg-light border-0 px-3 py-2" placeholder="Your email" aria-label="Your email">
+            <button class="btn btn-dark rounded-0 px-4 fw-bold text-uppercase" type="button" style="font-size: 11px; letter-spacing: 1px;">Subscribe</button>
+        </div>
+    </div>
+</section>
+
+<footer class="footer-section py-5 border-top bg-white">
+    <div class="container">
+        
+        <div class="row g-4 mb-5">
+            
+            <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                <h2 class="fw-bolder mb-2" style="font-family: 'Archivo Black', sans-serif; font-size: 24px;">URBAN<span style="color: #0088ff; font-family: 'Arial', sans-serif; font-size: 14px; vertical-align: middle; margin-left: 5px;">EDGE</span></h2>
+                <p class="text-muted mt-3" style="font-size: 11px;">URBAN EDGE a premium streetwear brand.</p>
+                <div class="d-flex gap-3 mt-3">
+                    <a href="#" class="text-dark fs-5"><i class="fa-brands fa-pinterest"></i></a>
+                    <a href="#" class="text-dark fs-5"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-3 col-6">
+                <h6 class="fw-bold mb-3 text-uppercase" style="font-size: 11px; letter-spacing: 1px;">Women</h6>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#">Limited Edition Prints</a></li>
+                    <li><a href="#">Shirts & Tops</a></li>
+                    <li><a href="#">Sweatshirts/Hoodies</a></li>
+                </ul>
+                <h6 class="fw-bold mt-4 mb-3 text-uppercase" style="font-size: 11px; letter-spacing: 1px;">Men</h6>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#">Limited Edition Prints</a></li>
+                    <li><a href="#">Shirts & Tops</a></li>
+                    <li><a href="#">Sweatshirts/Hoodies</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-lg-2 col-md-3 col-6">
+                <h6 class="fw-bold mb-3 text-uppercase" style="font-size: 11px; letter-spacing: 1px;">Accessories</h6>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#">Tote Bags</a></li>
+                    <li><a href="#">Backpacks</a></li>
+                    <li><a href="#">Hats & Beanies</a></li>
+                </ul>
+                <h6 class="fw-bold mt-4 mb-3 text-uppercase" style="font-size: 11px; letter-spacing: 1px;">Home Decor</h6>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#">Wall Art & Prints</a></li>
+                    <li><a href="#">Statement Pillows</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-3 col-6">
+                <h6 class="fw-bold mb-3 text-uppercase" style="font-size: 11px; letter-spacing: 1px;">Sales</h6>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#">Women's Sale</a></li>
+                    <li><a href="#">Men's Sale</a></li>
+                    <li><a href="#">Accessories Sale</a></li>
+                </ul>
+                <h6 class="fw-bold mt-4 mb-3 text-uppercase" style="font-size: 11px; letter-spacing: 1px;">Collections</h6>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#">Urban Collection</a></li>
+                    <li><a href="#">DT Classics</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-6">
+                <h6 class="fw-bold mb-3 text-uppercase" style="font-size: 11px; letter-spacing: 1px;">About Us</h6>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Sustainability Initiatives</a></li>
+                    <li><a href="#">Contact Information</a></li>
+                </ul>
+                <h6 class="fw-bold mt-4 mb-3 text-uppercase" style="font-size: 11px; letter-spacing: 1px;">Quick Links</h6>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#">Search</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row align-items-center pt-4 border-top">
+            
+            <div class="col-md-4 mb-3 mb-md-0 d-flex gap-2 justify-content-center justify-content-md-start">
+                <select class="form-select form-select-sm rounded-0 bg-light border-0 text-muted" style="width: auto; font-size: 11px;">
+                    <option>United States (USD $)</option>
+                    <option>India (INR ₹)</option>
+                </select>
+                <select class="form-select form-select-sm rounded-0 bg-light border-0 text-muted" style="width: auto; font-size: 11px;">
+                    <option>English</option>
+                </select>
+            </div>
+            
+            <div class="col-md-4 text-center mb-3 mb-md-0">
+                <p class="text-muted mb-0" style="font-size: 10px;">&copy; 2026 URBAN EDGE</p>
+            </div>
+            
+            <div class="col-md-4 text-md-end text-center">
+                <div class="payment-icons fs-5 text-muted d-flex gap-2 justify-content-center justify-content-md-end">
+                    <i class="fa-brands fa-cc-amazon-pay"></i>
+                    <i class="fa-brands fa-cc-apple-pay"></i>
+                    <i class="fa-brands fa-google-pay"></i>
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

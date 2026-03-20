@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Shop the latest accessories at Urban Edge. Elevate your street style with premium bags, eyewear, and jewelry.">
+    <title>Urban Edge | Premium Hardware & Accessories</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top" style="min-height: 70px;">
+        <div class="container-fluid px-md-5">
+            <div class="logo">
+                <a href="index.html" class="custom-brand-logo pb-1" style="padding-left: 0;">
+                    <div class="urban-part">
+                        <span class="urban-text">URBAN</span>
+                        <div class="urban-line"></div>
+                    </div>
+                    <div class="edge-part">
+                        <span class="edge-text">EDGE</span>
+                        <div class="edge-icons">
+                            <i class="fa-solid fa-headphones"></i> <i class="fa-solid fa-shirt"></i> <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <button class="navbar-toggler rounded-0 border-dark" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between" id="mobileNav">
+                <div class="nav-links mx-auto mt-3 mt-lg-0">
+                    <ul class="d-flex flex-column flex-lg-row align-items-center mb-0 ps-0 text-center gap-3 gap-lg-0">
+                        <li><a href="clothing.html">CLOTHING</a></li>
+                        <li><a href="accessories.html" style="color: #d34e2a;">ACCESSORIES</a></li>
+                        <li><a href="homedecor.html">HOME DECOR</a></li>
+                        <li><a href="collections.html">COLLECTIONS</a></li>
+                        <li><a href="newarrivals.html">NEW ARRIVALS</a></li>
+                        <li><a href="sales.html" class="sale-link" style="color: #d34e2a;">SALES</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-icons d-flex flex-column flex-lg-row align-items-center gap-3 mt-3 mt-lg-0 pb-3 pb-lg-0">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search">
+                        <a href="#" style="text-decoration:none;">🔍</a>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="fs-5 text-dark" style="text-decoration:none;"><i class="fa-regular fa-user"></i></a>
+                        <a href="#" class="fs-5 text-dark" style="text-decoration:none;"><i class="fa-solid fa-bag-shopping"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="acc-hero position-relative d-flex align-items-center justify-content-center text-center vh-100 overflow-hidden">
+        <div class="acc-hero-overlay position-absolute w-100 h-100"></div>
+        
+        <img src="image\accessories.png" class="acc-hero-bg position-absolute w-100 h-100 object-fit-cover z-n1" alt="Accessories Background">
+        
+        <div class="container position-relative z-2 text-white px-3">
+            <p class="text-uppercase tracking-widest mb-3 brand-accent" style="letter-spacing: 3px;">The Details Matter</p>
+            <h1 class="display-1 fw-bolder text-uppercase mb-4 acc-hero-title" style="font-family: 'Archivo Black', sans-serif;">Premium<br>Hardware</h1>
+            <a href="#acc-shop" class="btn btn-outline-light rounded-0 px-5 py-3 fw-bold text-uppercase shop-btn" style="letter-spacing: 2px;">Explore The Drop</a>
+        </div>
+        
+        <div class="position-absolute bottom-0 mb-4 z-2 text-white animate-bounce">
+            <i class="fa-solid fa-arrow-down fs-4"></i>
+        </div>
+    </header>
+
+    <section class="py-5 bg-light border-bottom">
+        <div class="container">
+            <div class="row g-4 text-center justify-content-center">
+                <div class="col-6 col-md-3">
+                    <div class="acc-cat-card p-4 bg-white shadow-sm cursor-pointer">
+                        <i class="fa-solid fa-briefcase fs-1 mb-3 text-dark"></i>
+                        <h6 class="fw-bold text-uppercase mb-0" style="font-size: 12px; letter-spacing: 1px;">Bags & Packs</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="acc-cat-card p-4 bg-white shadow-sm cursor-pointer">
+                        <i class="fa-solid fa-glasses fs-1 mb-3 text-dark"></i>
+                        <h6 class="fw-bold text-uppercase mb-0" style="font-size: 12px; letter-spacing: 1px;">Eyewear</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="acc-cat-card p-4 bg-white shadow-sm cursor-pointer">
+                        <i class="fa-solid fa-hat-cowboy fs-1 mb-3 text-dark"></i>
+                        <h6 class="fw-bold text-uppercase mb-0" style="font-size: 12px; letter-spacing: 1px;">Headwear</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="acc-cat-card p-4 bg-white shadow-sm cursor-pointer">
+                        <i class="fa-solid fa-link fs-1 mb-3 text-dark"></i>
+                        <h6 class="fw-bold text-uppercase mb-0" style="font-size: 12px; letter-spacing: 1px;">Jewelry</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="acc-shop" class="py-5 my-md-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bolder text-uppercase" style="font-family: 'Archivo Black', sans-serif;">Latest Drops</h2>
+                <div style="width: 50px; height: 3px; background-color: #d34e2a; margin: 0 auto;"></div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="bento-card position-relative overflow-hidden bg-dark w-100 h-100" style="min-height: 500px;">
+                        <img src="image\Accessoriesbackpacks.png" class="bento-img w-100 h-100 object-fit-cover opacity-75" alt="Featured Bag">
+                        <div class="position-absolute bottom-0 start-0 p-4 p-md-5 text-white z-2 w-100 bento-content">
+                            <span class="badge bg-white text-dark rounded-0 px-2 py-1 mb-2 fw-bold" style="font-size: 10px;">MUST HAVE</span>
+                            <h3 class="fw-bolder text-uppercase mb-1" style="font-family: 'Archivo Black', sans-serif;">Urban Tactical Backpack</h3>
+                            <p class="fs-5 fw-bold text-light mb-3">Rs. 2500</p>
+                            <button class="btn btn-outline-light rounded-0 px-4 py-2 text-uppercase fw-bold bento-btn" style="font-size: 11px;">Shop Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 d-flex flex-column gap-4">
+                    
+                    <div class="bento-card position-relative overflow-hidden bg-light w-100" style="height: calc(50% - 12px); min-height: 240px;">
+                        <img src="image/shades.png" class="bento-img w-100 h-100 object-fit-cover" alt="Shades">
+                        <div class="position-absolute bottom-0 start-0 p-4 z-2 w-100 bento-content-light">
+                            <h4 class="fw-bolder text-uppercase mb-1 text-dark" style="font-family: 'Archivo Black', sans-serif;">Onyx Aviators</h4>
+                            <p class="fw-bold text-dark mb-0">Rs. 899</p>
+                        </div>
+                    </div>
+
+                    <div class="bento-card position-relative overflow-hidden bg-light w-100" style="height: calc(50% - 12px); min-height: 240px;">
+                        <img src="image/chains.png" class="bento-img w-100 h-100 object-fit-cover" alt="Chain">
+                        <div class="position-absolute bottom-0 start-0 p-4 z-2 w-100 bento-content-light">
+                            <h4 class="fw-bolder text-uppercase mb-1 text-dark" style="font-family: 'Archivo Black', sans-serif;">Cuban Link Chain</h4>
+                            <p class="fw-bold text-dark mb-0">Rs. 1200</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-section py-5 border-top bg-white">
+        <div class="container text-center" style="max-width: 550px;">
+            <h5 class="fw-bolder mb-3 text-uppercase" style="font-family: 'Archivo Black', sans-serif; font-size: 18px;">Join The Culture</h5>
+            <p class="text-muted mb-4" style="font-size: 13px;">Sign up for exclusive accessory drops, early access, and secret codes.</p>
+            <div class="input-group mb-3">
+                <input type="email" class="form-control rounded-0 bg-light border-0 px-3 py-2" placeholder="Your email" aria-label="Your email">
+                <button class="btn btn-dark rounded-0 px-4 fw-bold text-uppercase" type="button" style="font-size: 11px; letter-spacing: 1px;">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section py-5 border-top bg-white">
+        <div class="container text-center">
+            <h2 class="fw-bolder mb-2" style="font-family: 'Archivo Black', sans-serif; font-size: 24px;">URBAN<span style="color: #d34e2a; font-family: 'Arial', sans-serif; font-size: 14px; vertical-align: middle; margin-left: 5px;">EDGE</span></h2>
+            <p class="text-muted mt-3 mb-0" style="font-size: 11px;">&copy; 2026 URBAN EDGE. Premium Streetwear Brand.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
