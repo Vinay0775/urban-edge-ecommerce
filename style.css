@@ -6,6 +6,10 @@
     font-family: 'Arial', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 
 /* --- Premium Navbar --- */
 
@@ -642,29 +646,40 @@
 /* ======================================================================================================================== */
 
 /* Full Viewport Hero */
+/* Parallax Background Effect */
+/* --- PRO LEVEL: PARALLAX + SLOW ZOOM COMBO 🔥 --- */
+
 .acc-hero {
-    height: 100vh; /* Pura screen cover karega */
+    position: relative;
+    height: 100vh;
+    /* Sabse bada Jadoo: Ye line fixed image ko dusre sections me ghusne se rokti hai */
+    clip-path: inset(0 0 0 0); 
 }
 
-.acc-hero-overlay {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
+.parallax-zoom-bg {
+    position: fixed; /* Ye banata hai Parallax (Scroll) effect */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url('image/accessories.webp'); /* Apni image ka path match kar lena */
+    background-size: cover;
+    background-position: center;
     z-index: 0;
+    
+    /* Ye banata hai Slow Zoom effect */
+    animation: proZoomBoth 20s ease-in-out infinite alternate;
 }
 
-.acc-hero-title {
-    font-size: 6rem;
-    line-height: 0.9;
-    text-shadow: 0 10px 20px rgba(0,0,0,0.5);
+/* Photo ko slightly dark karne ke liye */
+.acc-hero-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* 50% darkness */
 }
 
-.animate-bounce {
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-15px); }
-    60% { transform: translateY(-7px); }
+/* Zoom ki setting */
+@keyframes proZoomBoth {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.15); } /* 15% zoom hoga bina phate */
 }
 
 /* Category Cards */
@@ -712,6 +727,19 @@
 .bento-card:hover .bento-btn {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Card Image Hover Effect */
+.card {
+    overflow: hidden; /* Image ko card se bahar aane se rokne ke liye */
+}
+
+.card-img-top {
+    transition: transform 0.5s ease; /* Zoom smooth hone ke liye */
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.08); /* Mouse aane par image 8% badi ho jayegi */
 }
 
 /* =========================================================================================================== */
@@ -831,6 +859,42 @@
     transform: translateY(0);
 }
 
+
+/* --- MARQUEE ANIMATION --- */
+.marquee-container {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee-scroll 20s linear infinite;
+}
+
+@keyframes marquee-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* -50% taaki loop smooth ho */
+}
+
+/* --- MEGA FOOTER HOVER EFFECTS --- */
+.hover-white:hover {
+    color: #ffffff !important;
+    padding-left: 5px; /* Hover karne pe halka sa aage khiskega */
+    transition: all 0.3s ease;
+}
+
+.transition-hover {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.transition-hover:hover {
+    color: #d34e2a !important; /* Tera brand orange color */
+    transform: translateY(-4px); /* Halka sa upar bounce karega */
+}
 
 /* ============================================================================================================ */
 /* ------------------------------------ COLLECTIONS PAGE SPECIFIC STYLES -------------------------------------- */
@@ -1023,6 +1087,68 @@
 .sales-footer .form-control::placeholder {
     color: #555 !important;
 }
+
+/*============================================Cart-page-Styling===============================================*/
+
+
+.cart-item-img {
+        width: 120px; 
+        height: 150px; 
+        object-fit: cover;
+
+   }
+.qty-btn { 
+        width: 30px;
+        height: 30px;
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        border: 1px solid #000; 
+        cursor: pointer; 
+        background: white; 
+        font-weight: bold; 
+    }
+.qty-input { 
+        width: 40px; 
+        height: 30px; 
+        text-align: center; 
+        border-top: 1px solid #000; 
+        border-bottom: 1px solid #000; 
+        border-left: none; 
+        border-right: none; 
+        pointer-events: none; 
+        font-weight: bold; }
+.remove-btn { 
+        color: #888; 
+        text-decoration: underline; 
+        font-size: 12px; 
+        cursor: pointer; 
+        transition: 0.3s; 
+    }
+.remove-btn:hover { 
+        color: #d34e2a; 
+    }
+
+.summary-card { 
+    background-color: #f8f9fa; 
+    border: 2px solid #000; }
+        
+        /* Mega Footer Hover */
+
+.hover-white:hover { 
+    color: #ffffff !important; 
+    padding-left: 5px; 
+    transition: all 0.3s ease; }
+
+.transition-hover { 
+    transition: all 0.3s ease; 
+    display: inline-block; }
+
+.transition-hover:hover { 
+    color: #d34e2a !important; 
+    transform: translateY(-4px);
+   
+    }
 
 
 

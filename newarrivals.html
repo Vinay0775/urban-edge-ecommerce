@@ -10,6 +10,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Hack for Load More */
+        .toggle-content, .toggle-pagination { display: none; }
+        
+        #load-more-toggle:checked ~ .toggle-content { display: flex; }
+        #load-more-toggle:checked ~ .toggle-pagination { display: flex; }
+        #load-more-toggle:checked ~ #load-more-wrapper { display: none; }
+
+        /* Mega Footer Hover Effects */
+        .hover-white:hover { color: #ffffff !important; padding-left: 5px; transition: all 0.3s ease; }
+        .transition-hover { transition: all 0.3s ease; display: inline-block; }
+        .transition-hover:hover { color: #d34e2a !important; transform: translateY(-4px); }
+    </style>
 </head>
 <body class="bg-white">
 
@@ -42,7 +56,7 @@
                         <li><a href="homedecor.html">HOME DECOR</a></li>
                         <li><a href="collections.html">COLLECTIONS</a></li>
                         <li><a href="newarrivals.html" style="color: #d34e2a;">NEW ARRIVALS</a></li>
-                        <li><a href="sales.html" class="sale-link" style="color: #d34e2a;">SALES</a></li>
+                        <li><a href="sales.html">SALES</a></li>
                     </ul>
                 </div>
 
@@ -53,20 +67,18 @@
                     </div>
                     <div class="d-flex gap-3">
                         <a href="#" class="fs-5 text-dark" style="text-decoration:none;"><i class="fa-regular fa-user"></i></a>
-                        <a href="#" class="fs-5 text-dark" style="text-decoration:none;"><i class="fa-solid fa-bag-shopping"></i></a>
+                        <a href="cart.html" target="_blank" class="fs-5 text-dark" style="text-decoration:none;"><i class="fa-solid fa-bag-shopping"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
-
     <header class="new-drop-hero bg-dark text-white text-center py-5 position-relative overflow-hidden">
         <div class="container position-relative z-2 py-md-5">
             <span class="badge rounded-0 px-3 py-2 mb-3 fw-bold" style="background-color: #d34e2a; font-size: 12px; letter-spacing: 2px;">DROP 004 IS LIVE</span>
             <h1 class="display-1 fw-bolder text-uppercase mb-2" style="font-family: 'Archivo Black', sans-serif; line-height: 0.9;">The Fresh<br><span style="color: #d34e2a;">Batch</span></h1>
             <p class="text-light mt-4 mx-auto" style="max-width: 500px; font-size: 14px;">No restocks. No second chances. Secure the latest premium pieces before they're gone forever.</p>
         </div>
-        
         <div class="position-absolute top-50 start-50 translate-middle w-100 text-center lh-1 pointer-events-none drop-bg-text" style="font-family: 'Archivo Black', sans-serif; color: rgba(255,255,255,0.03); z-index: 1;">
             JUST IN
         </div>
@@ -80,98 +92,281 @@
     </div>
 
     <section class="py-5 mb-5">
-        <div class="container">
+        <div class="container position-relative">
             
+            <input type="checkbox" id="load-more-toggle" style="display: none;">
+
             <div class="d-flex justify-content-between align-items-end mb-4 border-bottom border-dark border-2 pb-2">
                 <h3 class="fw-bolder text-uppercase m-0" style="font-family: 'Archivo Black', sans-serif;">Latest Drops</h3>
-                <span class="fw-bold" style="font-size: 12px; color: #d34e2a;">24 ITEMS</span>
+                <span class="fw-bold" style="font-size: 12px; color: #d34e2a;">12 ITEMS</span>
             </div>
 
             <div class="row g-4">
                 
-                <div class="col-lg-3 col-md-4 col-6">
+                <div class="col-lg-4 col-md-6 col-6">
                     <div class="hype-card position-relative bg-white border border-dark border-2">
                         <div class="position-relative bg-light border-bottom border-dark border-2 overflow-hidden hype-img-box">
                             <span class="badge position-absolute top-0 start-0 m-2 px-2 py-1 rounded-0 fw-bold" style="background-color: #d34e2a; color: #fff; font-size: 10px; z-index: 2; border: 1px solid #000;">JUST IN</span>
-                            <img src="image/product1.webp" alt="New Product 1" class="img-fluid w-100 hype-img p-3">
-                            
+                            <img src="image\Neon.webp" alt="Neon-stitch-hoodie" class="img-fluid w-100 hype-img p-3" onerror="this.src='https://via.placeholder.com/300x350?text=Item+1'">
                             <div class="hype-quick-add position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center bg-white border-top border-dark border-2">
-                                <button class="btn w-100 rounded-0 fw-bold text-uppercase py-2 text-white" style="font-size: 11px; letter-spacing: 1px; background-color: #d34e2a;">Add To Bag</button>
+                                <button onclick="window.location.href='cart.html'" class="btn w-100 rounded-0 fw-bold text-uppercase py-2 text-white" style="font-size: 11px; letter-spacing: 1px; background-color: #d34e2a;">Add To Bag</button>
                             </div>
                         </div>
                         <div class="p-3 text-center">
-                            <h6 class="fw-bold mb-1 text-truncate text-uppercase" style="font-size: 12px; letter-spacing: 1px;">Neon Stitch Hoodie</h6>
+                            <h6 class="fw-bold mb-1 text-truncate text-uppercase" style="font-size: 12px;">Neon Stitch Hoodie</h6>
                             <p class="fw-bolder m-0" style="font-size: 14px;">Rs. 2400</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-4 col-6">
+                <div class="col-lg-4 col-md-6 col-6">
                     <div class="hype-card position-relative bg-white border border-dark border-2">
                         <div class="position-relative bg-light border-bottom border-dark border-2 overflow-hidden hype-img-box">
                             <span class="badge position-absolute top-0 start-0 m-2 px-2 py-1 rounded-0 fw-bold" style="background-color: #000; color: #fff; font-size: 10px; z-index: 2;">FAST SELLING</span>
-                            <img src="image/style1.webp" alt="New Product 2" class="img-fluid w-100 hype-img p-3">
-                            
+                            <img src="image/oversized.webp" alt="Oversized-cargo-denim" class="img-fluid w-100 hype-img p-3" onerror="this.src='https://via.placeholder.com/300x350?text=Item+2'">
                             <div class="hype-quick-add position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center bg-white border-top border-dark border-2">
-                                <button class="btn w-100 rounded-0 fw-bold text-uppercase py-2 text-white" style="font-size: 11px; letter-spacing: 1px; background-color: #d34e2a;">Add To Bag</button>
+                                <button onclick="window.location.href='cart.html'" class="btn w-100 rounded-0 fw-bold text-uppercase py-2 text-white" style="font-size: 11px; letter-spacing: 1px; background-color: #d34e2a;">Add To Bag</button>
                             </div>
                         </div>
                         <div class="p-3 text-center">
-                            <h6 class="fw-bold mb-1 text-truncate text-uppercase" style="font-size: 12px; letter-spacing: 1px;">Oversized Cargo Denim</h6>
+                            <h6 class="fw-bold mb-1 text-truncate text-uppercase" style="font-size: 12px;">Oversized Cargo Denim</h6>
                             <p class="fw-bolder m-0" style="font-size: 14px;">Rs. 1899</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-4 col-6">
+                <div class="col-lg-4 col-md-6 col-6">
                     <div class="hype-card position-relative bg-white border border-dark border-2">
                         <div class="position-relative bg-light border-bottom border-dark border-2 overflow-hidden hype-img-box">
-                            <span class="badge position-absolute top-0 start-0 m-2 px-2 py-1 rounded-0 fw-bold" style="background-color: #d34e2a; color: #fff; font-size: 10px; z-index: 2; border: 1px solid #000;">JUST IN</span>
-                            <img src="image\product6.webp" alt="New Product 3" class="img-fluid w-100 hype-img p-3">
-                            
+                            <img src="image/Tactical.webp" alt="Tactical-Chest-Rig" class="img-fluid w-100 hype-img p-3" onerror="this.src='https://via.placeholder.com/300x350?text=Item+3'">
                             <div class="hype-quick-add position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center bg-white border-top border-dark border-2">
-                                <button class="btn w-100 rounded-0 fw-bold text-uppercase py-2 text-white" style="font-size: 11px; letter-spacing: 1px; background-color: #d34e2a;">Add To Bag</button>
+                                <button onclick="window.location.href='cart.html'" class="btn w-100 rounded-0 fw-bold text-uppercase py-2 text-white" style="font-size: 11px; letter-spacing: 1px; background-color: #d34e2a;">Add To Bag</button>
                             </div>
                         </div>
                         <div class="p-3 text-center">
-                            <h6 class="fw-bold mb-1 text-truncate text-uppercase" style="font-size: 12px; letter-spacing: 1px;">Tactical Chest Rig</h6>
+                            <h6 class="fw-bold mb-1 text-truncate text-uppercase" style="font-size: 12px;">Tactical Chest Rig</h6>
                             <p class="fw-bolder m-0" style="font-size: 14px;">Rs. 1500</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-4 col-6">
+                <div class="col-lg-4 col-md-6 col-6">
                     <div class="hype-card position-relative bg-white border border-dark border-2">
                         <div class="position-relative bg-light border-bottom border-dark border-2 overflow-hidden hype-img-box">
-                            <img src="image/product5.webp" alt="New Product 4" class="img-fluid w-100 hype-img p-3">
-                            
+                            <img src="image/Urban.webp" alt="Urban-joggers" class="img-fluid w-100 hype-img p-3" onerror="this.src='https://via.placeholder.com/300x350?text=Item+4'">
                             <div class="hype-quick-add position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center bg-white border-top border-dark border-2">
-                                <button class="btn w-100 rounded-0 fw-bold text-uppercase py-2 text-white" style="font-size: 11px; letter-spacing: 1px; background-color: #d34e2a;">Add To Bag</button>
+                                <button onclick="window.location.href='cart.html'" class="btn w-100 rounded-0 fw-bold text-uppercase py-2 text-white" style="font-size: 11px; background-color: #d34e2a;">Add To Bag</button>
                             </div>
                         </div>
                         <div class="p-3 text-center">
-                            <h6 class="fw-bold mb-1 text-truncate text-uppercase" style="font-size: 12px; letter-spacing: 1px;">Heavyweight Blank Tee</h6>
-                            <p class="fw-bolder m-0" style="font-size: 14px;">Rs. 899</p>
+                            <h6 class="fw-bold mb-1 text-truncate text-uppercase" style="font-size: 12px;">Urban Joggers</h6>
+                            <p class="fw-bolder m-0" style="font-size: 14px;">Rs. 1200</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-6">
+                    <div class="hype-card position-relative bg-white border border-dark border-2">
+                        <div class="position-relative bg-light border-bottom border-dark border-2 overflow-hidden hype-img-box">
+                            <span class="badge position-absolute top-0 start-0 m-2 px-2 py-1 rounded-0 fw-bold" style="background-color: #d34e2a; color: #fff; font-size: 10px; z-index: 2; border: 1px solid #000;">RESTOCKED</span>
+                            <img src="image/Graphic.webp" alt="Graphic-print-tee" class="img-fluid w-100 hype-img p-3" onerror="this.src='https://via.placeholder.com/300x350?text=Item+5'">
+                            <div class="hype-quick-add position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center bg-white border-top border-dark border-2">
+                                <button onclick="window.location.href='cart.html'" class="btn w-100 rounded-0 fw-bold text-uppercase py-2 text-white" style="font-size: 11px; background-color: #d34e2a;">Add To Bag</button>
+                            </div>
+                        </div>
+                        <div class="p-3 text-center">
+                            <h6 class="fw-bold mb-1 text-truncate text-uppercase" style="font-size: 12px;">Graphic Print Tee</h6>
+                            <p class="fw-bolder m-0" style="font-size: 14px;">Rs. 799</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-6">
+                    <div class="hype-card position-relative bg-white border border-dark border-2">
+                        <div class="position-relative bg-light border-bottom border-dark border-2 overflow-hidden hype-img-box">
+                            <img src="image/Utility.webp" alt="Utility-vast" class="img-fluid w-100 hype-img p-3" onerror="this.src='https://via.placeholder.com/300x350?text=Item+6'">
+                            <div class="hype-quick-add position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center bg-white border-top border-dark border-2">
+                                <button onclick="window.location.href='cart.html'" class="btn w-100 rounded-0 fw-bold text-uppercase py-2 text-white" style="font-size: 11px; background-color: #d34e2a;">Add To Bag</button>
+                            </div>
+                        </div>
+                        <div class="p-3 text-center">
+                            <h6 class="fw-bold mb-1 text-truncate text-uppercase" style="font-size: 12px;">Utility Vest</h6>
+                            <p class="fw-bolder m-0" style="font-size: 14px;">Rs. 1800</p>
                         </div>
                     </div>
                 </div>
 
             </div>
+            <div class="row g-4 mt-1 toggle-content">
+                
+                <div class="col-lg-4 col-md-6 col-6">
+                    <div class="hype-card position-relative bg-white border border-dark border-2">
+                        <div class="position-relative bg-light border-bottom border-dark border-2 overflow-hidden hype-img-box">
+                            <img src="image/Heavyweight.webp" alt="Heavyweight-Blank-Tee" class="img-fluid w-100 hype-img p-3" onerror="this.src='https://via.placeholder.com/300x350?text=Item+7'">
+                            <div class="hype-quick-add position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center bg-white border-top border-dark border-2">
+                                <button onclick="window.location.href='cart.html'" class="btn w-100 rounded-0 fw-bold text-uppercase py-2 text-white" style="font-size: 11px; background-color: #d34e2a;">Add To Bag</button>
+                            </div>
+                        </div>
+                        <div class="p-3 text-center">
+                            <h6 class="fw-bold mb-1 text-truncate text-uppercase" style="font-size: 12px;">Heavyweight Blank Tee</h6>
+                            <p class="fw-bolder m-0" style="font-size: 14px;">Rs. 899</p>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="text-center mt-5">
-                <button class="btn btn-dark rounded-0 px-5 py-3 fw-bold text-uppercase" style="letter-spacing: 2px; font-size: 12px;">Load More Drops</button>
+                <div class="col-lg-4 col-md-6 col-6">
+                    <div class="hype-card position-relative bg-white border border-dark border-2">
+                        <div class="position-relative bg-light border-bottom border-dark border-2 overflow-hidden hype-img-box">
+                            <img src="image/Washed.webp" alt="Washed-Denim-jacket" class="img-fluid w-100 hype-img p-3" onerror="this.src='https://via.placeholder.com/300x350?text=Item+8'">
+                            <div class="hype-quick-add position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center bg-white border-top border-dark border-2">
+                                <button onclick="window.location.href='cart.html'" class="btn w-100 rounded-0 fw-bold text-uppercase py-2 text-white" style="font-size: 11px; background-color: #d34e2a;">Add To Bag</button>
+                            </div>
+                        </div>
+                        <div class="p-3 text-center">
+                            <h6 class="fw-bold mb-1 text-truncate text-uppercase" style="font-size: 12px;">Washed Denim Jacket</h6>
+                            <p class="fw-bolder m-0" style="font-size: 14px;">Rs. 3200</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-6">
+                    <div class="hype-card position-relative bg-white border border-dark border-2">
+                        <div class="position-relative bg-light border-bottom border-dark border-2 overflow-hidden hype-img-box">
+                            <span class="badge position-absolute top-0 start-0 m-2 px-2 py-1 rounded-0 fw-bold" style="background-color: #000; color: #fff; font-size: 10px; z-index: 2;">LOW STOCK</span>
+                            <img src="image/Parachute.webp" alt="Parachute-Pants" class="img-fluid w-100 hype-img p-3" onerror="this.src='https://via.placeholder.com/300x350?text=Item+9'">
+                            <div class="hype-quick-add position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center bg-white border-top border-dark border-2">
+                                <button onclick="window.location.href='cart.html'" class="btn w-100 rounded-0 fw-bold text-uppercase py-2 text-white" style="font-size: 11px; background-color: #d34e2a;">Add To Bag</button>
+                            </div>
+                        </div>
+                        <div class="p-3 text-center">
+                            <h6 class="fw-bold mb-1 text-truncate text-uppercase" style="font-size: 12px;">Parachute Pants</h6>
+                            <p class="fw-bolder m-0" style="font-size: 14px;">Rs. 2100</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-6">
+                    <div class="hype-card position-relative bg-white border border-dark border-2">
+                        <div class="position-relative bg-light border-bottom border-dark border-2 overflow-hidden hype-img-box">
+                            <img src="image/Retro.webp" alt="Retro-Tracksuit-Top" class="img-fluid w-100 hype-img p-3" onerror="this.src='https://via.placeholder.com/300x350?text=Item+10'">
+                            <div class="hype-quick-add position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center bg-white border-top border-dark border-2">
+                                <button onclick="window.location.href='cart.html'" class="btn w-100 rounded-0 fw-bold text-uppercase py-2 text-white" style="font-size: 11px; background-color: #d34e2a;">Add To Bag</button>
+                            </div>
+                        </div>
+                        <div class="p-3 text-center">
+                            <h6 class="fw-bold mb-1 text-truncate text-uppercase" style="font-size: 12px;">Retro Tracksuit Top</h6>
+                            <p class="fw-bolder m-0" style="font-size: 14px;">Rs. 2600</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-6">
+                    <div class="hype-card position-relative bg-white border border-dark border-2">
+                        <div class="position-relative bg-light border-bottom border-dark border-2 overflow-hidden hype-img-box">
+                            <img src="image/Distressed.webp" alt="Distressed-Beanie" class="img-fluid w-100 hype-img p-3" onerror="this.src='https://via.placeholder.com/300x350?text=Item+11'">
+                            <div class="hype-quick-add position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center bg-white border-top border-dark border-2">
+                                <button onclick="window.location.href='cart.html'" class="btn w-100 rounded-0 fw-bold text-uppercase py-2 text-white" style="font-size: 11px; background-color: #d34e2a;">Add To Bag</button>
+                            </div>
+                        </div>
+                        <div class="p-3 text-center">
+                            <h6 class="fw-bold mb-1 text-truncate text-uppercase" style="font-size: 12px;">Distressed Beanie</h6>
+                            <p class="fw-bolder m-0" style="font-size: 14px;">Rs. 599</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-6">
+                    <div class="hype-card position-relative bg-white border border-dark border-2">
+                        <div class="position-relative bg-light border-bottom border-dark border-2 overflow-hidden hype-img-box">
+                            <span class="badge position-absolute top-0 start-0 m-2 px-2 py-1 rounded-0 fw-bold" style="background-color: #d34e2a; color: #fff; font-size: 10px; z-index: 2; border: 1px solid #000;">JUST IN</span>
+                            <img src="image/Layered.webp" alt="Layered-Chain-Set" class="img-fluid w-100 hype-img p-3" onerror="this.src='https://via.placeholder.com/300x350?text=Item+12'">
+                            <div class="hype-quick-add position-absolute bottom-0 start-0 w-100 p-2 z-3 text-center bg-white border-top border-dark border-2">
+                                <button onclick="window.location.href='cart.html'" class="btn w-100 rounded-0 fw-bold text-uppercase py-2 text-white" style="font-size: 11px; background-color: #d34e2a;">Add To Bag</button>
+                            </div>
+                        </div>
+                        <div class="p-3 text-center">
+                            <h6 class="fw-bold mb-1 text-truncate text-uppercase" style="font-size: 12px;">Layered Chain Set</h6>
+                            <p class="fw-bolder m-0" style="font-size: 14px;">Rs. 1400</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            
+            <div class="text-center mt-5" id="load-more-wrapper">
+                <label for="load-more-toggle" class="btn btn-dark rounded-0 px-5 py-3 fw-bold text-uppercase transition-hover" style="letter-spacing: 2px; font-size: 12px; cursor: pointer;">
+                    Load More Drops
+                </label>
+            </div>
+
+            <nav class="mt-5 toggle-pagination justify-content-center">
+                <ul class="pagination m-0">
+                    <li class="page-item disabled"><a class="page-link rounded-0 text-dark border-dark fw-bold" href="#">Prev</a></li>
+                    <li class="page-item active"><a class="page-link rounded-0 text-white border-dark fw-bold" style="background-color: #d34e2a; border-color: #d34e2a;" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link rounded-0 text-dark border-dark fw-bold" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link rounded-0 text-dark border-dark fw-bold" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link rounded-0 text-dark border-dark fw-bold" href="#">Next</a></li>
+                </ul>
+            </nav>
+
         </div>
     </section>
 
-    <footer class="footer-section py-5 border-top border-dark border-2 bg-white">
-        <div class="container text-center">
-            <h2 class="fw-bolder mb-2" style="font-family: 'Archivo Black', sans-serif; font-size: 24px;">URBAN<span style="color: #d34e2a; font-family: 'Arial', sans-serif; font-size: 14px; vertical-align: middle; margin-left: 5px;">EDGE</span></h2>
-            <p class="text-muted mt-3 mb-0" style="font-size: 11px;">&copy; 2026 URBAN EDGE. Premium Streetwear Brand.</p>
+    <footer class="footer-section pt-5 pb-3 bg-dark text-white border-top border-secondary">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="fw-bolder mb-3" style="font-family: 'Archivo Black', sans-serif;">URBAN<span style="color: #d34e2a; font-family: 'Arial', sans-serif; font-size: 18px; vertical-align: middle; margin-left: 5px;">EDGE</span></h4>
+                    <p class="text-secondary" style="font-size: 13px;">Curating modern spaces and premium streetwear. Industrial aesthetics for the culture.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="text-white fs-5 transition-hover"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-white fs-5 transition-hover"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="text-white fs-5 transition-hover"><i class="fa-brands fa-pinterest"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h6 class="fw-bold text-uppercase mb-3" style="color: #d34e2a; font-size: 12px; letter-spacing: 1px;">Shop</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2" style="font-size: 13px;">
+                        <li><a href="clothing.html" class="text-secondary text-decoration-none hover-white">Clothing</a></li>
+                        <li><a href="accessories.html" class="text-secondary text-decoration-none hover-white">Accessories</a></li>
+                        <li><a href="homedecor.html" class="text-secondary text-decoration-none hover-white">Home Decor</a></li>
+                        <li><a href="collections.html" class="text-secondary text-decoration-none hover-white">Collections</a></li>
+                        <li><a href="newarrivals.html" class="text-white text-decoration-none hover-white">New Arrivals</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h6 class="fw-bold text-uppercase mb-3" style="color: #d34e2a; font-size: 12px; letter-spacing: 1px;">Support</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2" style="font-size: 13px;">
+                        <li><a href="#" class="text-secondary text-decoration-none hover-white">Track Order</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none hover-white">Shipping Policy</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none hover-white">Returns & FAQ</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none hover-white">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h6 class="fw-bold text-uppercase mb-3" style="color: #d34e2a; font-size: 12px; letter-spacing: 1px;">Join The Culture</h6>
+                    <p class="text-secondary mb-2" style="font-size: 12px;">Get 10% off your first order.</p>
+                    <div class="input-group mb-4">
+                        <input type="email" class="form-control rounded-0 bg-dark text-white border-secondary shadow-none" placeholder="Email Address" style="font-size: 12px;">
+                        <button class="btn btn-outline-light rounded-0 fw-bold text-uppercase" type="button" style="font-size: 11px;">Subscribe</button>
+                    </div>
+                    <div class="d-flex gap-3 fs-4 text-secondary">
+                        <i class="fa-brands fa-cc-visa"></i>
+                        <i class="fa-brands fa-cc-mastercard"></i>
+                        <i class="fa-brands fa-cc-paypal"></i>
+                        <i class="fa-brands fa-cc-apple-pay"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-top border-secondary pt-4 mt-2 text-center text-md-start d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <p class="text-secondary mb-2 mb-md-0" style="font-size: 11px;">&copy; 2026 URBAN EDGE. All Rights Reserved.</p>
+                <p class="text-secondary mb-0" style="font-size: 11px;">Designed & Developed by <span class="text-white fw-bold">Vinay Vishwakarma</span></p>
+            </div>
         </div>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

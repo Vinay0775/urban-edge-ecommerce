@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
+
+
 <body class="bg-light">
 
     <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top" style="min-height: 70px;">
@@ -42,7 +45,7 @@
                         <li><a href="homedecor.html" style="color: #d34e2a;">HOME DECOR</a></li>
                         <li><a href="collections.html">COLLECTIONS</a></li>
                         <li><a href="newarrivals.html">NEW ARRIVALS</a></li>
-                        <li><a href="sales.html" class="sale-link" style="color: #d34e2a;">SALES</a></li>
+                        <li><a href="sales.html">SALES</a></li>
                     </ul>
                 </div>
 
@@ -53,7 +56,7 @@
                     </div>
                     <div class="d-flex gap-3">
                         <a href="#" class="fs-5 text-dark" style="text-decoration:none;"><i class="fa-regular fa-user"></i></a>
-                        <a href="#" class="fs-5 text-dark" style="text-decoration:none;"><i class="fa-solid fa-bag-shopping"></i></a>
+                        <a href="cart.html" target="_blank" class="fs-5 text-dark" style="text-decoration:none;"><i class="fa-solid fa-bag-shopping"></i></a>
                     </div>
                 </div>
             </div>
@@ -119,43 +122,43 @@
             </div>
 
             <div class="masonry-grid">
-                <div class="masonry-item mb-4 position-relative">
+                <div class="masonry-item mb-4 position-relative" data-aos="fade-up" data-aos-delay="100">
                     <img src="image/vase.webp" class="w-100 rounded" alt="Vase">
                     <div class="masonry-overlay text-center p-3">
                         <h6 class="text-white fw-bold mb-1">Matte Black Vase</h6>
                         <button class="btn btn-light btn-sm rounded-0 fw-bold mt-2">Add to Cart - Rs. 1200</button>
                     </div>
                 </div>
-                <div class="masonry-item mb-4 position-relative">
+                <div class="masonry-item mb-4 position-relative" data-aos="fade-up" data-aos-delay="200">
                     <img src="image/lamp.webp" class="w-100 rounded" alt="Lamp">
                     <div class="masonry-overlay text-center p-3">
                         <h6 class="text-white fw-bold mb-1">Industrial Desk Lamp</h6>
                         <button class="btn btn-light btn-sm rounded-0 fw-bold mt-2">Add to Cart - Rs. 2200</button>
                     </div>
                 </div>
-                <div class="masonry-item mb-4 position-relative">
+                <div class="masonry-item mb-4 position-relative" data-aos="fade-up" data-aos-delay="300">
                     <img src="image/clock.webp" class="w-100 rounded" alt="Clock">
                     <div class="masonry-overlay text-center p-3">
                         <h6 class="text-white fw-bold mb-1">Concrete Wall Clock</h6>
                         <button class="btn btn-light btn-sm rounded-0 fw-bold mt-2">Add to Cart - Rs. 1500</button>
                     </div>
                 </div>
-                <div class="masonry-item mb-4 position-relative">
+                <div class="masonry-item mb-4 position-relative" data-aos="fade-up" data-aos-delay="400">
                     <img src="image/mirror.webp" class="w-100 rounded" alt="Mirror">
                     <div class="masonry-overlay text-center p-3">
                         <h6 class="text-white fw-bold mb-1">Asymmetric Mirror</h6>
                         <button class="btn btn-light btn-sm rounded-0 fw-bold mt-2">Add to Cart - Rs. 4000</button>
                     </div>
                 </div>
-                <div class="masonry-item mb-4 position-relative">
+                <div class="masonry-item mb-4 position-relative" data-aos="fade-up" data-aos-delay="500">
                     <img src="image/candle.webp" class="w-100 rounded" alt="Candle">
                     <div class="masonry-overlay text-center p-3">
                         <h6 class="text-white fw-bold mb-1">Urban Edge Scented Candle</h6>
                         <button class="btn btn-light btn-sm rounded-0 fw-bold mt-2">Add to Cart - Rs. 600</button>
                     </div>
                 </div>
-                <div class="masonry-item mb-4 position-relative">
-                    <img src="image/plant.webp" class="w-100 rounded" alt="Candle">
+                <div class="masonry-item mb-4 position-relative" data-aos="fade-up" data-aos-delay="600">
+                    <img src="image/plant.webp" class="w-100 rounded" alt="Plant">
                     <div class="masonry-overlay text-center p-3">
                         <h6 class="text-white fw-bold mb-1">Urban Edge Artificial Plants</h6>
                         <button class="btn btn-light btn-sm rounded-0 fw-bold mt-2">Add to Cart - Rs. 800</button>
@@ -165,13 +168,72 @@
         </div>
     </section>
 
-    <footer class="footer-section py-5 border-top bg-white">
-        <div class="container text-center">
-            <h2 class="fw-bolder mb-2" style="font-family: 'Archivo Black', sans-serif; font-size: 24px;">URBAN<span style="color: #d34e2a; font-family: 'Arial', sans-serif; font-size: 14px; vertical-align: middle; margin-left: 5px;">EDGE</span></h2>
-            <p class="text-muted mt-3 mb-0" style="font-size: 11px;">&copy; 2026 URBAN EDGE. Premium Streetwear & Lifestyle.</p>
+    <footer class="footer-section pt-5 pb-3 bg-dark text-white mt-5">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="fw-bolder mb-3" style="font-family: 'Archivo Black', sans-serif;">URBAN<span style="color: #d34e2a; font-family: 'Arial', sans-serif; font-size: 18px; vertical-align: middle; margin-left: 5px;">EDGE</span></h4>
+                    <p class="text-secondary" style="font-size: 13px;">Curating modern spaces and premium streetwear. Industrial aesthetics for the culture.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="text-white fs-5 transition-hover"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-white fs-5 transition-hover"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="text-white fs-5 transition-hover"><i class="fa-brands fa-pinterest"></i></a> </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h6 class="fw-bold text-uppercase mb-3" style="color: #d34e2a; font-size: 12px; letter-spacing: 1px;">Shop</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2" style="font-size: 13px;">
+                        <li><a href="clothing.html" class="text-secondary text-decoration-none hover-white">Clothing</a></li>
+                        <li><a href="accessories.html" class="text-secondary text-decoration-none hover-white">Accessories</a></li>
+                        <li><a href="homedecor.html" class="text-white text-decoration-none fw-bold">Home Decor</a></li>
+                        <li><a href="collections.html" class="text-secondary text-decoration-none hover-white">Collections</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h6 class="fw-bold text-uppercase mb-3" style="color: #d34e2a; font-size: 12px; letter-spacing: 1px;">Support</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2" style="font-size: 13px;">
+                        <li><a href="#" class="text-secondary text-decoration-none hover-white">Track Order</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none hover-white">Shipping Policy</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none hover-white">Returns & FAQ</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none hover-white">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h6 class="fw-bold text-uppercase mb-3" style="color: #d34e2a; font-size: 12px; letter-spacing: 1px;">Join The Culture</h6>
+                    <p class="text-secondary mb-2" style="font-size: 12px;">Get 10% off your first order.</p>
+                    <div class="input-group mb-4">
+                        <input type="email" class="form-control rounded-0 bg-dark text-white border-secondary shadow-none" placeholder="Email Address" style="font-size: 12px;">
+                        <button class="btn btn-outline-light rounded-0 fw-bold text-uppercase" type="button" style="font-size: 11px;">Subscribe</button>
+                    </div>
+                    <div class="d-flex gap-3 fs-4 text-secondary">
+                        <i class="fa-brands fa-cc-visa"></i>
+                        <i class="fa-brands fa-cc-mastercard"></i>
+                        <i class="fa-brands fa-cc-paypal"></i>
+                        <i class="fa-brands fa-cc-apple-pay"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-top border-secondary pt-4 mt-2 text-center text-md-start d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <p class="text-secondary mb-2 mb-md-0" style="font-size: 11px;">&copy; 2026 URBAN EDGE. All Rights Reserved.</p>
+                <p class="text-secondary mb-0" style="font-size: 11px;">Designed & Developed by <span class="text-white fw-bold">Vinay Vishwakarma</span></p>
+            </div>
         </div>
     </footer>
+    
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
 </body>
 </html>
