@@ -300,8 +300,10 @@
                 let cart = JSON.parse(localStorage.getItem('urban_edge_cart')) || [];
                 
                 // Construct payload
+                const uniqueId = pId + "-" + currentSelections.size.toLowerCase() + "-" + currentSelections.color.toLowerCase();
                 const payload = {
-                    id: pId,
+                    id: uniqueId,
+                    baseId: pId,
                     name: pName,
                     price: pPrice,
                     img: pImg,
@@ -311,10 +313,7 @@
                 };
 
                 // Check for duplicates
-                const uniqueId = payload.id + "_" + payload.size + "_" + payload.color;
-                payload.uniqueId = uniqueId;
-                
-                const exists = cart.findIndex(c => c.uniqueId === uniqueId);
+                const exists = cart.findIndex(c => c.id === uniqueId);
                 if (exists > -1) {
                     cart[exists].qty += payload.qty;
                 } else {
@@ -322,6 +321,20 @@
                 }
 
                 localStorage.setItem('urban_edge_cart', JSON.stringify(cart));
+                
+                // Update Badge Using cart.js Logic
+                if(typeof updateBadges === 'function' || typeof window.updateBadges === 'function') {
+                    // Update badges if possible
+                } else {
+                    // trigger refresh of badge manually by reloading array
+                    document.querySelectorAll('.cart-global-badge').forEach(badge => {
+                        let total = cart.reduce((tot, item) => tot + item.qty, 0);
+                        badge.innerText = total;
+                        badge.style.display = total > 0 ? 'inline-block' : 'none';
+                        badge.style.transform = 'scale(1.3) translate(-40%, -40%)';
+                        setTimeout(() => { badge.style.transform = 'scale(1) translate(-50%, -50%)'; }, 250);
+                    });
+                }
                 
                 // Show Animated Button State
                 const originalText = this.innerHTML;
@@ -339,6 +352,7 @@
             });
         });
     </script>
+    <script src="cart.js"></script>
     <script src="search.js"></script>
     <script src="wishlist.js"></script>
     <script src="recent.js"></script>

@@ -293,6 +293,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- 7. INTERCEPT "ADD TO CART" BUTTONS EVERYWHERE ---
     window.bindCartButton = function(button) {
+        if (button.id === 'pd-add-btn') return; // Skip main product page button
+        
         const text = button.innerText.toLowerCase().trim();
         if (text.includes("add") || text.includes("cart") || text.includes("bag")) {
             if (text.includes("subscribe") || text.includes("load") || text.includes("join") || text.includes("discover") || text.includes("view") || text.includes("address")) return;
