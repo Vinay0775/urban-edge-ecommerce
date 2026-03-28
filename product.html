@@ -297,7 +297,15 @@
                 // Ensure cart.js is loaded so we can dispatch its logic
                 // If not, we manually push to localStorage. 
                 // Wait, it's safer to just push to local storage directly and dispatch an event that cart.js listens to!
-                let cart = JSON.parse(localStorage.getItem('urban_edge_cart')) || [];
+                let cart = [];
+                try {
+                	cart = JSON.parse(localStorage.getItem('urban_edge_cart')) || [];
+                    if (!Array.isArray(cart)) cart = [];
+                } catch(e) {
+                    console.warn("Cart corrupted, clearing...");
+                    localStorage.removeItem('urban_edge_cart');
+                    cart = [];
+                }
                 
                 // Construct payload
                 const uniqueId = pId + "-" + currentSelections.size.toLowerCase() + "-" + currentSelections.color.toLowerCase();

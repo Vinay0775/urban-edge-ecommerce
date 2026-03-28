@@ -131,7 +131,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // --- 2. LOCAL STORAGE CART INITIALIZATION ---
-    let cart = JSON.parse(localStorage.getItem('urban_edge_cart')) || [];
+    let cart = [];
+    try {
+        cart = JSON.parse(localStorage.getItem('urban_edge_cart')) || [];
+        if (!Array.isArray(cart)) cart = [];
+    } catch (e) {
+        console.warn("Cart data corrupted, clearing...");
+        localStorage.removeItem('urban_edge_cart');
+        cart = [];
+    }
     let tempCurrentProduct = null;
     
     // --- 3. GLOBAL BADGE SETUP ---
