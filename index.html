@@ -107,7 +107,7 @@
         <p class="text-light mb-0" style="max-width: 350px; font-size: 13px; line-height: 1.6;">
             "Embrace URBAN, a bold celebration of contemporary streetwear, where modern design, fearless style, and the pulse of urban culture converge to define the blueprint of today’s fashion revolution."
         </p>
-        <a href="#" class=" fw-bold text-uppercase btn-urban" style="font-size: 12px; letter-spacing: 1px;">Discover Urban</a>
+        <a href="collections.html" class=" fw-bold text-uppercase btn-urban" style="font-size: 12px; letter-spacing: 1px;">Discover Urban</a>
     </div>
 
     <div class="position-absolute bottom-0  z-3 collection-box">
@@ -126,32 +126,46 @@
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h3 class="mb-0 text-uppercase fw-bolder" style="font-family: 'Archivo Black', sans-serif; letter-spacing: 1px;">Wear The Legacy</h3>
             <div class="slider-controls">
-                <button class="btn btn-outline-dark rounded-0 px-2 py-1 me-1"><i class="fa-solid fa-chevron-left"></i></button>
-                <button class="btn btn-outline-dark rounded-0 px-2 py-1"><i class="fa-solid fa-chevron-right"></i></button>
+                <button onclick="document.getElementById('legacySlider').scrollBy({left: -300, behavior: 'smooth'})" class="btn btn-outline-dark rounded-0 px-2 py-1 me-1"><i class="fa-solid fa-chevron-left"></i></button>
+                <button onclick="document.getElementById('legacySlider').scrollBy({left: 300, behavior: 'smooth'})" class="btn btn-outline-dark rounded-0 px-2 py-1"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
         </div>
 
-        <div class="row g-4 text-center">
+        <div class="row g-4 text-center flex-nowrap overflow-auto" id="legacySlider" style="scrollbar-width: none; -ms-overflow-style: none;">
             
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-5 col-10 flex-shrink-0" style="cursor: pointer;" onclick="window.location.href='clothing.html?category=men'">
                 <div class="category-box overflow-hidden mb-3">
                     <img src="image\style1.webp" alt="Men" class="img-fluid w-100 category-img">
                 </div>
                 <h6 class="text-uppercase fw-bold tracking-widest" style="font-size: 13px;">Men</h6>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-5 col-10 flex-shrink-0" style="cursor: pointer;" onclick="window.location.href='clothing.html?category=women'">
                 <div class="category-box overflow-hidden mb-3">
                     <img src="image\style2.webp" alt="Women" class="img-fluid w-100 category-img">
                 </div>
                 <h6 class="text-uppercase fw-bold tracking-widest" style="font-size: 13px;">Women</h6>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-5 col-10 flex-shrink-0" style="cursor: pointer;" onclick="window.location.href='accessories.html'">
                 <div class="category-box overflow-hidden mb-3">
                     <img src="image\style3.webp" alt="Bags" class="img-fluid w-100 category-img">
                 </div>
                 <h6 class="text-uppercase fw-bold tracking-widest" style="font-size: 13px;">Tote + Bags + Backpacks</h6>
+            </div>
+
+            <div class="col-lg-4 col-md-5 col-10 flex-shrink-0" style="cursor: pointer;" onclick="window.location.href='clothing.html'">
+                <div class="category-box overflow-hidden mb-3">
+                    <img src="image\style1.webp" alt="Footwear" class="img-fluid w-100 category-img">
+                </div>
+                <h6 class="text-uppercase fw-bold tracking-widest" style="font-size: 13px;">Footwear</h6>
+            </div>
+
+            <div class="col-lg-4 col-md-5 col-10 flex-shrink-0" style="cursor: pointer;" onclick="window.location.href='accessories.html'">
+                <div class="category-box overflow-hidden mb-3">
+                    <img src="image\style2.webp" alt="Essentials" class="img-fluid w-100 category-img">
+                </div>
+                <h6 class="text-uppercase fw-bold tracking-widest" style="font-size: 13px;">Essentials</h6>
             </div>
 
         </div>
@@ -166,17 +180,17 @@
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h4 class="mb-0 text-uppercase fw-bolder" style="font-family: 'Archivo Black', sans-serif; letter-spacing: 1px;">Latest Men's</h4>
             <div class="d-flex align-items-center">
-                <a href="#" class="text-dark text-decoration-underline text-uppercase fw-bold me-3 tracking-widest" style="font-size: 11px;">Show All</a>
+                <a href="javascript:void(0)" onclick="let grid = document.getElementById('moreProductsGrid'); grid.classList.toggle('d-none'); this.innerText = grid.classList.contains('d-none') ? 'SHOW ALL' : 'HIDE ALL';" class="text-dark text-decoration-underline text-uppercase fw-bold me-3 tracking-widest" style="font-size: 11px;">Show All</a>
                 <div class="slider-controls">
-                    <button class="btn btn-light rounded-0 px-2 py-1 me-1"><i class="fa-solid fa-chevron-left" style="font-size: 12px;"></i></button>
-                    <button class="btn btn-light rounded-0 px-2 py-1"><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></button>
+                    <button onclick="document.getElementById('latestMensSlider').scrollBy({left: -300, behavior: 'smooth'})" class="btn btn-light rounded-0 px-2 py-1 me-1"><i class="fa-solid fa-chevron-left" style="font-size: 12px;"></i></button>
+                    <button onclick="document.getElementById('latestMensSlider').scrollBy({left: 300, behavior: 'smooth'})" class="btn btn-light rounded-0 px-2 py-1"><i class="fa-solid fa-chevron-right" style="font-size: 12px;"></i></button>
                 </div>
             </div>
         </div>
 
-        <div class="row g-4 text-center">
+        <div class="row g-4 text-center flex-nowrap overflow-auto" id="latestMensSlider" style="scrollbar-width: none; -ms-overflow-style: none;">
             
-            <div class="col-lg-3 col-md-6 col-6">
+            <div class="col-lg-3 col-md-6 col-8 flex-shrink-0" style="cursor: pointer;" onclick="window.location.href='product.html'">
                 <div class="product-card">
                     <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
                         <span class="badge bg-dark rounded-0 position-absolute top-0 start-0 m-2 px-2 py-1" style="font-size: 9px; z-index: 2;">NEW</span>
@@ -188,7 +202,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 col-6">
+            <div class="col-lg-3 col-md-6 col-8 flex-shrink-0" style="cursor: pointer;" onclick="window.location.href='product.html'">
                 <div class="product-card">
                     <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
                         <span class="badge rounded-0 position-absolute top-0 start-0 m-2 px-2 py-1 text-white" style="font-size: 9px; background-color: #d34e2a; z-index: 2;">SALE</span>
@@ -200,7 +214,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 col-6">
+            <div class="col-lg-3 col-md-6 col-8 flex-shrink-0" style="cursor: pointer;" onclick="window.location.href='product.html'">
                 <div class="product-card">
                     <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
                         <img src="image\product3.webp" alt="Product 3" class="img-fluid w-100 product-img">
@@ -211,7 +225,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 col-6">
+            <div class="col-lg-3 col-md-6 col-8 flex-shrink-0" style="cursor: pointer;" onclick="window.location.href='product.html'">
                 <div class="product-card">
                     <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
                         <span class="badge bg-dark rounded-0 position-absolute top-0 start-0 m-2 px-2 py-1" style="font-size: 9px; z-index: 2;">NEW</span>
@@ -223,7 +237,94 @@
                 </div>
             </div>
 
+            <div class="col-lg-3 col-md-6 col-8 flex-shrink-0" style="cursor: pointer;" onclick="window.location.href='product.html'">
+                <div class="product-card">
+                    <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
+                        <img src="image\product2.webp" alt="Product 5" class="img-fluid w-100 product-img">
+                    </div>
+                    <h6 class="fw-bold mb-1 text-truncate" style="font-size: 12px;">Urban Streetwear Jacket</h6>
+                    <p class="text-muted mb-1" style="font-size: 11px;">1 color</p>
+                    <p class="fw-bold m-0" style="font-size: 13px;">Rs.3000</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 col-8 flex-shrink-0" style="cursor: pointer;" onclick="window.location.href='product.html'">
+                <div class="product-card">
+                    <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
+                        <img src="image\product1.webp" alt="Product 6" class="img-fluid w-100 product-img">
+                    </div>
+                    <h6 class="fw-bold mb-1 text-truncate" style="font-size: 12px;">Classic Cargo Pants</h6>
+                    <p class="text-muted mb-1" style="font-size: 11px;">Olive, Black</p>
+                    <p class="fw-bold m-0" style="font-size: 13px;">Rs.1800</p>
+                </div>
+            </div>
+
         </div>
+    </div>
+        <!-- Hidden Additional Grid Products -->
+        <div class="row g-4 text-center mt-3 d-none" id="moreProductsGrid">
+            <div class="col-lg-3 col-md-6 col-6" style="cursor: pointer;" onclick="window.location.href='product.html'">
+                <div class="product-card">
+                    <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
+                        <img src="image\product3.webp" alt="Extra 1" class="img-fluid w-100 product-img">
+                    </div>
+                    <h6 class="fw-bold mb-1 text-truncate" style="font-size: 12px;">Graphic Drop-Shoulder Tee</h6>
+                    <p class="text-muted mb-1" style="font-size: 11px;">2 colors</p>
+                    <p class="fw-bold m-0" style="font-size: 13px;">Rs.800</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-6" style="cursor: pointer;" onclick="window.location.href='product.html'">
+                <div class="product-card">
+                    <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
+                        <img src="image\product4.webp" alt="Extra 2" class="img-fluid w-100 product-img">
+                    </div>
+                    <h6 class="fw-bold mb-1 text-truncate" style="font-size: 12px;">Puffer Vest</h6>
+                    <p class="text-muted mb-1" style="font-size: 11px;">1 color</p>
+                    <p class="fw-bold m-0" style="font-size: 13px;">Rs.2200</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-6" style="cursor: pointer;" onclick="window.location.href='product.html'">
+                <div class="product-card">
+                    <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
+                        <img src="image\product1.webp" alt="Extra 3" class="img-fluid w-100 product-img">
+                    </div>
+                    <h6 class="fw-bold mb-1 text-truncate" style="font-size: 12px;">Techwear Joggers</h6>
+                    <p class="text-muted mb-1" style="font-size: 11px;">Khaki, Grey</p>
+                    <p class="fw-bold m-0" style="font-size: 13px;">Rs.1900</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-6" style="cursor: pointer;" onclick="window.location.href='product.html'">
+                <div class="product-card">
+                    <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
+                        <img src="image\product2.webp" alt="Extra 4" class="img-fluid w-100 product-img">
+                    </div>
+                    <h6 class="fw-bold mb-1 text-truncate" style="font-size: 12px;">Urban High-Top Sneakers</h6>
+                    <p class="text-muted mb-1" style="font-size: 11px;">2 colors</p>
+                    <p class="fw-bold m-0" style="font-size: 13px;">Rs.4500</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-6" style="cursor: pointer;" onclick="window.location.href='product.html'">
+                <div class="product-card">
+                    <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
+                        <img src="image\product3.webp" alt="Extra 5" class="img-fluid w-100 product-img">
+                    </div>
+                    <h6 class="fw-bold mb-1 text-truncate" style="font-size: 12px;">Monochrome Beanie</h6>
+                    <p class="text-muted mb-1" style="font-size: 11px;">Black, Navy</p>
+                    <p class="fw-bold m-0" style="font-size: 13px;">Rs.400</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-6" style="cursor: pointer;" onclick="window.location.href='product.html'">
+                <div class="product-card">
+                    <div class="position-relative bg-light mb-3 product-img-box overflow-hidden">
+                        <img src="image\product4.webp" alt="Extra 6" class="img-fluid w-100 product-img">
+                    </div>
+                    <h6 class="fw-bold mb-1 text-truncate" style="font-size: 12px;">Street Crossbody Bag</h6>
+                    <p class="text-muted mb-1" style="font-size: 11px;">1 color</p>
+                    <p class="fw-bold m-0" style="font-size: 13px;">Rs.950</p>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 
