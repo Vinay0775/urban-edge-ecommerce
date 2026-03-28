@@ -271,6 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <h6 class="fw-bold mb-0 text-truncate">${currentUser.name}</h6>
                                 <p class="text-muted small mb-0 text-truncate">${currentUser.email}</p>
                             </div>
+                            <a href="my-orders.html"><i class="fa-solid fa-box me-2"></i>My Orders</a>
                             <a href="track.html"><i class="fa-solid fa-truck-fast me-2"></i>Track Order</a>
                             <a href="wishlist.html"><i class="fa-solid fa-heart me-2"></i>Wishlist</a>
                             <a href="#" class="sign-out"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i>Sign Out</a>

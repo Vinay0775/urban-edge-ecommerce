@@ -29,10 +29,10 @@
             
             <p class="text-muted small fw-bold text-uppercase mb-3" style="letter-spacing: 1px;">Analytics</p>
             <ul class="nav flex-column mb-4 gap-2">
-                <li class="nav-item"><a href="#" class="nav-link active"><i class="fa-solid fa-chart-line me-3"></i>Overview</a></li>
-                <li class="nav-item"><a href="#" class="nav-link"><i class="fa-solid fa-bag-shopping me-3"></i>Live Orders</a></li>
-                <li class="nav-item"><a href="#" class="nav-link"><i class="fa-solid fa-users me-3"></i>Customers</a></li>
-                <li class="nav-item"><a href="#" class="nav-link"><i class="fa-solid fa-tag me-3"></i>Products</a></li>
+                <li class="nav-item"><a href="#" class="nav-link active admin-tab-link" data-target="view-overview"><i class="fa-solid fa-chart-line me-3"></i>Overview</a></li>
+                <li class="nav-item"><a href="#" class="nav-link admin-tab-link" data-target="view-orders"><i class="fa-solid fa-bag-shopping me-3"></i>Live Orders</a></li>
+                <li class="nav-item"><a href="#" class="nav-link admin-tab-link" data-target="view-customers"><i class="fa-solid fa-users me-3"></i>Customers</a></li>
+                <li class="nav-item"><a href="#" class="nav-link admin-tab-link" data-target="view-products"><i class="fa-solid fa-tag me-3"></i>Products</a></li>
             </ul>
 
             <p class="text-muted small fw-bold text-uppercase mb-3 mt-4" style="letter-spacing: 1px;">Management</p>
@@ -64,7 +64,11 @@
                 </div>
             </header>
 
-            <!-- KPI Cards -->
+            
+            <!-- Overview Tab -->
+            <div id="view-overview" class="admin-view active">
+                <!-- KPI Cards -->
+
             <div class="row g-4 mb-5">
                 <div class="col-xl-3 col-md-6">
                     <div class="kpi-card p-4">
@@ -174,7 +178,92 @@
                 </div>
             </div>
 
-        </main>
+        
+            </div>
+
+            <!-- Orders Tab -->
+            <div id="view-orders" class="admin-view" style="display: none;">
+                <div class="kpi-card p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="fw-bold m-0 text-white"><i class="fa-solid fa-box-open me-2"></i> All Live Orders</h5>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover align-middle admin-table m-0">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Details</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="all-orders-table-body">
+                                <tr><td colspan="7" class="text-center text-muted py-4"><i class="fa-solid fa-spinner fa-spin"></i> Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customers Tab -->
+            <div id="view-customers" class="admin-view" style="display: none;">
+                <div class="kpi-card p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="fw-bold m-0 text-white"><i class="fa-solid fa-users me-2"></i> Registered Customers</h5>
+                        <div class="input-group" style="max-width: 250px;">
+                            <input type="text" class="form-control bg-dark border-secondary text-white rounded-1 shadow-none" placeholder="Search Email..." id="search-customer-input">
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover align-middle admin-table m-0">
+                            <thead class="text-muted small text-uppercase">
+                                <tr>
+                                    <th>Initial</th>
+                                    <th>Full Name</th>
+                                    <th>Email Address</th>
+                                    <th>Joined Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="customers-table-body">
+                                <tr><td colspan="4" class="text-center text-muted py-4"><i class="fa-solid fa-spinner fa-spin mb-2"></i><br>Fetching Secure Data...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Tab -->
+            <div id="view-products" class="admin-view" style="display: none;">
+                <div class="kpi-card p-4 mb-4">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+                        <h5 class="fw-bold m-0 text-white"><i class="fa-solid fa-tag me-2"></i> Product Catalog Management</h5>
+                        <button class="btn btn-danger fw-bold rounded-1" data-bs-toggle="modal" data-bs-target="#addProductModal"><i class="fa-solid fa-plus me-1"></i> Add New Product</button>
+                    </div>
+                </div>
+                <!-- Catalog List -->
+                <div class="kpi-card p-4">
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover align-middle admin-table m-0">
+                            <thead class="text-muted small text-uppercase">
+                                <tr>
+                                    <th>Preview</th>
+                                    <th>Product Name</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="products-table-body">
+                                <tr><td colspan="5" class="text-center text-muted py-4"><i class="fa-solid fa-spinner fa-spin mb-2"></i><br>Syncing Catalog...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+</main>
     </div>
 
     <!-- Scripts -->
@@ -189,5 +278,60 @@
     <script src="wishlist.js"></script>
     <script src="recent.js"></script>
     <script src="auth.js"></script>
+
+    <!-- Add Product Modal -->
+    <div class="modal fade" id="addProductModal" tabindex="-1" data-bs-theme="dark">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white border-secondary">
+          <div class="modal-header border-secondary">
+            <h5 class="modal-title fw-bold text-uppercase d-flex align-items-center" style="font-family: 'Archivo Black', sans-serif;"><i class="fa-solid fa-tag me-2 text-danger"></i> Add New Drop</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          </div>
+          <form id="add-product-form">
+              <div class="modal-body p-4">
+                  <div class="mb-4">
+                      <label class="form-label small text-muted text-uppercase fw-bold letter-spacing-1">Product Title</label>
+                      <input type="text" class="form-control bg-dark border-secondary text-white shadow-none fs-5" id="p-title" required>
+                  </div>
+                  <div class="row">
+                      <div class="col-6 mb-4">
+                          <label class="form-label small text-muted text-uppercase fw-bold letter-spacing-1">Price (Rs.)</label>
+                          <input type="number" class="form-control bg-dark border-secondary text-white shadow-none" id="p-price" required>
+                      </div>
+                      <div class="col-6 mb-4">
+                          <label class="form-label small text-muted text-uppercase fw-bold letter-spacing-1">Category</label>
+                          <select class="form-select bg-dark border-secondary text-white shadow-none" id="p-category" required>
+                              <option value="clothing">Clothing (Men & Women)</option>
+                              <option value="bags">Bags & Packs</option>
+                              <option value="eyewear">Eyewear</option>
+                              <option value="headwear">Headwear</option>
+                              <option value="jewelry">Jewelry</option>
+                              <option value="footwear">Footwear</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="mb-2">
+                      <label class="form-label small text-muted text-uppercase fw-bold letter-spacing-1">Image Reference Path</label>
+                      <input type="text" class="form-control bg-dark border-secondary text-white shadow-none" placeholder="e.g. image/jacket_01.webp" id="p-image" required>
+                  </div>
+              </div>
+              <div class="modal-footer border-secondary p-3">
+                <button type="button" class="btn btn-outline-secondary px-4 fw-bold" data-bs-dismiss="modal">CANCEL</button>
+                <button type="submit" class="btn btn-danger fw-bold px-5" id="save-product-btn">DEPLOY TO STORE</button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Order Details Modal -->
+    <div class="modal fade" id="orderDetailsModal" tabindex="-1" data-bs-theme="dark">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-white border-secondary" id="order-details-content">
+            <!-- Dynamically Injected via JS -->
+        </div>
+      </div>
+    </div>
+
 </body>
 </html>

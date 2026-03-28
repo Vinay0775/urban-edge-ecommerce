@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="image/fav-icon.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="View your Urban Edge order history.">
+    <title>My Orders | Urban Edge</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    
+    <style>
+        .orders-hero {
+            background: linear-gradient(to right, #111, #333);
+            padding: 80px 0 40px;
+            color: white;
+            text-align: center;
+        }
+        
+        .order-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+            border: 1px solid #eee;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .order-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .order-header {
+            background: #fafafa;
+            padding: 15px 20px;
+            border-bottom: 1px border #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .order-body {
+            padding: 20px;
+        }
+        .order-item-img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+            background: #f0f0f0;
+        }
+        .status-badge {
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .status-processing { background: #fff3cd; color: #856404; }
+        .status-shipped { background: #d4edda; color: #155724; }
+        .status-delivered { background: #cce5ff; color: #004085; }
+        
+        #empty-orders-state {
+            display: none;
+            padding: 60px 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <!-- Basic Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white border-bottom fixed-top" style="min-height: 70px;">
+        <div class="container-fluid px-md-5">
+            <div class="logo">
+                <a href="index.html" class="custom-brand-logo pb-1" style="padding-left: 0;">
+                    <div class="urban-part">
+                        <span class="urban-text">URBAN</span>
+                        <div class="urban-line"></div>
+                    </div>
+                    <div class="edge-part">
+                        <span class="edge-text">EDGE</span>
+                        <div class="edge-icons">
+                            <i class="fa-solid fa-headphones"></i> <i class="fa-solid fa-shirt"></i> <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="mobileNav">
+                <div class="nav-icons d-flex flex-column flex-lg-row align-items-center gap-3 mt-3 mt-lg-0 pb-3 pb-lg-0">
+                    <div class="d-flex gap-3 align-items-center">
+                        <a href="cart.html" class="fs-5 text-dark" style="text-decoration:none;">
+                            <i class="fa-solid fa-bag-shopping position-relative">
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-global-badge" style="font-size: 0.55rem; display: none;">0</span>
+                            </i>
+                        </a>
+                        <a href="#" class="fs-5 text-dark"><i class="fa-regular fa-user"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="orders-hero mt-5">
+        <div class="container">
+            <h1 class="fw-bolder text-uppercase mb-2" style="font-family: 'Archivo Black', sans-serif; font-size: 35px;">My Orders</h1>
+            <p class="text-white-50" style="font-size: 14px; margin: 0 auto;">Review your recent purchases and drop history.</p>
+        </div>
+    </section>
+
+    <!-- Orders Section -->
+    <section class="py-5 flex-grow-1">
+        <div class="container" style="max-width: 800px;">
+            
+            <!-- Loader -->
+            <div id="orders-loader" class="text-center py-5">
+                <div class="spinner-border text-dark" style="width: 2rem; height: 2rem;" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <div id="empty-orders-state" class="bg-white rounded shadow-sm">
+                <div style="font-size: 50px; color: #ddd; margin-bottom: 20px;">
+                    <i class="fa-solid fa-box-open"></i>
+                </div>
+                <h4 class="fw-bold text-uppercase" style="font-family: 'Archivo Black', sans-serif;">Build Your Arsenal</h4>
+                <p class="text-muted small mb-4">You haven't placed any orders yet. Time to cop some new gear.</p>
+                <a href="index.html" class="btn btn-dark rounded-0 px-4 py-2 fw-bold text-uppercase" style="letter-spacing: 1px;">Start Shopping</a>
+            </div>
+
+            <!-- Pre-Login State -->
+            <div id="login-required-state" class="text-center bg-white rounded shadow-sm py-5 d-none">
+                <div style="font-size: 40px; color: #d34e2a; margin-bottom: 20px;">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h5 class="fw-bold text-uppercase">Authentication Required</h5>
+                <p class="text-muted small mb-4">Please log in to view your order history.</p>
+                <button onclick="window.openAuthModal()" class="btn btn-dark rounded-0 px-4 py-2 fw-bold text-uppercase" style="letter-spacing: 1px;">Sign In</button>
+            </div>
+
+            <!-- Orders Container -->
+            <div id="orders-container">
+                <!-- Orders will be injected here via JS -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section py-4 bg-dark text-center text-white mt-auto">
+        <p class="m-0 small">&copy; 2026 URBAN EDGE. All Rights Reserved. | <a href="index.html" class="text-white-50">Back to Store</a></p>
+    </footer>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-init.js"></script>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="orders.js"></script>
+    <script src="cart.js"></script>
+    <script src="search.js"></script>
+    <script src="wishlist.js"></script>
+    <script src="recent.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

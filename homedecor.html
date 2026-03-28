@@ -171,7 +171,10 @@
 
     <footer class="footer-section pt-5 pb-3 bg-dark text-white border-top border-secondary">
     <div class="container">
-        <div class="row g-4 mb-4">
+        <!-- Dynamic Catalog Injection -->
+            <div class="row g-4 mb-5 dynamic-product-grid" data-categories="homedecor"></div>
+            <hr class="mb-5">
+            <div class="row g-4 mb-4">
             
             <div class="col-lg-4 col-md-6">
                 <h4 class="fw-bolder mb-3" style="font-family: 'Archivo Black', sans-serif;">URBAN<span style="color: #d34e2a; font-family: 'Arial', sans-serif; font-size: 18px; vertical-align: middle; margin-left: 5px;">EDGE</span></h4>
@@ -256,5 +259,6 @@
     <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore-compat.js"></script>
     <script src="firebase-init.js"></script>
+    <script src="catalog.js"></script>
 </body>
 </html>

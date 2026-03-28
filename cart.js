@@ -292,8 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // --- 7. INTERCEPT "ADD TO CART" BUTTONS EVERYWHERE ---
-    const buttons = document.querySelectorAll("button, a.btn");
-    buttons.forEach(button => {
+    window.bindCartButton = function(button) {
         const text = button.innerText.toLowerCase().trim();
         if (text.includes("add") || text.includes("cart") || text.includes("bag")) {
             if (text.includes("subscribe") || text.includes("load") || text.includes("join") || text.includes("discover") || text.includes("view") || text.includes("address")) return;
@@ -303,9 +302,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 button.setAttribute('href', 'javascript:void(0)');
             }
             
-            button.addEventListener("click", function(e) {
+            // Remove previous listeners if any (by replacing clone)
+            let newBtn = button.cloneNode(true);
+            if(button.parentNode) button.parentNode.replaceChild(newBtn, button);
+            
+            newBtn.addEventListener("click", function(e) {
                 e.preventDefault(); 
-                let product = extractProductDetails(button);
+                let product = extractProductDetails(newBtn);
                 
                 // Track Recently Viewed Item
                 try {
@@ -315,7 +318,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     if(recentList.length > 8) recentList.pop(); // Keep max 8
                     localStorage.setItem('urban_edge_recent', JSON.stringify(recentList));
                     
-                    // Trigger global event so recent.js respects the change without reload
                     document.dispatchEvent(new Event('ue_recent_updated'));
                 } catch(err) { console.warn("Recent tracking error:", err); }
 
@@ -327,18 +329,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 // Reset selections to defaults
                 document.querySelectorAll('#ue-size-group .ue-option-btn').forEach(b => b.classList.remove('selected'));
-                document.querySelector('#ue-size-group .ue-option-btn[data-val="M"]').classList.add('selected');
+                let mBtn = document.querySelector('#ue-size-group .ue-option-btn[data-val="M"]');
+                if(mBtn) mBtn.classList.add('selected');
                 document.getElementById('ue-size-label').innerText = "M";
 
                 document.querySelectorAll('#ue-color-group .ue-color-btn').forEach(b => b.classList.remove('selected'));
-                document.querySelector('#ue-color-group .ue-color-btn[data-val="Black"]').classList.add('selected');
+                let blkBtn = document.querySelector('#ue-color-group .ue-color-btn[data-val="Black"]');
+                if(blkBtn) blkBtn.classList.add('selected');
                 document.getElementById('ue-color-label').innerText = "Black";
                 
                 modalWrap.classList.add('active');
                 document.body.style.overflow = 'hidden';
             });
         }
-    });
+    };
+
+    const buttons = document.querySelectorAll("button, a.btn");
+    buttons.forEach(button => window.bindCartButton(button));
 
     // --- 7.5 ROUTE PRODUCT IMAGES TO PD PAGE ---
     if (!window.location.pathname.toLowerCase().includes('product')) {
