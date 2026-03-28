@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="icon" type="image/png" href="image/fav-icon.png">
     <meta charset="utf-8">
@@ -12,56 +13,154 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
-    
+
     <style>
-        body { background-color: #fafafa; }
-        .checkout-container { margin-top: 100px; padding-bottom: 80px; }
-        
+        body {
+            background-color: #fafafa;
+        }
+
+        .checkout-container {
+            margin-top: 100px;
+            padding-bottom: 80px;
+        }
+
         /* Modern Accordion */
         .ue-accordion-item {
-            border: 1px solid #e0e0e0; background: #fff; margin-bottom: 10px; border-radius: 6px; overflow: hidden;
+            border: 1px solid #e0e0e0;
+            background: #fff;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            overflow: hidden;
         }
+
         .ue-accordion-header {
-            padding: 20px; cursor: pointer; display: flex; align-items: center; justify-content: space-between;
-            font-weight: bold; background: #fff; transition: background 0.2s;
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: bold;
+            background: #fff;
+            transition: background 0.2s;
         }
-        .ue-accordion-header:hover { background: #f8f9fa; }
-        .ue-accordion-header.active { border-bottom: 1px solid #e0e0e0; background: #fdfdfd; }
-        
-        .ue-accordion-body { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
-        .ue-accordion-body.active { padding: 20px; max-height: 500px; }
-        
+
+        .ue-accordion-header:hover {
+            background: #f8f9fa;
+        }
+
+        .ue-accordion-header.active {
+            border-bottom: 1px solid #e0e0e0;
+            background: #fdfdfd;
+        }
+
+        .ue-accordion-body {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .ue-accordion-body.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+
         /* Loading Spinner */
-        .spinner-btn { display: none; width: 1.2rem; height: 1.2rem; border-width: 0.15em; }
-        
+        .spinner-btn {
+            display: none;
+            width: 1.2rem;
+            height: 1.2rem;
+            border-width: 0.15em;
+        }
+
         /* Payment Icons */
-        .pay-icon { font-size: 24px; color: #555; }
-        .radio-custom { width: 18px; height: 18px; accent-color: #d34e2a; cursor: pointer; }
+        .pay-icon {
+            font-size: 24px;
+            color: #555;
+        }
+
+        .radio-custom {
+            width: 18px;
+            height: 18px;
+            accent-color: #d34e2a;
+            cursor: pointer;
+        }
 
         /* Order Summary Item */
-        .summary-item-img { width: 65px; height: 80px; object-fit: cover; border-radius: 4px; border: 1px solid #eee; }
-        .summary-badge { 
-            position: absolute; top: -8px; right: -8px; background: #666; color: white; border-radius: 50%; 
-            width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 11px; z-index: 2;
+        .summary-item-img {
+            width: 65px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid #eee;
         }
-        
+
+        .summary-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #666;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            z-index: 2;
+        }
+
         /* Success Modal Styles */
         #success-modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            background: rgba(0,0,0,0.85); z-index: 1050; display: flex;
-            align-items: center; justify-content: center; opacity: 0; visibility: hidden;
-            transition: opacity 0.4s ease; backdrop-filter: blur(8px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 1050;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease;
+            backdrop-filter: blur(8px);
         }
-        #success-modal-overlay.show { opacity: 1; visibility: visible; }
+
+        #success-modal-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
         .success-box {
-            background: white; padding: 50px 40px; border-radius: 12px; text-align: center;
-            max-width: 450px; width: 90%; transform: scale(0.8); transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            background: white;
+            padding: 50px 40px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            transform: scale(0.8);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
         }
-        #success-modal-overlay.show .success-box { transform: scale(1); }
+
+        #success-modal-overlay.show .success-box {
+            transform: scale(1);
+        }
+
         .check-circle {
-            width: 80px; height: 80px; border-radius: 50%; background: #28a745; color: white;
-            display: flex; align-items: center; justify-content: center; font-size: 40px; margin: 0 auto 24px auto;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #28a745;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin: 0 auto 24px auto;
             box-shadow: 0 0 0 15px rgba(40, 167, 69, 0.2);
         }
     </style>
@@ -72,78 +171,102 @@
     <nav class="navbar bg-white border-bottom fixed-top" style="min-height: 70px;">
         <div class="container d-flex justify-content-center justify-content-md-between align-items-center">
             <div class="logo">
-                <a href="index.html" class="custom-brand-logo pb-1" style="padding-left: 0; text-decoration: none;">
+                <a href="index.html" class="custom-brand-logo pb-1" style="padding-left: 0;">
                     <div class="urban-part">
                         <span class="urban-text">URBAN</span>
                         <div class="urban-line"></div>
                     </div>
+                    <div class="edge-part">
+                        <span class="edge-text">EDGE</span>
+                        <div class="edge-icons">
+                            <i class="fa-solid fa-headphones"></i> <i class="fa-solid fa-shirt"></i> <i
+                                class="fa-solid fa-bag-shopping"></i>
+                        </div>
+                    </div>
                 </a>
             </div>
-            <a href="cart.html" class="d-none d-md-block text-dark fw-bold text-decoration-none" style="font-size: 13px; letter-spacing: 1px;"><i class="fa-solid fa-arrow-left me-2"></i> RETURN TO CART</a>
+            <a href="cart.html" class="d-none d-md-block text-dark fw-bold text-decoration-none"
+                style="font-size: 13px; letter-spacing: 1px;"><i class="fa-solid fa-arrow-left me-2"></i> RETURN TO
+                CART</a>
         </div>
     </nav>
 
     <div class="container checkout-container">
         <div class="row g-5 flex-column-reverse flex-lg-row">
-            
+
             <!-- Left Column: Forms -->
             <div class="col-lg-7">
-                <a href="cart.html" class="d-lg-none text-dark fw-bold text-decoration-none mb-4 d-inline-block" style="font-size: 13px; letter-spacing: 1px;"><i class="fa-solid fa-arrow-left me-2"></i> RETURN TO CART</a>
+                <a href="cart.html" class="d-lg-none text-dark fw-bold text-decoration-none mb-4 d-inline-block"
+                    style="font-size: 13px; letter-spacing: 1px;"><i class="fa-solid fa-arrow-left me-2"></i> RETURN TO
+                    CART</a>
 
                 <form id="checkoutSubmitForm">
                     <!-- Delivery Information -->
-                    <h4 class="fw-bolder mb-4 text-uppercase" style="font-family: 'Archivo Black', sans-serif;">Delivery Information</h4>
+                    <h4 class="fw-bolder mb-4 text-uppercase" style="font-family: 'Archivo Black', sans-serif;">Delivery
+                        Information</h4>
                     <div class="bg-white p-4 p-md-5 border mb-5 rounded shadow-sm">
                         <div class="row g-3">
                             <div class="col-12 mb-2">
                                 <label class="fw-bold mb-1" style="font-size: 12px; color: #555;">Email Address</label>
-                                <input type="email" class="form-control rounded-0 p-3 bg-light border-0" placeholder="Enter your email" required>
+                                <input type="email" class="form-control rounded-0 p-3 bg-light border-0"
+                                    placeholder="Enter your email" required>
                             </div>
                             <div class="col-md-6 mb-2">
                                 <label class="fw-bold mb-1" style="font-size: 12px; color: #555;">First Name</label>
-                                <input type="text" class="form-control rounded-0 p-3 bg-light border-0" placeholder="First Name" required>
+                                <input type="text" class="form-control rounded-0 p-3 bg-light border-0"
+                                    placeholder="First Name" required>
                             </div>
                             <div class="col-md-6 mb-2">
                                 <label class="fw-bold mb-1" style="font-size: 12px; color: #555;">Last Name</label>
-                                <input type="text" class="form-control rounded-0 p-3 bg-light border-0" placeholder="Last Name" required>
+                                <input type="text" class="form-control rounded-0 p-3 bg-light border-0"
+                                    placeholder="Last Name" required>
                             </div>
                             <div class="col-12 mb-2">
                                 <label class="fw-bold mb-1" style="font-size: 12px; color: #555;">Street Address</label>
-                                <input type="text" class="form-control rounded-0 p-3 bg-light border-0" placeholder="House number, street name" required>
+                                <input type="text" class="form-control rounded-0 p-3 bg-light border-0"
+                                    placeholder="House number, street name" required>
                             </div>
                             <div class="col-12 mb-2">
-                                <label class="fw-bold mb-1" style="font-size: 12px; color: #555;">Appartment/Suite (Optional)</label>
-                                <input type="text" class="form-control rounded-0 p-3 bg-light border-0" placeholder="Apartment, suite, etc.">
+                                <label class="fw-bold mb-1" style="font-size: 12px; color: #555;">Appartment/Suite
+                                    (Optional)</label>
+                                <input type="text" class="form-control rounded-0 p-3 bg-light border-0"
+                                    placeholder="Apartment, suite, etc.">
                             </div>
                             <div class="col-md-4 mb-2">
                                 <label class="fw-bold mb-1" style="font-size: 12px; color: #555;">City</label>
-                                <input type="text" class="form-control rounded-0 p-3 bg-light border-0" placeholder="City" required>
+                                <input type="text" class="form-control rounded-0 p-3 bg-light border-0"
+                                    placeholder="City" required>
                             </div>
                             <div class="col-md-4 mb-2">
                                 <label class="fw-bold mb-1" style="font-size: 12px; color: #555;">State</label>
-                                <input type="text" class="form-control rounded-0 p-3 bg-light border-0" placeholder="State" required>
+                                <input type="text" class="form-control rounded-0 p-3 bg-light border-0"
+                                    placeholder="State" required>
                             </div>
                             <div class="col-md-4 mb-2">
                                 <label class="fw-bold mb-1" style="font-size: 12px; color: #555;">PIN Code</label>
-                                <input type="text" class="form-control rounded-0 p-3 bg-light border-0" placeholder="PIN Code" required>
+                                <input type="text" class="form-control rounded-0 p-3 bg-light border-0"
+                                    placeholder="PIN Code" required>
                             </div>
                             <div class="col-12 mt-2">
                                 <label class="fw-bold mb-1" style="font-size: 12px; color: #555;">Phone Number</label>
-                                <input type="tel" class="form-control rounded-0 p-3 bg-light border-0" placeholder="For delivery updates" required>
+                                <input type="tel" class="form-control rounded-0 p-3 bg-light border-0"
+                                    placeholder="For delivery updates" required>
                             </div>
                         </div>
                     </div>
 
                     <!-- Payment Method -->
-                    <h4 class="fw-bolder mb-4 text-uppercase" style="font-family: 'Archivo Black', sans-serif;">Payment Method</h4>
+                    <h4 class="fw-bolder mb-4 text-uppercase" style="font-family: 'Archivo Black', sans-serif;">Payment
+                        Method</h4>
                     <p class="text-muted" style="font-size: 13px;">All transactions are secure and encrypted.</p>
-                    
+
                     <div class="payment-options mb-5 shadow-sm">
                         <!-- Option 1: Credit Card -->
                         <div class="ue-accordion-item">
                             <label class="ue-accordion-header active m-0" for="pay-card">
                                 <div class="d-flex align-items-center gap-3">
-                                    <input type="radio" name="payment_method" id="pay-card" class="radio-custom" value="card" checked>
+                                    <input type="radio" name="payment_method" id="pay-card" class="radio-custom"
+                                        value="card" checked>
                                     <span>Credit / Debit Card</span>
                                 </div>
                                 <div class="d-flex gap-2 text-muted">
@@ -154,26 +277,31 @@
                             <div class="ue-accordion-body active" id="body-card">
                                 <div class="row g-3 py-2">
                                     <div class="col-12">
-                                        <input type="text" class="form-control rounded-0 p-3 bg-light border-0" placeholder="Card number" required id="card-num">
+                                        <input type="text" class="form-control rounded-0 p-3 bg-light border-0"
+                                            placeholder="Card number" required id="card-num">
                                     </div>
                                     <div class="col-12">
-                                        <input type="text" class="form-control rounded-0 p-3 bg-light border-0" placeholder="Name on card" required id="card-name">
+                                        <input type="text" class="form-control rounded-0 p-3 bg-light border-0"
+                                            placeholder="Name on card" required id="card-name">
                                     </div>
                                     <div class="col-6">
-                                        <input type="text" class="form-control rounded-0 p-3 bg-light border-0" placeholder="Expiration date (MM / YY)" required id="card-exp">
+                                        <input type="text" class="form-control rounded-0 p-3 bg-light border-0"
+                                            placeholder="Expiration date (MM / YY)" required id="card-exp">
                                     </div>
                                     <div class="col-6">
-                                        <input type="text" class="form-control rounded-0 p-3 bg-light border-0" placeholder="Security code (CVV)" required id="card-cvv">
+                                        <input type="text" class="form-control rounded-0 p-3 bg-light border-0"
+                                            placeholder="Security code (CVV)" required id="card-cvv">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Option 2: UPI -->
                         <div class="ue-accordion-item">
                             <label class="ue-accordion-header m-0" for="pay-upi">
                                 <div class="d-flex align-items-center gap-3">
-                                    <input type="radio" name="payment_method" id="pay-upi" class="radio-custom" value="upi">
+                                    <input type="radio" name="payment_method" id="pay-upi" class="radio-custom"
+                                        value="upi">
                                     <span>UPI App / QR Code</span>
                                 </div>
                                 <div class="d-flex gap-2 text-muted">
@@ -191,7 +319,8 @@
                                         <div style="flex-grow: 1; height: 1px; background: #ddd;"></div>
                                     </div>
                                     <div class="w-75 mx-auto mt-3 text-start">
-                                        <input type="text" class="form-control rounded-0 p-3 border-0 bg-white" placeholder="Enter your UPI ID (e.g. name@okhdfc)" id="upi-id">
+                                        <input type="text" class="form-control rounded-0 p-3 border-0 bg-white"
+                                            placeholder="Enter your UPI ID (e.g. name@okhdfc)" id="upi-id">
                                     </div>
                                 </div>
                             </div>
@@ -201,7 +330,8 @@
                         <div class="ue-accordion-item">
                             <label class="ue-accordion-header m-0" for="pay-cod">
                                 <div class="d-flex align-items-center gap-3">
-                                    <input type="radio" name="payment_method" id="pay-cod" class="radio-custom" value="cod">
+                                    <input type="radio" name="payment_method" id="pay-cod" class="radio-custom"
+                                        value="cod">
                                     <span>Cash on Delivery (COD)</span>
                                 </div>
                                 <div class="text-muted">
@@ -212,20 +342,24 @@
                                 <div class="p-4 bg-light text-center border mt-2 rounded">
                                     <i class="fa-solid fa-hand-holding-dollar fs-2 mb-2" style="color: #28a745;"></i>
                                     <h6 class="fw-bold">Pay upon delivery</h6>
-                                    <p class="text-muted small m-0">Please keep exact change ready. Rs. 50 COD charge might apply.</p>
+                                    <p class="text-muted small m-0">Please keep exact change ready. Rs. 50 COD charge
+                                        might apply.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Submit Action -->
-                    <button type="submit" class="btn btn-dark w-100 rounded-0 p-4 fs-5 fw-bold text-uppercase d-flex align-items-center justify-content-center gap-3 submit-order-btn" style="letter-spacing: 2px;">
+                    <button type="submit"
+                        class="btn btn-dark w-100 rounded-0 p-4 fs-5 fw-bold text-uppercase d-flex align-items-center justify-content-center gap-3 submit-order-btn"
+                        style="letter-spacing: 2px;">
                         <span class="btn-text">Complete Order</span>
                         <div class="spinner-border text-light spinner-btn" role="status">
                             <span class="visually-hidden">Loading...</span>
                         </div>
                     </button>
-                    <p class="text-center text-muted mt-3" style="font-size: 11px;"><i class="fa-solid fa-lock me-1"></i> Secured via 256-bit SSL encryption</p>
+                    <p class="text-center text-muted mt-3" style="font-size: 11px;"><i
+                            class="fa-solid fa-lock me-1"></i> Secured via 256-bit SSL encryption</p>
                 </form>
 
             </div>
@@ -233,9 +367,11 @@
             <!-- Right Column: Summary -->
             <div class="col-lg-5">
                 <div class="bg-white p-4 p-md-5 border mb-4 rounded shadow-sm sticky-top" style="top: 100px;">
-                    <h5 class="fw-bolder mb-4 text-uppercase border-bottom pb-3" style="font-family: 'Archivo Black', sans-serif;">Order Summary</h5>
-                    
-                    <div id="checkout-items-box" class="mb-4" style="max-height: 400px; overflow-y: auto; overflow-x: hidden;">
+                    <h5 class="fw-bolder mb-4 text-uppercase border-bottom pb-3"
+                        style="font-family: 'Archivo Black', sans-serif;">Order Summary</h5>
+
+                    <div id="checkout-items-box" class="mb-4"
+                        style="max-height: 400px; overflow-y: auto; overflow-x: hidden;">
                         <!-- JS injected Items -->
                     </div>
 
@@ -253,7 +389,8 @@
                             <span class="fw-bold" id="chk-tax">Rs. 0</span>
                         </div>
                         <div class="d-flex justify-content-between pt-3 border-top mt-2">
-                            <span class="fs-5 fw-bolder text-uppercase" style="font-family: 'Archivo Black', sans-serif;">Total</span>
+                            <span class="fs-5 fw-bolder text-uppercase"
+                                style="font-family: 'Archivo Black', sans-serif;">Total</span>
                             <span class="fs-4 fw-bolder" id="chk-total" style="color: #d34e2a;">Rs. 0</span>
                         </div>
                     </div>
@@ -269,9 +406,13 @@
             <div class="check-circle">
                 <i class="fa-solid fa-check"></i>
             </div>
-            <h2 class="fw-bolder text-uppercase mb-2" style="font-family: 'Archivo Black', sans-serif;">Order Confirmed!</h2>
-            <p class="text-muted mb-4">Your order <strong id="order-id-display" class="text-dark">#UE-0000</strong> has been placed successfully. A confirmation email has been sent.</p>
-            <button onclick="window.location.href='index.html'" class="btn btn-dark w-100 rounded-0 py-3 fw-bold text-uppercase" style="letter-spacing: 1px;">Continue Shopping</button>
+            <h2 class="fw-bolder text-uppercase mb-2" style="font-family: 'Archivo Black', sans-serif;">Order Confirmed!
+            </h2>
+            <p class="text-muted mb-4">Your order <strong id="order-id-display" class="text-dark">#UE-0000</strong> has
+                been placed successfully. A confirmation email has been sent.</p>
+            <button onclick="window.location.href='index.html'"
+                class="btn btn-dark w-100 rounded-0 py-3 fw-bold text-uppercase" style="letter-spacing: 1px;">Continue
+                Shopping</button>
         </div>
     </div>
 
@@ -283,4 +424,5 @@
     <script src="recent.js"></script>
     <script src="auth.js"></script>
 </body>
+
 </html>
