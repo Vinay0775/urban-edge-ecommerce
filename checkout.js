@@ -83,25 +83,61 @@ document.addEventListener("DOMContentLoaded", () => {
         btnText.style.display = 'none';
         spinner.style.display = 'inline-block';
         
-        // Simulate Network Request
-        setTimeout(() => {
-            // Clear the Cart!
-            localStorage.setItem('urban_edge_cart', JSON.stringify([]));
+        // Firebase Save
+        if (window.db) {
+            const inputs = checkoutForm.querySelectorAll('input:not([type="radio"])');
+            const paymentMethod = document.querySelector('input[name="payment_method"]:checked').value;
             
-            // Generate Random Order ID
-            const orderId = 'UE-' + Math.floor(10000 + Math.random() * 90000);
-            document.getElementById('order-id-display').innerText = '#' + orderId;
-            
-            // Revert Button
-            submitBtn.removeAttribute('disabled');
-            btnText.style.display = 'inline-block';
-            spinner.style.display = 'none';
-            btnText.innerText = 'Paid Successfully';
-            submitBtn.classList.replace('btn-dark', 'btn-success');
-            
-            // Show Success Modal
-            successModal.classList.add('show');
-            
-        }, 2200); // 2.2 second artificial load time
+            const orderData = {
+                orderId: 'UE-' + Math.floor(10000 + Math.random() * 90000),
+                customer: {
+                    email: inputs[0].value,
+                    name: inputs[1].value + ' ' + inputs[2].value,
+                    address: inputs[3].value,
+                    city: inputs[5].value,
+                    phone: inputs[8].value
+                },
+                items: cart,
+                total: finalTotal,
+                paymentMethod: paymentMethod,
+                status: 'Processing',
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            };
+
+            db.collection("orders").doc(orderData.orderId).set(orderData)
+            .then(() => {
+                // Clear the Cart!
+                localStorage.setItem('urban_edge_cart', JSON.stringify([]));
+                
+                document.getElementById('order-id-display').innerText = '#' + orderData.orderId;
+                
+                // Revert Button
+                submitBtn.removeAttribute('disabled');
+                btnText.style.display = 'inline-block';
+                spinner.style.display = 'none';
+                btnText.innerText = 'Paid Successfully';
+                submitBtn.classList.replace('btn-dark', 'btn-success');
+                
+                // Show Success Modal
+                successModal.classList.add('show');
+            })
+            .catch((error) => {
+                console.error("Error writing document: ", error);
+                alert("Payment was successful but we couldn't save your order. Please contact support.");
+            });
+        } else {
+            // Fallback Simulation 
+            setTimeout(() => {
+                localStorage.setItem('urban_edge_cart', JSON.stringify([]));
+                const orderId = 'UE-' + Math.floor(10000 + Math.random() * 90000);
+                document.getElementById('order-id-display').innerText = '#' + orderId;
+                submitBtn.removeAttribute('disabled');
+                btnText.style.display = 'inline-block';
+                spinner.style.display = 'none';
+                btnText.innerText = 'Paid Successfully';
+                submitBtn.classList.replace('btn-dark', 'btn-success');
+                successModal.classList.add('show');
+            }, 2200);
+        }
     });
 });

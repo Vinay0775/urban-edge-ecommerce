@@ -170,6 +170,15 @@ document.addEventListener("DOMContentLoaded", () => {
         currentUser = { name, email, initials: name.substring(0,2).toUpperCase() };
         localStorage.setItem('urban_edge_user', JSON.stringify(currentUser));
         
+        // Save to Firebase
+        if (window.db) {
+            db.collection("users").doc(email).set({
+                name: name,
+                email: email,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            }).catch(console.error);
+        }
+        
         // Setup Success Screen overlay instead of closing
         document.querySelectorAll('.ue-auth-tab').forEach(t => t.style.display = 'none');
         document.querySelector('.ue-auth-tabs').style.display = 'none';

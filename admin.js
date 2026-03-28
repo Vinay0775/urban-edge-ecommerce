@@ -108,24 +108,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // --- 3. MANAGE & RENDER RECENT ORDERS ---
-    const defaultOrders = [
-        { id: "#UE-74892", customer: "Rahul Sharma", date: "Today, 10:24 AM", amount: "₹ 4,500", status: "Pending" },
-        { id: "#UE-39912", customer: "Neha Gupta", date: "Yesterday, 4:15 PM", amount: "₹ 11,200", status: "Shipped" },
-        { id: "#UE-11004", customer: "Varun K.", date: "Oct 12, 2026", amount: "₹ 2,499", status: "Delivered" },
-        { id: "#UE-88543", customer: "Priya Desai", date: "Oct 11, 2026", amount: "₹ 7,850", status: "Delivered" }
-    ];
+    let systemOrders = [];
 
-    // Load from local storage or use defaults
-    let systemOrders = JSON.parse(localStorage.getItem('urban_edge_admin_orders'));
-    if (!systemOrders || systemOrders.length === 0) {
-        systemOrders = defaultOrders;
-        localStorage.setItem('urban_edge_admin_orders', JSON.stringify(systemOrders));
+    if (window.db) {
+        // Listen to Firebase Orders Live
+        db.collection("orders").orderBy("timestamp", "desc").limit(15).onSnapshot((snapshot) => {
+            systemOrders = [];
+            snapshot.forEach((doc) => {
+                let data = doc.data();
+                let dateStr = "Just Now";
+                if(data.timestamp) {
+                    dateStr = data.timestamp.toDate().toLocaleString('en-IN', { month: 'short', day: 'numeric', hour: '2-digit', minute:'2-digit' });
+                }
+                
+                systemOrders.push({
+                    dbId: doc.id,
+                    id: data.orderId || doc.id,
+                    customer: data.customer ? data.customer.name : 'Guest',
+                    date: dateStr,
+                    amount: '₹ ' + (data.total || 0).toLocaleString('en-IN'),
+                    status: data.status || 'Pending'
+                });
+            });
+            renderOrdersTable();
+        });
     }
-    
-    renderOrdersTable();
 
     function renderOrdersTable() {
         const tbody = document.getElementById('orders-table-body');
+        if (!tbody) return;
         tbody.innerHTML = '';
         
         systemOrders.forEach((order, index) => {
@@ -136,10 +147,10 @@ document.addEventListener("DOMContentLoaded", () => {
             
             // Generate next available action
             let actionBtn = '';
-            if (order.status === "Pending") {
-                actionBtn = `<button class="btn btn-sm btn-outline-info border-0 rounded-1" onclick="changeOrderStatus(${index}, 'Shipped')"><i class="fa-solid fa-truck fw-bold me-1"></i> Ship It</button>`;
+            if (order.status === "Processing" || order.status === "Pending") {
+                actionBtn = `<button class="btn btn-sm btn-outline-info border-0 rounded-1" onclick="changeOrderStatus('${order.dbId}', 'Shipped')"><i class="fa-solid fa-truck fw-bold me-1"></i> Ship It</button>`;
             } else if (order.status === "Shipped") {
-                actionBtn = `<button class="btn btn-sm btn-outline-success border-0 rounded-1" onclick="changeOrderStatus(${index}, 'Delivered')"><i class="fa-solid fa-check-double fw-bold me-1"></i> Mark Delivered</button>`;
+                actionBtn = `<button class="btn btn-sm btn-outline-success border-0 rounded-1" onclick="changeOrderStatus('${order.dbId}', 'Delivered')"><i class="fa-solid fa-check-double fw-bold me-1"></i> Mark Delivered</button>`;
             } else {
                 actionBtn = `<span class="text-success small fw-bold"><i class="fa-solid fa-check me-1"></i> Done</span>`;
             }
@@ -157,14 +168,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         
         // Update KPI
-        document.getElementById('kpi-orders').innerText = systemOrders.length + 38; // fake total multiplier
+        const kpiOrders = document.getElementById('kpi-orders');
+        if(kpiOrders) kpiOrders.innerText = systemOrders.length;
     }
 
     // Global Action for updating order status
-    window.changeOrderStatus = function(index, newStatus) {
-        systemOrders[index].status = newStatus;
-        localStorage.setItem('urban_edge_admin_orders', JSON.stringify(systemOrders));
-        renderOrdersTable();
+    window.changeOrderStatus = function(dbId, newStatus) {
+        if (window.db) {
+            db.collection("orders").doc(dbId).update({
+                status: newStatus
+            }).catch(console.error);
+        }
     };
 
     // Global Action for simulating a new incoming order (creates one at top)
