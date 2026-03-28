@@ -341,7 +341,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // --- 7.5 ROUTE PRODUCT IMAGES TO PD PAGE ---
-    if (!window.location.pathname.toLowerCase().includes('product.html')) {
+    if (!window.location.pathname.toLowerCase().includes('product')) {
         document.addEventListener('click', function(e) {
             if (e.target.tagName.toLowerCase() === 'img') {
                 const card = e.target.closest('.card, .bento-card, .acc-cat-card, .wishlist-item, .ue-recent-item, .product-img-box');
@@ -357,7 +357,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // --- 8. RENDER CART PAGE ---
-    if (window.location.pathname.toLowerCase().includes('cart.html')) {
+    if (window.location.pathname.toLowerCase().includes('cart')) {
         renderCartPage();
     }
 

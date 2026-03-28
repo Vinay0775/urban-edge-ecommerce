@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // --- 5. RENDER WISHLIST PAGE ---
-    if (window.location.pathname.toLowerCase().includes('wishlist.html')) {
+    if (window.location.pathname.toLowerCase().includes('wishlist')) {
         renderWishlistPage();
     }
 

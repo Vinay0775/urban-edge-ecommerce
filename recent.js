@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Find Anchor point (Newsletter or Footer)
         const anchor = document.querySelector('.newsletter-section') || document.querySelector('footer');
         // Do not render on Cart or Wishlist page to avoid clutter
-        if (window.location.pathname.toLowerCase().includes('cart.html') || window.location.pathname.toLowerCase().includes('wishlist.html')) return;
+        if (window.location.pathname.toLowerCase().includes('cart') || window.location.pathname.toLowerCase().includes('wishlist')) return;
         if (!anchor) return;
 
         let recentList = [];
