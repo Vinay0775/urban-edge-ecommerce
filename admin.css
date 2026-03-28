@@ -1,0 +1,83 @@
+/* admin.css */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #f1f1f1;
+    background-color: #121212 !important;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #181818;
+    border-right: 1px solid #2d2d2d;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+.sidebar .nav-link {
+    color: #888;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+.sidebar .nav-link:hover, .sidebar .nav-link.active {
+    background-color: rgba(211, 78, 42, 0.1);
+    color: #d34e2a;
+}
+
+/* KPI Cards */
+.kpi-card {
+    background: #181818;
+    border-radius: 16px;
+    border: 1px solid #2d2d2d;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.2s ease;
+}
+.kpi-card:hover {
+    transform: translateY(-5px);
+}
+.icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+/* Custom Table */
+.admin-table th {
+    border-bottom: 2px solid #2d2d2d;
+    color: #888;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+    background: transparent;
+}
+.admin-table td {
+    padding: 15px 10px;
+    border-bottom: 1px solid #2d2d2d;
+    background: transparent;
+    color: #ccc;
+    font-size: 14px;
+}
+.badge-status {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.badge-pending { background: rgba(255, 193, 7, 0.15); color: #ffc107; border: 1px solid rgba(255, 193, 7, 0.3); }
+.badge-shipped { background: rgba(13, 110, 253, 0.15); color: #0d6efd; border: 1px solid rgba(13, 110, 253, 0.3); }
+.badge-delivered { background: rgba(25, 135, 84, 0.15); color: #198754; border: 1px solid rgba(25, 135, 84, 0.3); }
+
+/* Scrollbar Customization */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #121212; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #555; }

@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +7,8 @@
 
 
 /* GLOBAL OVERFLOW LOCK (Website ko right side khisakne se rokne ke liye) */
-html, body {
+html,
+body {
     overflow-x: hidden !important;
     width: 100%;
     max-width: 100%;
@@ -33,10 +33,12 @@ html, body {
     width: 0;
     height: 2px;
     bottom: 0;
-    left: 50%; /* Center se start hogi */
+    left: 50%;
+    /* Center se start hogi */
     transform: translateX(-50%);
     background-color: #d34e2a;
-    transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth snap animation */
+    transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* Smooth snap animation */
 }
 
 /* Hover karne par text thoda upar uthega aur line 100% ho jayegi */
@@ -55,7 +57,8 @@ html, body {
 }
 
 .nav-icons a:hover {
-    transform: scale(1.2) translateY(-2px); /* Icon bada hoga aur thoda upar jayega */
+    transform: scale(1.2) translateY(-2px);
+    /* Icon bada hoga aur thoda upar jayega */
     color: #d34e2a !important;
 }
 
@@ -69,8 +72,10 @@ html, body {
 
 .custom-brand-logo {
     display: flex;
-    align-items: flex-end; /* Dono words ko niche se ek line me barabar rakhne ke liye */
-    gap: 8px; /* URBAN aur EDGE ke beech ka thoda sa gap */
+    align-items: flex-end;
+    /* Dono words ko niche se ek line me barabar rakhne ke liye */
+    gap: 8px;
+    /* URBAN aur EDGE ke beech ka thoda sa gap */
     text-decoration: none;
     padding-left: 30px;
     color: #000;
@@ -79,39 +84,41 @@ html, body {
 }
 
 .custom-brand-logo:hover {
-    transform: scale(1.05); /* Pura logo halka sa aage aayega */
+    transform: scale(1.05);
+    /* Pura logo halka sa aage aayega */
 }
 
 /* URBAN Part */
 .urban-part {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
 }
 
 .urban-text {
     font-size: 32px;
-    font-weight: 900; 
+    font-weight: 900;
     letter-spacing: -1px;
-    line-height: 1; 
+    line-height: 1;
 }
 
 .urban-line {
     width: 100%;
-    height: 4px; 
+    height: 4px;
     background-color: #000;
-    margin-top: 4px; 
+    margin-top: 4px;
 }
 
 /* EDGE Part */
 .edge-part {
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    margin-bottom: 0px; 
+    align-items: center;
+    margin-bottom: 0px;
 }
 
 .edge-text {
-    font-size: 18px; /* URBAN se chhota, jaisa tumne kaha */
+    font-size: 18px;
+    /* URBAN se chhota, jaisa tumne kaha */
     font-weight: 700;
     letter-spacing: 1px;
     line-height: 1;
@@ -121,10 +128,13 @@ html, body {
 
 .edge-icons {
     display: flex;
-    gap: 4px; /* Icons ke beech ka gap */
-    margin: 3px 0; 
-    font-size: 10px; /* Ekdam chhote letters */
-    color: #0088ff; ;
+    gap: 4px;
+    /* Icons ke beech ka gap */
+    margin: 3px 0;
+    font-size: 10px;
+    /* Ekdam chhote letters */
+    color: #0088ff;
+    ;
 }
 
 
@@ -186,8 +196,10 @@ html, body {
 /* --- HERO SECTION CUSTOM CSS --- */
 
 .hero-section {
-    min-height: calc(100vh - 90px); /* Screen ki height minus navbar ki height */
-    background: #111; /* Dark background */
+    min-height: calc(100vh - 90px);
+    /* Screen ki height minus navbar ki height */
+    background: #111;
+    /* Dark background */
 }
 
 /* Peeche wala bada text */
@@ -201,25 +213,34 @@ html, body {
     /* 8 seconds ka smooth loop */
     animation: urbanBreathe 8s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
     transform-origin: center center;
-    white-space: nowrap; /* Taki letter spacing badhne par text tute nahi */
+    white-space: nowrap;
+    /* Taki letter spacing badhne par text tute nahi */
 }
 
 @keyframes urbanBreathe {
     0% {
         /* translate(-50%, -50%) rakhna zaroori hai center maintain karne ke liye */
         transform: translate(-50%, -50%) scale(1);
-        letter-spacing: -2px; /* Shuru mein thoda tight */
+        letter-spacing: -2px;
+        /* Shuru mein thoda tight */
         opacity: 0.8;
     }
+
     50% {
-        transform: translate(-50%, -50%) scale(1.05); /* Piche ki taraf zoom hoga */
-        letter-spacing: 15px; /* Letters ke beech jagah khulegi */
-        opacity: 0.4; /* Thoda fade hoga taaki models aur highlight hon */
-        text-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15); /* Halka sa 3D glow */
+        transform: translate(-50%, -50%) scale(1.05);
+        /* Piche ki taraf zoom hoga */
+        letter-spacing: 15px;
+        /* Letters ke beech jagah khulegi */
+        opacity: 0.4;
+        /* Thoda fade hoga taaki models aur highlight hon */
+        text-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+        /* Halka sa 3D glow */
     }
+
     100% {
         transform: translate(-50%, -50%) scale(1);
-        letter-spacing: -2px; /* Wapas original position */
+        letter-spacing: -2px;
+        /* Wapas original position */
         opacity: 0.8;
     }
 }
@@ -228,8 +249,10 @@ html, body {
 
 /* Outline Text Effect (2026 ke liye) */
 .outline-text {
-    color: transparent; /* Andar se khali */
-    -webkit-text-stroke: 2px #fff; /* Bahar se white border */
+    color: transparent;
+    /* Andar se khali */
+    -webkit-text-stroke: 2px #fff;
+    /* Bahar se white border */
 }
 
 /* Chhote text ke beech ka gap */
@@ -249,7 +272,8 @@ html, body {
 /* --- BACKGROUND TEXT (GEAR/URBAN/JUST IN) ANIMATION --- */
 /* ========================================= */
 
-.hero-bg-text, .drop-bg-text {
+.hero-bg-text,
+.drop-bg-text {
     /* 12 second loop */
     animation: backgroundBreathe 15s ease-in-out infinite;
     transform-origin: center center;
@@ -257,17 +281,19 @@ html, body {
 }
 
 @keyframes backgroundBreathe {
-    0% { 
+    0% {
         /* Opacity hata di, bas position aur scale rakha hai */
-        transform: translate(-50%, -50%) scale(1); 
+        transform: translate(-50%, -50%) scale(1);
     }
-    50% { 
+
+    50% {
         /* Halki si zoom aur letter spacing khulegi */
-        transform: translate(-50%, -50%) scale(1.08); 
-        letter-spacing: 2vw; 
+        transform: translate(-50%, -50%) scale(1.08);
+        letter-spacing: 2vw;
     }
-    100% { 
-        transform: translate(-50%, -50%) scale(1); 
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
     }
 }
 
@@ -279,63 +305,82 @@ html, body {
 .marquee-container {
     position: absolute;
 
-    background: #d34e2a; /* Orange background */
+    background: #d34e2a;
+    /* Orange background */
     color: #fff;
     padding: 8px 0;
     overflow: hidden;
     white-space: nowrap;
     border-bottom: 1px solid #000;
-    top: 70px ;
+    top: 70px;
 
 }
 
 .marquee-content {
     display: inline-block;
     font-size: 11px;
-    animation: scrollText 15s linear infinite; /* 15s speed hai, kam zyada kar sakte ho */
+    animation: scrollText 15s linear infinite;
+    /* 15s speed hai, kam zyada kar sakte ho */
 }
 
 @keyframes scrollText {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* Aadha scroll hone par loop ho jayega */
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+    /* Aadha scroll hone par loop ho jayega */
 }
 
 /* OPTION 1: HOLLOW OUTLINE TEXT */
 .massive-text {
-    font-size: 24vw; 
+    font-size: 24vw;
     font-weight: 900;
-    font-family: 'Archivo Black', sans-serif; /* Ye font ispe bahut mast lagega */
+    font-family: 'Archivo Black', sans-serif;
+    /* Ye font ispe bahut mast lagega */
     letter-spacing: -5px;
-    z-index: 1; 
-    user-select: none; 
-    
+    z-index: 1;
+    user-select: none;
+
     /* Jadoo yahan hai */
-    color: transparent; /* Andar ka color gayab */
-    -webkit-text-stroke: 4px #d34e2a; /* Bahar 4px ka orange border */
-    text-shadow: 0px 0px 30px rgba(211, 78, 42, 0.4); /* Halke orange rang ki glowing shadow */
+    color: transparent;
+    /* Andar ka color gayab */
+    -webkit-text-stroke: 4px #d34e2a;
+    /* Bahar 4px ka orange border */
+    text-shadow: 0px 0px 30px rgba(211, 78, 42, 0.4);
+    /* Halke orange rang ki glowing shadow */
 }
 
 
 .hero-carousel-container {
-    height: 85%; 
+    height: 85%;
     max-height: 100vh;
-    width: 100%; /* Pure screen par failne ke liye */
-    z-index: 2; /* Bada text peeche, collection text aage */
-    pointer-events: none; /* Taaki log image par click karke slide na rokein */
+    width: 100%;
+    /* Pure screen par failne ke liye */
+    z-index: 2;
+    /* Bada text peeche, collection text aage */
+    pointer-events: none;
+    /* Taaki log image par click karke slide na rokein */
 
 }
 
 .hero-carousel-img {
-    height: 100%; /* Container ki poori height lega */
-    width: 50%; /* Ratio maintain rakhega */
+    height: 100%;
+    /* Container ki poori height lega */
+    width: 50%;
+    /* Ratio maintain rakhega */
     object-fit: contain;
-    filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.5)); /* Thodi shadow taaki model realistic lage */
+    filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.5));
+    /* Thodi shadow taaki model realistic lage */
 }
 
 /* --- CAROUSEL SMOOTH FADE FIX --- */
 .carousel-fade .carousel-item {
     /* Bootstrap ke default time ko override kar rahe hain */
-    transition: opacity 3.5s ease-in-out !important; 
+    transition: opacity 3.5s ease-in-out !important;
 }
 
 
@@ -348,10 +393,13 @@ html, body {
 
 /* Text ko 'U' ke upar set karne ke liye */
 .urban-box {
-    top: 20%; /* Upar se kitna niche lana hai (U ke center ke hisaab se adjust kar lena) */
-    left: 5%; /* Left side se doori (U ke theek upar lane ke liye) */
+    top: 20%;
+    /* Upar se kitna niche lana hai (U ke center ke hisaab se adjust kar lena) */
+    left: 5%;
+    /* Left side se doori (U ke theek upar lane ke liye) */
 }
-.urban-box p{
+
+.urban-box p {
     font-size: 20px;
     color: whitesmoke;
 }
@@ -359,70 +407,110 @@ html, body {
 /* Button ko ekdam niche set karne ke liye */
 .button-box {
     flex-direction: column;
-    bottom: 20px; /* Niche se doori (Collection 2026 ke barabar rakhne ke liye 60px theek hai) */
-    left: 5%; 
+    bottom: 20px;
+    /* Niche se doori (Collection 2026 ke barabar rakhne ke liye 60px theek hai) */
+    left: 5%;
     gap: 40px;
     padding-bottom: 40px;
 }
-.button-box p{
+
+.button-box p {
     text-align: left;
 }
+
 /* --- PREMIUM URBAN BUTTON DESIGN --- */
 
 .btn-urban {
     background-color: #ffffff;
     color: #000000;
     border: 2px solid #ffffff;
-    padding: 12px 35px; /* Button ko thoda lamba aur chauda kiya */
+    padding: 12px 35px;
+    /* Button ko thoda lamba aur chauda kiya */
     font-size: 13px;
-    letter-spacing: 2px; /* Text ke beech gap premium look deta hai */
+    letter-spacing: 2px;
+    /* Text ke beech gap premium look deta hai */
     text-decoration: none;
     display: inline-block;
-    transition: all 0.3s ease-in-out; /* Smooth animation ke liye */
-    width: fit-content; /* Button sirf text jitni jagah lega */
+    transition: all 0.3s ease-in-out;
+    /* Smooth animation ke liye */
+    width: fit-content;
+    /* Button sirf text jitni jagah lega */
 }
 
 /* Hover Effect (Jab mouse button par aayega) */
 .btn-urban:hover {
-    background-color: transparent; /* Background gayab (transparent) ho jayega */
-    color: #ffffff; /* Text white ho jayega */
-    border: 2px solid #ffffff; /* White border dikhega */
-    transform: translateY(-5px); /* Button thoda hawa me uthega */
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5); /* Niche ek mast shadow aayegi */
+    background-color: transparent;
+    /* Background gayab (transparent) ho jayega */
+    color: #ffffff;
+    /* Text white ho jayega */
+    border: 2px solid #ffffff;
+    /* White border dikhega */
+    transform: translateY(-5px);
+    /* Button thoda hawa me uthega */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    /* Niche ek mast shadow aayegi */
 }
 
 
 
 /* Collection 2026 ko 'N' ke theek niche lana */
 .collection-box {
-    right: 4%; /* Ye usko N ke theek niche layega */
+    right: 4%;
+    /* Ye usko N ke theek niche layega */
 
-    padding-bottom: 15px; /* Niche se thoda upar uthane ke liye */
+    padding-bottom: 15px;
+    /* Niche se thoda upar uthane ke liye */
     pointer-events: auto;
 
 }
 
-.collection{
+.collection {
     font-size: 100px;
-    font-family: 'Archivo Black' ;
-    letter-spacing: 5px; /* Letters ko thoda chipkane ke liye, bilkul image jaisa */
-    text-transform: none; /* Taki 'C' capital aur baaki small rahe */
+    font-family: 'Archivo Black';
+    letter-spacing: 5px;
+    /* Letters ko thoda chipkane ke liye, bilkul image jaisa */
+    text-transform: none;
+    /* Taki 'C' capital aur baaki small rahe */
     transition: all 0.2s ease;
     cursor: pointer;
 }
 
-.collection:hover{
+.collection:hover {
     animation: glitch-anim 0.2s infinite;
 
 
 }
+
 @keyframes glitch-anim {
-    0% { text-shadow: 3px 2px 0px #0ff, -3px -2px 0px #f00; transform: translate(0); }
-    20% { text-shadow: -3px 2px 0px #0ff, 3px -2px 0px #f00; transform: translate(-2px, 2px); }
-    40% { text-shadow: 3px -2px 0px #0ff, -3px 2px 0px #f00; transform: translate(2px, -2px); }
-    60% { text-shadow: -3px -2px 0px #0ff, 3px 2px 0px #f00; transform: translate(-2px, -2px); }
-    80% { text-shadow: 3px 2px 0px #0ff, -3px -2px 0px #f00; transform: translate(2px, 2px); }
-    100% { text-shadow: 3px 2px 0px #0ff, -3px -2px 0px #f00; transform: translate(0); }
+    0% {
+        text-shadow: 3px 2px 0px #0ff, -3px -2px 0px #f00;
+        transform: translate(0);
+    }
+
+    20% {
+        text-shadow: -3px 2px 0px #0ff, 3px -2px 0px #f00;
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        text-shadow: 3px -2px 0px #0ff, -3px 2px 0px #f00;
+        transform: translate(2px, -2px);
+    }
+
+    60% {
+        text-shadow: -3px -2px 0px #0ff, 3px 2px 0px #f00;
+        transform: translate(-2px, -2px);
+    }
+
+    80% {
+        text-shadow: 3px 2px 0px #0ff, -3px -2px 0px #f00;
+        transform: translate(2px, 2px);
+    }
+
+    100% {
+        text-shadow: 3px 2px 0px #0ff, -3px -2px 0px #f00;
+        transform: translate(0);
+    }
 }
 
 
@@ -430,24 +518,28 @@ html, body {
 
 
 .wear-legacy-section {
-    background-color: #ffffff; /* Safed background */
+    background-color: #ffffff;
+    /* Safed background */
 }
 
 /* Image par hover effect (Zoom in) */
 .category-box {
     cursor: pointer;
-    background-color: #f8f9fa; /* Agar photo load na ho toh light grey dikhega */
+    background-color: #f8f9fa;
+    /* Agar photo load na ho toh light grey dikhega */
 }
 
 .category-img {
-    transition: transform 0.5s ease; /* Smooth animation time */
+    transition: transform 0.5s ease;
+    /* Smooth animation time */
     object-fit: cover;
-    aspect-ratio: 4 / 5; /* Ekdam perfect portrait ratio set karega */
+    aspect-ratio: 4 / 5;
+    /* Ekdam perfect portrait ratio set karega */
 }
 
 /* Jab mouse dabbe par aayega, photo badi hogi par bahar nahi niklegi overflow-hidden ki wajah se */
 .category-box:hover .category-img {
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 /*================================latest Men's collection=========================================*/
@@ -465,8 +557,10 @@ html, body {
 
 /* Image background ko ekdam light grey rakha hai jaisa design me hai */
 .product-img-box {
-    background-color: #f8f9fa; /* Light grey base */
-    aspect-ratio: 4 / 5; /* Sabhi images ek hi size/height ki rahengi */
+    background-color: #f8f9fa;
+    /* Light grey base */
+    aspect-ratio: 4 / 5;
+    /* Sabhi images ek hi size/height ki rahengi */
 }
 
 .product-img {
@@ -477,11 +571,13 @@ html, body {
 
 /* Hover Effect: Jab mouse layenge toh photo thodi zoom hogi aur shadow aayegi */
 .product-card:hover .product-img {
-    transform: scale(1.08); /* Photo badi hogi */
+    transform: scale(1.08);
+    /* Photo badi hogi */
 }
 
 .product-card:hover h6 {
-    color: #d34e2a; /* Title ka color hover par orange ho jayega */
+    color: #d34e2a;
+    /* Title ka color hover par orange ho jayega */
     transition: color 0.3s;
 }
 
@@ -500,23 +596,31 @@ html, body {
 
 /* Bada text ab dark background par aur mast chamkega */
 .promo-massive-text {
-    text-shadow: 0px 10px 30px rgba(0, 0, 0, 0.8); /* Shadow ko thoda heavy kar diya */
+    text-shadow: 0px 10px 30px rgba(0, 0, 0, 0.8);
+    /* Shadow ko thoda heavy kar diya */
 }
+
 .promo-massive-text {
-    font-size: 10vw; /* Screen ke hisaab se bada-chhota hoga */
+    font-size: 10vw;
+    /* Screen ke hisaab se bada-chhota hoga */
     letter-spacing: -2px;
-    white-space: nowrap; /* Text ko ek hi line me rakhega */
-    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.05); /* Halka sa 3D feel */
+    white-space: nowrap;
+    /* Text ko ek hi line me rakhega */
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.05);
+    /* Halka sa 3D feel */
     user-select: none;
 }
 
 /* Model ki image ko adjust karna */
 .promo-model-img {
-    height:100%; /* Banner ki height ka 95% lega */
+    height: 100%;
+    /* Banner ki height ka 95% lega */
     max-height: 450px;
     object-fit: contain;
-    object-position: bottom; /* Zameen se chipka rahega */
-    filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.3)); /* Model ke peeche shadow */
+    object-position: bottom;
+    /* Zameen se chipka rahega */
+    filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.3));
+    /* Model ke peeche shadow */
 }
 
 /* Button ka Hover Effect */
@@ -525,7 +629,8 @@ html, body {
 }
 
 .promo-btn:hover {
-    background-color: #d34e2a; /* Hover par Orange ho jayega */
+    background-color: #d34e2a;
+    /* Hover par Orange ho jayega */
     border-color: #d34e2a;
     transform: translateY(-3px);
 }
@@ -536,11 +641,13 @@ html, body {
 
 /* Footer ke links ka design */
 .footer-links li {
-    margin-bottom: 8px; /* Links ke beech ka gap */
+    margin-bottom: 8px;
+    /* Links ke beech ka gap */
 }
 
 .footer-links a {
-    color: #6c757d; /* Muted grey color */
+    color: #6c757d;
+    /* Muted grey color */
     text-decoration: none;
     font-size: 12px;
     transition: color 0.3s ease;
@@ -573,18 +680,23 @@ html, body {
 /*============================================ Inner Pages (Clothing, etc) ======================================*/
 
 .page-header {
-    min-height: 250px; /* Banner ki height */
+    min-height: 250px;
+    /* Banner ki height */
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%); /* Premium dark background */
+    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+    /* Premium dark background */
 }
 
 .filter-bar select {
     cursor: pointer;
 }
+
 .filter-bar select:focus {
-    box-shadow: none; /* Click karne par jo blue glow aata hai use hatane ke liye */
-    border-color: #d34e2a; /* Click karne par orange border aayega */
+    box-shadow: none;
+    /* Click karne par jo blue glow aata hai use hatane ke liye */
+    border-color: #d34e2a;
+    /* Click karne par orange border aayega */
 }
 
 /* --- Hero Section Background --- */
@@ -597,12 +709,15 @@ html, body {
 .hero-bg-text {
     position: absolute;
     top: 50%;
-    left: 50%; /* Yahan se Right shift ho gaya */
+    left: 50%;
+    /* Yahan se Right shift ho gaya */
     transform: translate(-50%, -50%);
     font-family: 'Archivo Black', sans-serif;
     font-size: 20vw;
-    color: rgba(255, 255, 255, 0.04); /* Ekdum halka transparent kar diya */
-    z-index: 1; /* Peeche bhej diya */
+    color: rgba(255, 255, 255, 0.04);
+    /* Ekdum halka transparent kar diya */
+    z-index: 1;
+    /* Peeche bhej diya */
     pointer-events: none;
     white-space: nowrap;
 }
@@ -633,9 +748,12 @@ html, body {
     max-height: 400px;
     width: auto;
     display: inline-block;
-    vertical-align: bottom; /* Isse image column ke base line par aayegi */
-    margin-bottom: -25px; /* Exact border par chipkane ke liye */
-    filter: drop-shadow(-15px 15px 25px rgba(0,0,0,0.6)); /* Shadow left side di hai */
+    vertical-align: bottom;
+    /* Isse image column ke base line par aayegi */
+    margin-bottom: -25px;
+    /* Exact border par chipkane ke liye */
+    filter: drop-shadow(-15px 15px 25px rgba(0, 0, 0, 0.6));
+    /* Shadow left side di hai */
 }
 
 
@@ -651,46 +769,61 @@ html, body {
     position: relative;
     height: 100vh;
     /* Sabse bada Jadoo: Ye line fixed image ko dusre sections me ghusne se rokti hai */
-    clip-path: inset(0 0 0 0); 
+    clip-path: inset(0 0 0 0);
 }
 
 .parallax-zoom-bg {
-    position: fixed; /* Ye banata hai Parallax (Scroll) effect */
+    position: fixed;
+    /* Ye banata hai Parallax (Scroll) effect */
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background-image: url('image/accessories.webp'); /* Apni image ka path match kar lena */
+    background-image: url('image/accessories.webp');
+    /* Apni image ka path match kar lena */
     background-size: cover;
     background-position: center;
     z-index: 0;
-    
+
     /* Ye banata hai Slow Zoom effect */
     animation: proZoomBoth 20s ease-in-out infinite alternate;
 }
 
 /* Photo ko slightly dark karne ke liye */
 .acc-hero-overlay {
-    background-color: rgba(0, 0, 0, 0.5); /* 50% darkness */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 50% darkness */
 }
 
 /* Zoom ki setting */
 @keyframes proZoomBoth {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.15); } /* 15% zoom hoga bina phate */
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.15);
+    }
+
+    /* 15% zoom hoga bina phate */
 }
 
 /* Category Cards */
-.cursor-pointer { cursor: pointer; }
+.cursor-pointer {
+    cursor: pointer;
+}
+
 .acc-cat-card {
     transition: all 0.3s ease;
     border: 1px solid transparent;
 }
+
 .acc-cat-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
     border-color: #d34e2a;
 }
+
 .acc-cat-card:hover i {
     color: #d34e2a !important;
 }
@@ -709,11 +842,11 @@ html, body {
 }
 
 .bento-content {
-    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 .bento-content-light {
-    background: linear-gradient(to top, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 .bento-btn {
@@ -729,15 +862,18 @@ html, body {
 
 /* Card Image Hover Effect */
 .card {
-    overflow: hidden; /* Image ko card se bahar aane se rokne ke liye */
+    overflow: hidden;
+    /* Image ko card se bahar aane se rokne ke liye */
 }
 
 .card-img-top {
-    transition: transform 0.5s ease; /* Zoom smooth hone ke liye */
+    transition: transform 0.5s ease;
+    /* Zoom smooth hone ke liye */
 }
 
 .card:hover .card-img-top {
-    transform: scale(1.08); /* Mouse aane par image 8% badi ho jayegi */
+    transform: scale(1.08);
+    /* Mouse aane par image 8% badi ho jayegi */
 }
 
 /* =========================================================================================================== */
@@ -756,7 +892,7 @@ html, body {
     background-color: #fff;
     border: 4px solid #d34e2a;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     position: relative;
     transition: all 0.3s ease;
 }
@@ -769,15 +905,23 @@ html, body {
     left: -8px;
     right: -8px;
     bottom: -8px;
-    background-color: rgba(211, 78, 42, 0.4); /* Brand orange transparent */
+    background-color: rgba(211, 78, 42, 0.4);
+    /* Brand orange transparent */
     border-radius: 50%;
     animation: pulse 1.5s infinite;
     z-index: -1;
 }
 
 @keyframes pulse {
-    0% { transform: scale(0.8); opacity: 1; }
-    100% { transform: scale(1.5); opacity: 0; }
+    0% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
 }
 
 .hotspot:hover .hotspot-dot {
@@ -788,7 +932,8 @@ html, body {
 /* Pop-up Card */
 .hotspot-card {
     position: absolute;
-    top: 30px; /* Dot ke niche dikhega */
+    top: 30px;
+    /* Dot ke niche dikhega */
     left: 50%;
     transform: translateX(-50%) translateY(15px);
     width: 140px;
@@ -798,7 +943,8 @@ html, body {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    pointer-events: none; /* Jab hidden ho toh click na ho */
+    pointer-events: none;
+    /* Jab hidden ho toh click na ho */
 }
 
 /* Triangle Pointing Up */
@@ -822,12 +968,14 @@ html, body {
 
 /* --- Pinterest Style Masonry Grid --- */
 .masonry-grid {
-    column-count: 3; /* Desktop par 3 columns */
+    column-count: 3;
+    /* Desktop par 3 columns */
     column-gap: 1.5rem;
 }
 
 .masonry-item {
-    break-inside: avoid; /* Image beech se kate nahi */
+    break-inside: avoid;
+    /* Image beech se kate nahi */
     overflow: hidden;
 }
 
@@ -842,7 +990,7 @@ html, body {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.3s ease;
@@ -873,14 +1021,22 @@ html, body {
 }
 
 @keyframes marquee-scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* -50% taaki loop smooth ho */
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+    /* -50% taaki loop smooth ho */
 }
 
 /* --- MEGA FOOTER HOVER EFFECTS --- */
 .hover-white:hover {
     color: #ffffff !important;
-    padding-left: 5px; /* Hover karne pe halka sa aage khiskega */
+    padding-left: 5px;
+    /* Hover karne pe halka sa aage khiskega */
     transition: all 0.3s ease;
 }
 
@@ -890,8 +1046,10 @@ html, body {
 }
 
 .transition-hover:hover {
-    color: #d34e2a !important; /* Tera brand orange color */
-    transform: translateY(-4px); /* Halka sa upar bounce karega */
+    color: #d34e2a !important;
+    /* Tera brand orange color */
+    transform: translateY(-4px);
+    /* Halka sa upar bounce karega */
 }
 
 /* ============================================================================================================ */
@@ -899,14 +1057,16 @@ html, body {
 /* ============================================================================================================ */
 
 .campaign-banner {
-    min-height: 85vh; /* Badi cinematic height */
+    min-height: 85vh;
+    /* Badi cinematic height */
     border-bottom: 2px solid #fff;
     cursor: pointer;
 }
 
 /* Background image ka smooth zoom effect */
 .campaign-bg {
-    transition: transform 6s ease-out; /* Ekdum slow cinematic zoom */
+    transition: transform 6s ease-out;
+    /* Ekdum slow cinematic zoom */
     z-index: 0;
 }
 
@@ -921,7 +1081,8 @@ html, body {
 }
 
 .campaign-banner:hover .campaign-overlay {
-    opacity: 0.8; /* Thoda dark hoga taaki text aur pop hoke aaye */
+    opacity: 0.8;
+    /* Thoda dark hoga taaki text aur pop hoke aaye */
 }
 
 /* Content Fade In animation */
@@ -979,20 +1140,28 @@ html, body {
 }
 
 @keyframes marqueeScroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* -50% kyunki humne text 2 baar likha hai HTML mein */
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+    /* -50% kyunki humne text 2 baar likha hai HTML mein */
 }
 
 /* Hype Grid Cards (Brutalist Black & White Boxy Design) */
 .hype-card {
     transition: all 0.2s ease;
     /* Hard solid shadow for brutalist streetwear look */
-    box-shadow: 4px 4px 0px rgba(0,0,0,1); 
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
 }
 
 .hype-card:hover {
     transform: translate(-2px, -2px);
-    box-shadow: 8px 8px 0px rgba(211, 78, 42, 1); /* Hover par shadow Orange ho jayegi */
+    box-shadow: 8px 8px 0px rgba(211, 78, 42, 1);
+    /* Hover par shadow Orange ho jayegi */
 }
 
 .hype-img-box {
@@ -1032,20 +1201,27 @@ html, body {
 }
 
 @keyframes slideLines {
-    0% { background-position: 0 0; }
-    100% { background-position: 100px 100px; }
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100px 100px;
+    }
 }
 
 /* Sale Cards Styling */
 .sale-card {
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
 }
 
 .sale-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(255, 51, 0, 0.15); /* Red tinted shadow on hover */
-    outline: 2px solid #ff3300; /* Sharp red border on hover */
+    box-shadow: 0 15px 30px rgba(255, 51, 0, 0.15);
+    /* Red tinted shadow on hover */
+    outline: 2px solid #ff3300;
+    /* Sharp red border on hover */
 }
 
 
@@ -1054,7 +1230,8 @@ html, body {
 /* ========================================= */
 
 .sales-footer {
-    background-color: #050505 !important; /* Normal dark se bhi thoda zyada gehra kala */
+    background-color: #050505 !important;
+    /* Normal dark se bhi thoda zyada gehra kala */
 }
 
 /* Links pe hover karne par Orange color aur aage khisakna */
@@ -1064,7 +1241,8 @@ html, body {
 
 .footer-links-dark a:hover {
     color: #ff3300 !important;
-    padding-left: 5px; /* Hover pe text halka sa aage aayega */
+    padding-left: 5px;
+    /* Hover pe text halka sa aage aayega */
 }
 
 /* Social Icons Hover Bounce */
@@ -1082,6 +1260,7 @@ html, body {
     border-color: #ff3300 !important;
     box-shadow: none;
 }
+
 .sales-footer .form-control::placeholder {
     color: #555 !important;
 }
@@ -1090,73 +1269,85 @@ html, body {
 
 
 .cart-item-img {
-        width: 120px; 
-        height: 150px; 
-        object-fit: cover;
+    width: 100%;
+    max-width: 120px;
+    aspect-ratio: 4 / 5;
+    height: auto;
+    object-fit: cover;
+}
 
-   }
-.qty-btn { 
-        width: 30px;
-        height: 30px;
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-        border: 1px solid #000; 
-        cursor: pointer; 
-        background: white; 
-        font-weight: bold; 
-    }
-.qty-input { 
-        width: 40px; 
-        height: 30px; 
-        text-align: center; 
-        border-top: 1px solid #000; 
-        border-bottom: 1px solid #000; 
-        border-left: none; 
-        border-right: none; 
-        pointer-events: none; 
-        font-weight: bold; }
-.remove-btn { 
-        color: #888; 
-        text-decoration: underline; 
-        font-size: 12px; 
-        cursor: pointer; 
-        transition: 0.3s; 
-    }
-.remove-btn:hover { 
-        color: #d34e2a; 
-    }
-        
-        /* Mega Footer Hover */
+.qty-btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+    cursor: pointer;
+    background: white;
+    font-weight: bold;
+}
 
-.hover-white:hover { 
-    color: #ffffff !important; 
-    padding-left: 5px; 
-    transition: all 0.3s ease; }
+.qty-input {
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-left: none;
+    border-right: none;
+    pointer-events: none;
+    font-weight: bold;
+}
 
-.transition-hover { 
-    transition: all 0.3s ease; 
-    display: inline-block; }
+.remove-btn {
+    color: #888;
+    text-decoration: underline;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-.transition-hover:hover { 
-    color: #d34e2a !important; 
+.remove-btn:hover {
+    color: #d34e2a;
+}
+
+/* Mega Footer Hover */
+
+.hover-white:hover {
+    color: #ffffff !important;
+    padding-left: 5px;
+    transition: all 0.3s ease;
+}
+
+.transition-hover {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.transition-hover:hover {
+    color: #d34e2a !important;
     transform: translateY(-4px);
-   
-    }
+
+}
 
 /* --- PREMIUM 3D ORDER SUMMARY --- */
 
 .premium-summary-card {
     background-color: #ffffff;
     border: 1px solid #f0f0f0;
-    border-radius: 16px !important; /* Smooth gol kinare */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); /* 3D Soft Shadow */
+    border-radius: 16px !important;
+    /* Smooth gol kinare */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    /* 3D Soft Shadow */
     transition: all 0.4s ease;
 }
 
 .premium-summary-card:hover {
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12); /* Mouse laane pe shadow dark hoga */
-    transform: translateY(-5px); /* Dabba hawa mein tairta hua lagega */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+    /* Mouse laane pe shadow dark hoga */
+    transform: translateY(-5px);
+    /* Dabba hawa mein tairta hua lagega */
 }
 
 /* --- GLOWING BLUE CHECKOUT BUTTON --- */
@@ -1167,16 +1358,22 @@ html, body {
 
 /* 1. Normal State (Box Black, Text White) */
 .btn-checkout {
-    background-color: #000000 !important; /* Box Black */
-    color: #ffffff !important;            /* Text White */
-    border: 2px solid #000000 !important; /* Black Border (zaroori hai white hone pe dikhne ke liye) */
-    transition: all 0.3s ease;            /* Smooth change */
+    background-color: #000000 !important;
+    /* Box Black */
+    color: #ffffff !important;
+    /* Text White */
+    border: 2px solid #000000 !important;
+    /* Black Border (zaroori hai white hone pe dikhne ke liye) */
+    transition: all 0.3s ease;
+    /* Smooth change */
 }
 
 /* 2. Hover State (Cursor laate hi: Box White, Text Black) */
 .btn-checkout:hover {
-    background-color: #ffffff !important; /* Box White */
-    color: #000000 !important;            /* Text Black */
+    background-color: #ffffff !important;
+    /* Box White */
+    color: #000000 !important;
+    /* Text Black */
 }
 
 
@@ -1209,26 +1406,42 @@ html, body {
 /* --------------------------------- MOBILE RESPONSIVE CSS  ----------------------------------------- */
 /* ========================================================================================================= */
 @media (max-width: 991px) {
-    
+
     body {
-        padding-top: 70px !important; 
+        padding-top: 70px !important;
     }
-    
+
     .navbar-collapse {
         background-color: #ffffff;
         padding: 20px 0;
         border-top: 1px solid #eaeaea;
-        box-shadow: 0 15px 20px rgba(0,0,0,0.1);
+        box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
         text-align: center;
-        position: absolute; 
+        position: absolute;
         width: 100%;
         left: 0;
         top: 70px;
         z-index: 1000;
     }
-    .nav-links ul { flex-direction: column; gap: 15px; padding-top: 0; }
-    .nav-icons { flex-direction: column; justify-content: center; padding-right: 0; margin-top: 20px; }
-    .search-bar { width: 80%; justify-content: space-between; margin: 0 auto; }
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 15px;
+        padding-top: 0;
+    }
+
+    .nav-icons {
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 0;
+        margin-top: 20px;
+    }
+
+    .search-bar {
+        width: 80%;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
 }
 
 
@@ -1238,100 +1451,136 @@ html, body {
 
 @media (max-width: 991px) {
     .hero-section {
-        height: 520px !important; /* JADOO: Poori screen gherne se roka, compact height di */
+        height: 520px !important;
+        /* JADOO: Poori screen gherne se roka, compact height di */
         min-height: 520px !important;
         display: flex !important;
         width: 100% !important;
-        overflow: hidden !important; 
+        overflow: hidden !important;
         position: relative;
     }
 
-    .marquee-container { top: 0 !important; width: 100% !important; }
+    .marquee-container {
+        top: 0 !important;
+        width: 100% !important;
+    }
 
     /* Bada URBAN Text */
     .massive-text {
-        font-size: 24vw !important; 
-        top: 35% !important; /* Text ko thoda upar shift kiya */
+        font-size: 24vw !important;
+        top: 35% !important;
+        /* Text ko thoda upar shift kiya */
         left: 50% !important;
-        transform: translate(-50%, -50%) !important; 
+        transform: translate(-50%, -50%) !important;
         width: 100%;
         text-align: center;
     }
 
     /* Models ko fit karne ka fix */
     .hero-carousel-container {
-        height: 75% !important; /* Ab models dabbe mein better fit honge */
+        height: 75% !important;
+        /* Ab models dabbe mein better fit honge */
         bottom: 0 !important;
         width: 100% !important;
         left: 50% !important;
         transform: translateX(-50%) !important;
     }
-    
+
     .hero-carousel-img {
-        width: 100% !important; 
+        width: 100% !important;
         object-fit: contain !important;
         object-position: bottom center !important;
     }
-    
+
     /* --- TEXT BOXES (Thoda pass-pass laaya) --- */
     .urban-box {
-        top: 45px !important; /* Marquee ke theek niche */
-        left: 5% !important; 
+        top: 45px !important;
+        /* Marquee ke theek niche */
+        left: 5% !important;
         width: 90% !important;
         z-index: 4;
         transform: none !important;
     }
-    .urban-box p { font-size: 11px !important; text-align: left; }
+
+    .urban-box p {
+        font-size: 11px !important;
+        text-align: left;
+    }
 
     .button-box {
-        bottom: 20px !important; /* Thoda aur niche chipkaya */
-        left: 5% !important; 
-        width: 55% !important; 
+        bottom: 20px !important;
+        /* Thoda aur niche chipkaya */
+        left: 5% !important;
+        width: 55% !important;
         flex-direction: column;
         gap: 8px !important;
         padding-bottom: 0 !important;
         z-index: 4;
         transform: none !important;
     }
-    .button-box p { font-size: 10px !important; line-height: 1.3 !important; text-align: left; }
-    
+
+    .button-box p {
+        font-size: 10px !important;
+        line-height: 1.3 !important;
+        text-align: left;
+    }
+
     /* Discover Urban Button thoda chhota aur sleek kiya */
-    .btn-urban { 
-        padding: 8px 14px !important; 
-        font-size: 10px !important; 
-        align-self: flex-start; 
+    .btn-urban {
+        padding: 8px 14px !important;
+        font-size: 10px !important;
+        align-self: flex-start;
         letter-spacing: 1px !important;
     }
 
     .collection-box {
-        bottom: 20px !important; /* 2026 ko bottom se match kiya */
-        right: 5% !important; 
+        bottom: 20px !important;
+        /* 2026 ko bottom se match kiya */
+        right: 5% !important;
         z-index: 4;
         transform: none !important;
     }
-    .collection { font-size: 20px !important; letter-spacing: 1px !important; margin-bottom: -5px !important; }
-    .display-3.outline-text { font-size: 28px !important; }
+
+    .collection {
+        font-size: 20px !important;
+        letter-spacing: 1px !important;
+        margin-bottom: -5px !important;
+    }
+
+    .display-3.outline-text {
+        font-size: 28px !important;
+    }
 
     /* --- WEAR THE LEGACY BUTTONS --- */
-    .wear-legacy-section .slider-controls .btn { width: 28px !important; height: 28px !important; padding: 0 !important; font-size: 10px !important; display: inline-flex; align-items: center; justify-content: center; }
+    .wear-legacy-section .slider-controls .btn {
+        width: 28px !important;
+        height: 28px !important;
+        padding: 0 !important;
+        font-size: 10px !important;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
 
     /* --- 4. URBAN LAND BANNER COMPACT FIX --- */
-    
+
     /* Banner ki lambaai (height) ekdum kam kar di */
     .promo-gradient-box {
-        min-height: 260px !important; /* Pehle 380px thi, ab ekdum compact 260px */
+        min-height: 260px !important;
+        /* Pehle 380px thi, ab ekdum compact 260px */
         height: 260px !important;
     }
 
     /* Andar wale dabbe ka inline 450px height override kiya */
     .promo-gradient-box .z-3.pointer-events-auto {
         min-height: 260px !important;
-        padding: 20px !important; /* Gap kam kiya taaki content close aaye */
+        padding: 20px !important;
+        /* Gap kam kiya taaki content close aaye */
     }
 
     /* Model ki image nayi height me fit ki */
     .promo-model-img {
-        height: 90% !important; 
+        height: 90% !important;
     }
 
     /* THE URBAN LAND text ko thoda balance kiya */
@@ -1350,8 +1599,10 @@ html, body {
 
     /* DISCOVER MORE BUTTON ko chhota aur sharp banaya */
     .promo-btn {
-        padding: 8px 16px !important; /* Button patla aur chhota kiya */
-        font-size: 9px !important;    /* Text size kam kiya */
+        padding: 8px 16px !important;
+        /* Button patla aur chhota kiya */
+        font-size: 9px !important;
+        /* Text size kam kiya */
         letter-spacing: 1px !important;
     }
 
@@ -1365,44 +1616,61 @@ html, body {
     .navbar {
         height: 70px !important;
         max-height: 70px !important;
-        padding: 0 !important; 
+        padding: 0 !important;
     }
+
     .navbar .container-fluid {
         height: 70px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
     }
-    .custom-brand-logo { margin: 0 !important; padding: 0 !important; }
-    .navbar-toggler { margin: 0 !important; padding: 5px 10px !important; }
+
+    .custom-brand-logo {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .navbar-toggler {
+        margin: 0 !important;
+        padding: 5px 10px !important;
+    }
 
     .navbar-collapse {
         background-color: #ffffff;
         padding: 20px 0;
         border-top: 1px solid #eaeaea;
-        box-shadow: 0 15px 20px rgba(0,0,0,0.1);
-        position: absolute; 
+        box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+        position: absolute;
         width: 100%;
         left: 0;
-        top: 70px; 
+        top: 70px;
         z-index: 1000;
     }
 
-    .search-bar { width: 80%; justify-content: space-between; margin: 0 auto; }
+    .search-bar {
+        width: 80%;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
 
     /* --- 3. HERO SECTION FIX --- */
     /* Hero Subtitle Fix (Text Center) */
-    .hero-clothing .hero-subtitle { 
-        font-size: 13px !important; 
-        margin-bottom: 30px !important; 
-        padding: 0 15px; 
-        margin-left: auto !important;  /* Jadoo 1: Box ko center karega */
-        margin-right: auto !important; /* Jadoo 2: Box ko center karega */
-        text-align: center !important; /* Jadoo 3: Text ko center karega */
+    .hero-clothing .hero-subtitle {
+        font-size: 13px !important;
+        margin-bottom: 30px !important;
+        padding: 0 15px;
+        margin-left: auto !important;
+        /* Jadoo 1: Box ko center karega */
+        margin-right: auto !important;
+        /* Jadoo 2: Box ko center karega */
+        text-align: center !important;
+        /* Jadoo 3: Text ko center karega */
     }
+
     .hero-clothing .row {
         min-height: unset !important;
-        flex-direction: column; 
+        flex-direction: column;
         align-items: center !important;
     }
 
@@ -1415,14 +1683,21 @@ html, body {
     }
 
 
-    .hero-clothing .hero-title { font-size: 40px !important; margin-bottom: 10px !important; line-height: 1; }
-    
-    .hero-clothing .shop-btn { padding: 10px 20px !important; font-size: 11px !important; }
+    .hero-clothing .hero-title {
+        font-size: 40px !important;
+        margin-bottom: 10px !important;
+        line-height: 1;
+    }
+
+    .hero-clothing .shop-btn {
+        padding: 10px 20px !important;
+        font-size: 11px !important;
+    }
 
     /* Background "URBAN" Text Fix */
     .hero-bg-text {
         font-size: 24vw !important;
-        top: 38% !important; 
+        top: 38% !important;
         left: 50% !important;
         transform: translateX(-50%) !important;
         width: 100%;
@@ -1431,59 +1706,100 @@ html, body {
 
     /* Model Box Fix */
     .hero-model-div {
-        height: 450px !important; 
+        height: 450px !important;
         margin-top: 20px;
         width: 100%;
     }
+
     .hero-model-img {
         height: 100% !important;
-        object-fit: cover; 
+        object-fit: cover;
         object-position: bottom center;
     }
 
     /* --- 4. FILTER & SORTING BAR FIX --- */
-    .filter-bar .container { flex-direction: column !important; gap: 15px !important; }
-    .filter-bar .filters { width: 100% !important; justify-content: space-between !important; }
-    .filter-bar .filters select { width: 48% !important; }
-    .filter-bar .sorting { width: 100% !important; justify-content: space-between !important; }
-    .filter-bar .sorting select { width: 100% !important; }
+    .filter-bar .container {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    .filter-bar .filters {
+        width: 100% !important;
+        justify-content: space-between !important;
+    }
+
+    .filter-bar .filters select {
+        width: 48% !important;
+    }
+
+    .filter-bar .sorting {
+        width: 100% !important;
+        justify-content: space-between !important;
+    }
+
+    .filter-bar .sorting select {
+        width: 100% !important;
+    }
 
     /* --- 5. PRODUCT CARDS MOBILE VIEW --- */
-    .clothing-products .product-img-box { height: 170px !important; }
-    .clothing-products .product-img { object-fit: cover !important; }
-    .clothing-products h6 { font-size: 11px !important; }
-    .clothing-products .quick-add-box { opacity: 1 !important; bottom: 0 !important; }
-    .clothing-products .quick-add-box button { padding: 5px !important; font-size: 9px !important; }
+    .clothing-products .product-img-box {
+        height: 170px !important;
+    }
+
+    .clothing-products .product-img {
+        object-fit: cover !important;
+    }
+
+    .clothing-products h6 {
+        font-size: 11px !important;
+    }
+
+    .clothing-products .quick-add-box {
+        opacity: 1 !important;
+        bottom: 0 !important;
+    }
+
+    .clothing-products .quick-add-box button {
+        padding: 5px !important;
+        font-size: 9px !important;
+    }
 
 
 
 }
+
 /*------------------------------------------------Mobile Responsive for Accessories--------------------------------------------------*/
 
 @media (max-width: 991px) {
 
     .hero-model-img {
-        max-height: none !important; /* Purani chhoti height limit hata di */
-        width: 100% !important; /* Ab ye mobile screen ki puri width le lega */
-        max-width: 450px; /* Bahut zyada bada hoke phate nahi, isliye limit */
+        max-height: none !important;
+        /* Purani chhoti height limit hata di */
+        width: 100% !important;
+        /* Ab ye mobile screen ki puri width le lega */
+        max-width: 450px;
+        /* Bahut zyada bada hoke phate nahi, isliye limit */
         margin-top: 40px;
         display: block;
         margin-left: auto;
         margin-right: auto;
     }
+
     .acc-hero-title {
-    font-size: 45px !important;
-    line-height: 0.9;
-    text-shadow: 0 10px 20px rgba(0,0,0,0.5);
-}
+        font-size: 45px !important;
+        line-height: 0.9;
+        text-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
     /* --- ACCESSORIES PAGE: LAMBE PRODUCTS FIX --- */
-    #section-bags .card-img-top, 
-    #section-eyewear .card-img-top, 
-    #section-headwear .card-img-top, 
+    #section-bags .card-img-top,
+    #section-eyewear .card-img-top,
+    #section-headwear .card-img-top,
     #section-jewelry .card-img-top {
-        height: 180px !important;  
-       
-        object-fit: cover !important; /* Photo ko phatne ya dabne nahi dega */
+        height: 180px !important;
+
+        object-fit: cover !important;
+        /* Photo ko phatne ya dabne nahi dega */
     }
 
     /* Mobile pe Button aur Text thoda balance karne ke liye */
@@ -1491,6 +1807,7 @@ html, body {
         font-size: 11px !important;
         margin-top: 10px !important;
     }
+
     .card-body .btn {
         padding: 8px 5px !important;
         font-size: 10px !important;
@@ -1498,12 +1815,14 @@ html, body {
 
     /* --- ACCESSORIES PAGE: TOP BENTO CARDS (BAG WALI IMAGE) SQUARE FIX --- */
     #acc-shop .bento-card {
-        min-height: unset !important; /* Wo 500px ki lambaai hata dega */
+        min-height: unset !important;
+        /* Wo 500px ki lambaai hata dega */
         height: auto !important;
-        aspect-ratio: 1 / 1 !important; /* JADOO: Dabbe ko ekdum perfect square bana dega */
+        aspect-ratio: 1 / 1 !important;
+        /* JADOO: Dabbe ko ekdum perfect square bana dega */
         width: 100% !important;
     }
-    
+
     /* Shades aur Chain wale dabbon ke beech ka gap theek karega */
     #acc-shop .col-lg-6.d-flex {
         gap: 20px !important;
@@ -1515,19 +1834,25 @@ html, body {
 
 @media (max-width: 991px) {
     .masonry-grid {
-        column-count: 2; /* Tablet par 2 columns */
+        column-count: 2;
+        /* Tablet par 2 columns */
     }
 }
 
 @media (max-width: 576px) {
     .masonry-grid {
-        column-count: 1; /* Phone par 1 column */
+        column-count: 1;
+        /* Phone par 1 column */
     }
+
     .hotspot-card {
-        width: 120px; /* Mobile par card chota */
+        width: 120px;
+        /* Mobile par card chota */
     }
+
     .masonry-overlay {
-        opacity: 1; /* Mobile par hamesha dikhao kyunki hover nahi hota */
+        opacity: 1;
+        /* Mobile par hamesha dikhao kyunki hover nahi hota */
         transform: translateY(0);
     }
 }
@@ -1537,20 +1862,22 @@ html, body {
 
 @media (max-width: 991px) {
     .campaign-banner {
-        min-height: 60vh; /* Mobile par height thodi kam */
+        min-height: 60vh;
+        /* Mobile par height thodi kam */
     }
-    
+
     /* Mobile par gradients center focused hone chahiye kyunki text mostly left/center align ho jata hai */
     .campaign-overlay {
-        background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 100%) !important;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.3) 100%) !important;
     }
-    
+
     /* Text alignment mobile par center kar dete hain jisse clean lage */
     .campaign-content {
         text-align: center !important;
-        margin-top: auto; /* Text ko bottom ki taraf push karne ke liye */
+        margin-top: auto;
+        /* Text ko bottom ki taraf push karne ke liye */
     }
-    
+
     .campaign-content p.ms-lg-auto {
         margin-left: auto !important;
         margin-right: auto !important;
@@ -1558,8 +1885,8 @@ html, body {
 
 }
 
-    
-  /*-------------------------------- Mobile Responsiveness for New arrivals---------------------------------------- */
+
+/*-------------------------------- Mobile Responsiveness for New arrivals---------------------------------------- */
 
 @media (max-width: 991px) {
     .hype-quick-add {
@@ -1567,70 +1894,118 @@ html, body {
         position: relative !important;
         border-top: 0 !important;
     }
+
     .hype-card {
-        box-shadow: 2px 2px 0px rgba(0,0,0,1);
+        box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
     }
 }
 
 @media (max-width: 768px) {
-   .drop-bg-text { font-size: 25vw !important; }
+    .drop-bg-text {
+        font-size: 25vw !important;
+    }
 }
 
 /*-------------------------------------- Mobile Adjustments for Sales------------------------------------------ */
 
 @media (max-width: 768px) {
     .sale-hero h1 {
-        font-size: 3.5rem !important;
+        font-size: 2.2rem !important;
         text-shadow: 2px 2px 0 #fff !important;
     }
+
     .sale-hero h2 {
-        font-size: 2rem !important;
+        font-size: 1.5rem !important;
     }
+
     .sale-card .badge {
         font-size: 10px !important;
     }
+
     .sale-card h6 {
-        white-space: normal; /* Mobile pe product naam poora dikhna chahiye */
+        white-space: normal;
+        /* Mobile pe product naam poora dikhna chahiye */
+    }
+
+    .sales-footer h2.display-3 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
     }
 }
 
 
 
 /* --------------------------------------- Responsive for FOOTER ------------------------------------------------ */
-    
+@media (max-width: 991px) {
+    .footer-section {
+        text-align: center !important;
+        padding-top: 40px !important;
+        padding-bottom: 20px !important;
+        overflow: hidden !important;
+    }
 
+    .footer-section .col-lg-3.col-md-12 {
+        margin-bottom: 35px !important;
+    }
 
+    .footer-section .d-flex.mt-3 {
+        justify-content: flex-start !important;
+    }
 
-    .footer-section { text-align: center !important; padding-top: 40px !important; padding-bottom: 20px !important; overflow: hidden !important;}
-    .footer-section .col-lg-3.col-md-12 { margin-bottom: 35px !important; }
-    .footer-section .d-flex.mt-3 { justify-content: flex-start !important; }
-    .footer-section .col-6 { margin-bottom: 25px !important; }
-    .footer-section h6 { font-size: 13px !important; margin-bottom: 12px !important; color: #0088ff !important; }
-    .footer-links a { font-size: 13px !important; padding-bottom: 6px; display: inline-block; }
-    .footer-section .row.border-top { flex-direction: column !important; text-align: center !important; gap: 15px; padding-top: 25px !important; }
-    .footer-section .row.border-top .col-md-4.d-flex { justify-content: center !important; }
-    .payment-icons { justify-content: center !important; margin-top: 5px; }
-    .payment-icons i { font-size: 24px !important; }
+    .footer-section .col-6 {
+        margin-bottom: 25px !important;
+    }
+
+    .footer-section h6 {
+        font-size: 13px !important;
+        margin-bottom: 12px !important;
+        color: #0088ff !important;
+    }
+
+    .footer-links a {
+        font-size: 13px !important;
+        padding-bottom: 6px;
+        display: inline-block;
+    }
+
+    .footer-section .row.border-top {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 15px;
+        padding-top: 25px !important;
+    }
+
+    .footer-section .row.border-top .col-md-4.d-flex {
+        justify-content: center !important;
+    }
+
+    .payment-icons {
+        justify-content: center !important;
+        margin-top: 5px;
+    }
+
+    .payment-icons i {
+        font-size: 24px !important;
+    }
+
     /* --- FOOTER SOCIAL ICONS CENTER FIX --- */
     .footer-section .col-lg-4 .d-flex.gap-3,
     .footer-section .col-lg-3 .d-flex.gap-3 {
         justify-content: center !important;
-        margin-top: 25px !important; /* Thoda upar se gap bhi badha diya taaki saaf dikhe */
+        margin-top: 25px !important;
+        /* Thoda upar se gap bhi badha diya taaki saaf dikhe */
     }
+
     /* --- SECURE CHECKOUT & PAYMENT ICONS CENTER FIX --- */
     .footer-section .col-lg-4 h6:last-of-type {
-        text-align: center !important; /* "Secure Checkout" text ko center karega */
-        margin-top: 30px !important;   /* Upar se thoda saaf gap dega */
+        text-align: center !important;
+        /* "Secure Checkout" text ko center karega */
+        margin-top: 30px !important;
+        /* Upar se thoda saaf gap dega */
     }
+
     .footer-section .col-lg-4 .d-flex.fs-4.text-secondary {
-        justify-content: center !important; /* Chaaron Payment icons ko center karega */
+        justify-content: center !important;
+        /* Chaaron Payment icons ko center karega */
     }
 }
-
-
-
-
-
-
-
-

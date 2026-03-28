@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="image/fav-icon.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Track your Urban Edge order status in real-time.">
+    <title>Track Order | Urban Edge</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    
+    <style>
+        .track-hero {
+            background: linear-gradient(to right, #111, #333);
+            padding: 100px 0 60px;
+            color: white;
+            text-align: center;
+        }
+        .track-input-group {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+            transform: translateY(25px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        .track-input {
+            height: 60px;
+            padding-left: 25px;
+            font-size: 16px;
+            border: 2px solid transparent;
+        }
+        .track-input:focus {
+            border-color: #d34e2a;
+            box-shadow: none;
+        }
+        .track-btn {
+            background: #d34e2a;
+            color: white;
+            border: none;
+            width: 60px;
+            font-size: 20px;
+            transition: background 0.2s;
+        }
+        .track-btn:hover { background: #b03e1f; }
+        
+        /* Timeline UI */
+        .tracking-box {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            margin-bottom: 50px;
+            display: none;
+        }
+        .tracking-box.active { display: block; animation: slideUp 0.5s ease; }
+        
+        .timeline-wrapper {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            max-width: 700px;
+            margin: 50px auto 20px;
+            padding: 0 20px;
+        }
+        .timeline-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 40px;
+            right: 40px;
+            height: 4px;
+            background: #eee;
+            z-index: 1;
+        }
+        .timeline-progress {
+            position: absolute;
+            top: 15px;
+            left: 40px;
+            height: 4px;
+            background: #d34e2a;
+            z-index: 2;
+            transition: width 1s ease;
+        }
+        
+        .timeline-step {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            width: 80px;
+        }
+        .step-icon {
+            width: 34px;
+            height: 34px;
+            background: #eee;
+            border: 4px solid white;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .step-text {
+            font-size: 11px;
+            font-weight: bold;
+            color: #888;
+            text-transform: uppercase;
+        }
+        .step-date {
+            font-size: 10px;
+            color: #aaa;
+            margin-top: 5px;
+            opacity: 0;
+        }
+        
+        .timeline-step.completed .step-icon {
+            background: #d34e2a;
+            color: white;
+        }
+        .timeline-step.completed .step-text { color: #111; }
+        .timeline-step.completed .step-date { opacity: 1; }
+        
+        .timeline-step.active .step-icon {
+            background: #111;
+            color: white;
+            transform: scale(1.2);
+            box-shadow: 0 0 0 5px rgba(17, 17, 17, 0.2);
+        }
+        .timeline-step.active .step-text { color: #d34e2a; }
+
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        @media (max-width: 576px) {
+            .timeline-wrapper { flex-direction: column; align-items: flex-start; padding: 0; }
+            .timeline-wrapper::before, .timeline-progress {
+                left: 17px; top: 0; bottom: 0; width: 4px; height: 100%; right: auto;
+            }
+            .timeline-progress { transition: height 1s ease; width: 4px; }
+            .timeline-step {
+                display: flex; align-items: center; text-align: left; margin-bottom: 30px; width: 100%;
+            }
+            .step-icon { margin: 0 20px 0 0; }
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Basic Navbar injection point (simplified for this specialized page) -->
+    <nav class="navbar navbar-expand-lg bg-white border-bottom fixed-top" style="min-height: 70px;">
+        <div class="container-fluid px-md-5">
+            <div class="logo">
+                <a href="index.html" class="custom-brand-logo pb-1" style="padding-left: 0;">
+                    <div class="urban-part">
+                        <span class="urban-text">URBAN</span>
+                        <div class="urban-line"></div>
+                    </div>
+                    <div class="edge-part">
+                        <span class="edge-text">EDGE</span>
+                        <div class="edge-icons">
+                            <i class="fa-solid fa-headphones"></i> <i class="fa-solid fa-shirt"></i> <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="mobileNav">
+                <div class="nav-icons d-flex flex-column flex-lg-row align-items-center gap-3 mt-3 mt-lg-0 pb-3 pb-lg-0">
+                    <div class="d-flex gap-3 align-items-center">
+                        <a href="cart.html" class="fs-5 text-dark" style="text-decoration:none;">
+                            <i class="fa-solid fa-bag-shopping position-relative">
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-global-badge" style="font-size: 0.55rem; display: none;">0</span>
+                            </i>
+                        </a>
+                        <a href="#" class="fs-5 text-dark"><i class="fa-regular fa-user"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tracking Hero -->
+    <section class="track-hero">
+        <div class="container">
+            <h1 class="fw-bolder text-uppercase mb-3" style="font-family: 'Archivo Black', sans-serif; font-size: 40px;">Track Order</h1>
+            <p class="text-white-50" style="font-size: 14px; max-width: 400px; margin: 0 auto;">Enter your UE Order ID (e.g. #UE-12345) to see the real-time status of your premium drop.</p>
+            
+            <form id="track-form">
+                <div class="input-group track-input-group">
+                    <input type="text" id="order-id-input" class="form-control track-input rounded-0" placeholder="Order ID (UE-XXXXX)" required autocomplete="off">
+                    <button class="btn track-btn rounded-0" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Tracking Results Section -->
+    <section class="py-5 mt-4">
+        <div class="container">
+            <!-- Loading Indicator -->
+            <div id="track-loader" class="text-center py-5 d-none">
+                <div class="spinner-border text-danger" style="width: 3rem; height: 3rem;" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="mt-3 fw-bold text-muted small text-uppercase" style="letter-spacing: 2px;">Locating Package...</p>
+            </div>
+
+            <!-- Error Box -->
+            <div id="track-error" class="alert alert-danger text-center rounded-0 fw-bold border-0 d-none" style="max-width: 500px; margin: 0 auto;">
+                <i class="fa-solid fa-triangle-exclamation me-2"></i> No active order found with this ID.
+            </div>
+
+            <!-- Tracker Box -->
+            <div id="track-result-box" class="tracking-box">
+                <div class="d-flex justify-content-between align-items-center border-bottom pb-4 mb-4">
+                    <div>
+                        <p class="text-muted small mb-1">Order Number</p>
+                        <h5 class="fw-bolder m-0" id="display-order-id" style="font-family: 'Archivo Black', sans-serif;">---</h5>
+                    </div>
+                    <div class="text-end">
+                        <p class="text-muted small mb-1">Expected Arrival</p>
+                        <h6 class="fw-bold m-0" id="display-eta" style="color: #28a745;">---</h6>
+                    </div>
+                </div>
+                
+                <h6 class="fw-bolder text-center mb-0 mt-2 text-uppercase" id="current-status-text" style="letter-spacing: 1px;">Preparing to Ship</h6>
+                
+                <!-- Timeline -->
+                <div class="timeline-wrapper" id="timeline-container">
+                    <div class="timeline-progress" id="progress-bar" style="width: 0%;"></div>
+                    
+                    <div class="timeline-step completed" id="step-1">
+                        <div class="step-icon"><i class="fa-solid fa-check"></i></div>
+                        <div class="step-text">Order Placed</div>
+                        <div class="step-date" id="date-1">--</div>
+                    </div>
+                    
+                    <div class="timeline-step active" id="step-2">
+                        <div class="step-icon"><i class="fa-solid fa-box"></i></div>
+                        <div class="step-text">Processing</div>
+                        <div class="step-date" id="date-2">--</div>
+                    </div>
+                    
+                    <div class="timeline-step" id="step-3">
+                        <div class="step-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                        <div class="step-text">Shipped</div>
+                        <div class="step-date" id="date-3">--</div>
+                    </div>
+                    
+                    <div class="timeline-step" id="step-4">
+                        <div class="step-icon"><i class="fa-solid fa-house"></i></div>
+                        <div class="step-text">Delivered</div>
+                        <div class="step-date" id="date-4">--</div>
+                    </div>
+                </div>
+                
+                <div class="mt-5 p-3 bg-light rounded text-center">
+                    <p class="m-0 text-muted small"><i class="fa-solid fa-circle-info me-2"></i>Courier partner: <strong>Delhivery Express</strong>. Tracking link will be sent via SMS when shipped.</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Basic Footer Injection Anchor -->
+    <footer class="footer-section py-4 bg-dark text-center text-white mt-auto">
+        <p class="m-0 small">&copy; 2026 URBAN EDGE. All Rights Reserved. | <a href="index.html" class="text-white-50">Back to Store</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="track.js"></script>
+    <script src="cart.js"></script>
+    <script src="search.js"></script>
+    <script src="wishlist.js"></script>
+    <script src="recent.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>
