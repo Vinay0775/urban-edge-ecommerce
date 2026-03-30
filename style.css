@@ -1637,16 +1637,39 @@ body {
     }
 
     .navbar-collapse {
-        background-color: #ffffff;
-        padding: 20px 0;
-        border-top: 1px solid #eaeaea;
-        box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+        background-color: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        padding: 30px 20px !important;
+        border-top: none !important;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
         position: absolute;
         width: 100%;
         left: 0;
         top: 70px;
         z-index: 1000;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
+    
+    .navbar-toggler {
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    .navbar-collapse .nav-links ul li {
+        margin: 15px 0 !important;
+    }
+
+    .navbar-collapse .nav-links ul li a {
+        font-size: 18px !important;
+        font-weight: 900 !important;
+        letter-spacing: 2px !important;
+        color: #111 !important;
+    }
+
 
     .search-bar {
         width: 80%;
@@ -1713,8 +1736,9 @@ body {
 
     .hero-model-img {
         height: 100% !important;
-        object-fit: cover;
-        object-position: bottom center;
+        object-fit: contain !important;
+        object-position: bottom center !important;
+        transform: scale(1.05); /* slightly zoom to fill properly without cropping head */
     }
 
     /* --- 4. FILTER & SORTING BAR FIX --- */
