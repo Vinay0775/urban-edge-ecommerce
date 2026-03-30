@@ -249,16 +249,43 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         
         saveCart();
-        closeUeModal();
-        showUeToast(tempCurrentProduct, `Size: ${selectedSize} | Color: ${selectedColor}`);
         
         // Change text of original button
         if(tempCurrentProduct.triggerButton) {
             const btn = tempCurrentProduct.triggerButton;
-            btn.innerHTML = `✓ ADDED TO BAG`;
-            btn.style.backgroundColor = 'black';
-            btn.style.color = 'white';
+            const originalText = btn.innerHTML;
+            btn.innerHTML = `ADDED <i class="fa-solid fa-check ms-2"></i>`;
+            btn.classList.add('btn-success');
+            btn.classList.remove('btn-dark');
+            if(btn.style) {
+                btn.style.backgroundColor = '#198754';
+                btn.style.setProperty('background-color', '#198754', 'important');
+                btn.style.color = 'white';
+            }
+            // Revert after 2 seconds
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.classList.remove('btn-success');
+                btn.classList.add('btn-dark');
+                if(btn.style) {
+                    btn.style.backgroundColor = '';
+                    btn.style.color = '';
+                }
+            }, 2000);
         }
+        
+        // Animate modal button
+        const confirmBtn = document.getElementById('ue-confirm-add');
+        const oldConfirmHtml = confirmBtn.innerHTML;
+        confirmBtn.innerHTML = `ADDED <i class="fa-solid fa-check ms-2"></i>`;
+        confirmBtn.style.backgroundColor = '#198754';
+        
+        setTimeout(() => {
+            closeUeModal();
+            showUeToast(tempCurrentProduct, `Size: ${selectedSize} | Color: ${selectedColor}`);
+            confirmBtn.innerHTML = oldConfirmHtml;
+            confirmBtn.style.backgroundColor = '';
+        }, 600);
     });
 
     // Close on overlay click
@@ -293,7 +320,12 @@ document.addEventListener("DOMContentLoaded", () => {
             
             if (foundImg && foundName && foundPriceEl) {
                 img = foundImg.src; name = foundName.innerText.trim();
-                let priceText = foundPriceEl.innerText.replace(/[^0-9]/g, '');
+                
+                // Remove line-through elements to avoid concatenating prices
+                let clone = foundPriceEl.cloneNode(true);
+                clone.querySelectorAll('del, .text-decoration-line-through').forEach(n => n.remove());
+                
+                let priceText = (clone.innerText || clone.textContent).replace(/[^0-9]/g, '');
                 if(priceText) price = parseInt(priceText);
                 break;
             }
@@ -307,10 +339,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- 7. INTERCEPT "ADD TO CART" BUTTONS EVERYWHERE ---
     window.bindCartButton = function(button) {
-        if (button.id === 'pd-add-btn') return; // Skip main product page button
+        if (button.id === 'pd-add-btn' || button.id === 'ue-confirm-add') return; // Skip main product page & modal buttons
         
         const text = button.innerText.toLowerCase().trim();
-        if (text.includes("add") || text.includes("cart") || text.includes("bag")) {
+        let isCartButton = text.includes("add") || 
+                           text.includes("cart") || 
+                           text.includes("bag") || 
+                           button.classList.contains("dynamic-add-btn");
+                           
+        if (isCartButton) {
             if (text.includes("subscribe") || text.includes("load") || text.includes("join") || text.includes("discover") || text.includes("view") || text.includes("address")) return;
             
             button.removeAttribute("onclick");
