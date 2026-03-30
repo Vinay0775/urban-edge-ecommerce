@@ -274,8 +274,10 @@ document.addEventListener("DOMContentLoaded", () => {
         for(let i=0; i<7; i++) {
             if(!container || container.tagName === 'BODY') break;
             
-            let foundImg = container.querySelector('img.img-fluid, img.product-img, img.card-img-top, img.category-img');
-            let foundName = container.querySelector('h5, h6, h4, .card-title');
+            let foundImg = container.querySelector('img.img-fluid, img.product-img, img.card-img-top, img.category-img, img.w-100, img.bento-img');
+            if(!foundImg) foundImg = container.querySelector('img');
+            
+            let foundName = container.querySelector('h3, h4, h5, h6, .card-title, .bento-content h3');
             
             let foundPriceEl = null;
             let priceCandidates = container.querySelectorAll('p:not(del), span:not(del), div:not(del)');
@@ -283,6 +285,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 if(el.children.length <= 1 && el.innerText.includes('Rs.') && !el.closest('del')) {
                     foundPriceEl = el; break;
                 }
+            }
+            // Check button itself if no price paragraph is found
+            if(!foundPriceEl && btn && btn.innerText.includes('Rs.')) {
+                foundPriceEl = btn;
             }
             
             if (foundImg && foundName && foundPriceEl) {

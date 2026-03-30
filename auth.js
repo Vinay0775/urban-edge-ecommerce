@@ -216,7 +216,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- 5. BIND TO NAVBAR USER ICONS ---
     function updateUserIcons() {
-        const userNavContainers = document.querySelectorAll('.nav-icons .d-flex.gap-3');
+        const userNavContainers = [];
+        document.querySelectorAll('.fa-user, .ue-account-wrapper').forEach(el => {
+            let parent = el.closest('div.d-flex');
+            if(parent && !userNavContainers.includes(parent)) userNavContainers.push(parent);
+        });
         
         // Ensure a single global click handler for clicking outside dropdown
         document.addEventListener('click', (e) => {
