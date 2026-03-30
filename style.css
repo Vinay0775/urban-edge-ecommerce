@@ -2033,3 +2033,30 @@ body {
         /* Chaaron Payment icons ko center karega */
     }
 }
+
+/* --- MOBILE NAVBAR 320PX FIX (Toggle Button Shift & Fit) --- */
+@media (max-width: 360px) {
+    /* Scale down logo slightly to make room */
+    .urban-text {
+        font-size: 22px !important;
+    }
+    .edge-text {
+        font-size: 13px !important;
+    }
+    .custom-brand-logo {
+        gap: 4px !important;
+    }
+    
+    /* Reduce gaps and margin between icons and toggle */
+    .navbar .d-flex.d-lg-none {
+        gap: 10px !important;
+        margin-right: 8px !important;
+    }
+    
+    /* Shift toggle button slightly to the left and adjust padding */
+    .navbar-toggler {
+        padding: 4px 6px !important;
+        position: relative;
+        right: 5px !important; /* Thoda sa left me khiskane ke liye */
+    }
+}
