@@ -19,6 +19,32 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // --- 1.5 MOBILE SIDEBAR TOGGLE ---
+    const sidebarToggleBtn = document.getElementById('adminSidebarToggle');
+    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+    const sidebar = document.getElementById('adminSidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    function toggleSidebar() {
+        if(sidebar) sidebar.classList.toggle('show');
+        if(sidebarOverlay) sidebarOverlay.classList.toggle('show');
+    }
+
+    if(sidebarToggleBtn) sidebarToggleBtn.addEventListener('click', toggleSidebar);
+    if(closeSidebarBtn) closeSidebarBtn.addEventListener('click', toggleSidebar);
+    if(sidebarOverlay) sidebarOverlay.addEventListener('click', toggleSidebar);
+    
+    // Auto-close sidebar on mobile when a tab is selected
+    tabLinks.forEach(link => {
+        link.addEventListener('click', () => {
+             if(window.innerWidth <= 768 && sidebar && sidebar.classList.contains('show')) {
+                 toggleSidebar();
+             }
+        });
+    });
+
+
+
     // --- 2. SETUP REVENUE CHART (MOCK HISTORICAL DATA) ---
     const chartCanv = document.getElementById('revenueChart');
     if(chartCanv) {

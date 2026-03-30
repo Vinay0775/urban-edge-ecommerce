@@ -88,10 +88,22 @@ document.addEventListener("DOMContentLoaded", () => {
             const inputs = checkoutForm.querySelectorAll('input:not([type="radio"])');
             const paymentMethod = document.querySelector('input[name="payment_method"]:checked').value;
             
+            // STRICT EMAIL BINDING: Use logged in user's email to ensure it shows up in their "My Orders"
+            let orderEmail = inputs[0].value.trim();
+            const loggedInUserStr = localStorage.getItem('urban_edge_user');
+            if (loggedInUserStr) {
+                try {
+                    const userObj = JSON.parse(loggedInUserStr);
+                    if (userObj && userObj.email) {
+                        orderEmail = userObj.email;
+                    }
+                } catch(e) {}
+            }
+            
             const orderData = {
                 orderId: 'UE-' + Math.floor(10000 + Math.random() * 90000),
                 customer: {
-                    email: inputs[0].value,
+                    email: orderEmail,
                     name: inputs[1].value + ' ' + inputs[2].value,
                     address: inputs[3].value,
                     city: inputs[5].value,
